@@ -12,7 +12,7 @@ from dataclasses import dataclass
 import pandas as pd
 
 from riskkit.config import RiskConfig
-from riskkit.data.cache import load_prices
+from riskkit.data.cache import load_prices, seed_from_snapshot
 from riskkit.data.fx import convert_prices, fx_ticker, major_currency, needs_conversion
 from riskkit.data.reference import StockProfile, load_profile, risk_free_daily
 from riskkit.data.sources import DataUnavailableError, PriceSource, get_source
@@ -64,6 +64,7 @@ def price_in_base(ticker: str, local: pd.Series, currency: str, cfg: RiskConfig,
 
 def collect_market_data(cfg: RiskConfig, refresh: bool = False) -> MarketData:
     """Fetch prices, benchmark, risk-free rate and profiles for every stock in the config."""
+    seed_from_snapshot(cfg.cache_dir)
     sources = build_sources(cfg)
     columns: dict[str, pd.Series] = {}
     profiles: dict[str, StockProfile] = {}
