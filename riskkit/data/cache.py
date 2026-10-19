@@ -8,6 +8,7 @@ and if the download then fails the old file is used rather than nothing.
 
 from __future__ import annotations
 
+import shutil
 from datetime import date
 from pathlib import Path
 
@@ -46,6 +47,48 @@ def write_cache(path: Path, df: pd.DataFrame) -> None:
 def is_fresh(path: Path, today: date | None = None) -> bool:
     """True when the file was written today."""
     return path.exists() and date.fromtimestamp(path.stat().st_mtime) == (today or date.today())
+
+
+def snapshot_dir(cache_dir: Path) -> Path:
+    """The saved copy of the cache that ships with the code: data/snapshot next to data/cache."""
+    return Path(cache_dir).parent / "snapshot"
+
+
+def seed_from_snapshot(cache_dir: Path) -> int:
+    """Copy snapshot files that are missing from the cache into it, and return how many were copied.
+
+    A fresh install (or the online app, whose disk starts empty) then begins from the shipped
+    prices instead of downloading 25 years of history for every stock. The copies count as
+    today's files, so nothing is downloaded until "Re-download latest prices" is pressed or a
+    stock outside the snapshot is added. Files already in the cache are never overwritten.
+    """
+    source = snapshot_dir(cache_dir)
+    if not source.is_dir():
+        return 0
+    copied = 0
+    for file in source.rglob("*"):
+        if not file.is_file():
+            continue
+        target = Path(cache_dir) / file.relative_to(source)
+        if target.exists():
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(file, target)
+        copied += 1
+    return copied
+
+
+def save_snapshot(cache_dir: Path) -> int:
+    """Copy the current cache into the snapshot (run after downloading fresh prices)."""
+    target = snapshot_dir(cache_dir)
+    count = 0
+    for file in Path(cache_dir).rglob("*"):
+        if file.is_file() and file.suffix in (".parquet", ".json"):
+            dest = target / file.relative_to(cache_dir)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(file, dest)
+            count += 1
+    return count
 
 
 def load_prices(ticker: str, sources: list[PriceSource], cache_dir: Path,

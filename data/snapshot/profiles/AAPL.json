@@ -1,0 +1,10 @@
+{
+ "ticker": "AAPL",
+ "name": "Apple Inc.",
+ "sector": "Technology",
+ "industry": "Consumer Electronics",
+ "country": "United States",
+ "currency": "USD",
+ "shares_outstanding": 14594180000,
+ "market_cap": 5012516765696
+}

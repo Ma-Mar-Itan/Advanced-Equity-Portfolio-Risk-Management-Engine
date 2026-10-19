@@ -8,6 +8,7 @@ set PY=.venv\Scripts\python.exe
 echo.
 echo [1/4] Downloading the latest prices from Yahoo Finance...
 "%PY%" -m tools.module1_demo || goto :failed
+"%PY%" -m tools.save_snapshot || goto :failed
 
 echo.
 echo [2/4] Recomputing every number, table and figure for the report...
