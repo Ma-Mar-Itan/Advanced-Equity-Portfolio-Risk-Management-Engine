@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Risk platform design layer.
+   Tokens mirror dashboard/theme.py. Colour = identity or state, never decoration.
+   ========================================================================== */
+:root {
+  --canvas: #EFEFEC;
+  --surface: #FFFFFF;
+  --ink: #161616;
+  --ink-2: #4B4B48;
+  --ink-3: #8B8B86;
+  --rule: #DADAD5;
+  --rule-soft: #ECECE8;
+  --accent: #0E5A63;
+  --within: #2E6B45;
+  --watch: #9A6200;
+  --breach: #A3271B;
+  --fig: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- page frame ---------------------------------------------------- */
+.stApp { background: var(--canvas); }
+[data-testid="stMainBlockContainer"], .block-container {
+  max-width: 1480px;
+  padding: 3.9rem 2.2rem 4rem 2.2rem !important;
+}
+[data-testid="stHeader"] { background: var(--surface); border-bottom: 1px solid var(--rule); height: 3rem; }
+[data-testid="stDecoration"] { display: none; }
+[data-testid="stVerticalBlock"] { gap: 0.9rem; }
+[data-testid="stHorizontalBlock"] { gap: 1rem; }
+h1, h2, h3, h4 { letter-spacing: -0.01em; color: var(--ink); }
+p, li { color: var(--ink); }
+[data-testid="stCaptionContainer"] p { color: var(--ink-3); font-size: 12px; }
+hr { margin: 0.4rem 0; border-color: var(--rule); }
+
+/* top navigation */
+[data-testid="stTopNavLinkContainer"] a, [data-testid="stTopNavLink"] { font-size: 13.5px; }
+
+/* bordered containers are the panels */
+[data-testid="stVerticalBlockBorderWrapper"]:has(> div > [data-testid="stVerticalBlock"]) ,
+div[data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"][class*="border"] {
+  background: var(--surface);
+}
+.st-key-panel, [class*="st-key-panel"] {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 14px 16px 10px 16px;
+}
+
+/* widgets: compact, quiet */
+[data-testid="stWidgetLabel"] p { font-size: 12px; color: var(--ink-3); }
+.stSelectbox div[data-baseweb="select"] > div { min-height: 34px; font-size: 13px; }
+.stButton button, .stDownloadButton button, .stPopover button {
+  min-height: 34px; padding: 0 14px; font-size: 13px; font-weight: 500;
+}
+[data-testid="stDownloadButton"] button { border: none !important; background: transparent !important; color: var(--ink-3);
+  padding: 0 !important; min-height: 22px !important; font-size: 12px; box-shadow: none !important; }
+[data-testid="stDownloadButton"] button:hover { color: var(--accent); text-decoration: underline; }
+[data-testid="stDownloadButton"] p { font-size: 12px; }
+[data-testid="stTabs"] [data-baseweb="tab"] p { font-size: 13.5px; }
+[data-testid="stAlert"] { padding: 0.55rem 0.8rem; }
+
+/* ---------- header band --------------------------------------------------- */
+.rk-ident { display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.rk-ident-name { font-size: 15px; font-weight: 600; color: var(--ink); }
+.rk-ident-meta { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 12px; color: var(--ink-3); }
+.rk-ident-meta b { font-weight: 500; color: var(--ink-2); }
+.rk-flag { color: var(--watch); font-weight: 500; }
+
+/* ---------- page title ---------------------------------------------------- */
+.rk-title { margin: 6px 0 2px 0; }
+.rk-title h1 { font-size: 22px; font-weight: 600; margin: 0; padding: 0; line-height: 1.25; }
+.rk-title p { margin: 4px 0 0 0; font-size: 13.5px; color: var(--ink-2); max-width: 78ch; }
+
+/* ---------- section heading inside panels -------------------------------- */
+.rk-sec { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 2px; }
+.rk-sec h3 { font-size: 14.5px; font-weight: 600; margin: 0; padding: 0; color: var(--ink); line-height: 1.3; }
+.rk-sec .rk-sec-aside { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.rk-sec-finding { font-size: 12.5px; color: var(--ink-2); margin: 2px 0 4px 0; }
+.rk-note { font-size: 12px; color: var(--ink-3); margin: 2px 0 0 0; line-height: 1.45; max-width: 90ch; }
+
+/* ---------- the hero: headline VaR + limit rail -------------------------- */
+.rk-hero { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 22px 16px 22px; }
+.rk-hero-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.rk-hero-label { font-size: 12.5px; color: var(--ink-2); margin-bottom: 2px; }
+.rk-hero-fig { font-family: var(--fig); font-size: 46px; font-weight: 600; line-height: 1; color: var(--ink);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.rk-hero-sub { font-size: 13px; color: var(--ink-2); margin-top: 6px; }
+.rk-hero-sub .fig { font-family: var(--fig); font-weight: 500; color: var(--ink); }
+.rk-hero-side { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 34px; align-items: end; }
+.rk-hero-side .lab { font-size: 12px; color: var(--ink-3); }
+.rk-hero-side .val { font-family: var(--fig); font-size: 20px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rk-hero-side .val small { font-size: 12.5px; color: var(--ink-2); font-weight: 400; margin-left: 4px; }
+
+.rk-rail { position: relative; margin: 26px 0 6px 0; height: 46px; }
+.rk-rail-track { position: absolute; left: 0; right: 0; top: 18px; height: 8px; background: var(--rule-soft); border-radius: 4px; }
+.rk-rail-fill { position: absolute; left: 0; top: 18px; height: 8px; border-radius: 4px 0 0 4px; }
+.rk-rail-es { position: absolute; top: 18px; height: 8px; opacity: 0.28; }
+.rk-rail-limit { position: absolute; top: 8px; width: 2px; height: 28px; background: var(--ink); }
+.rk-rail-prev { position: absolute; top: 14px; width: 2px; height: 16px; background: var(--ink-3); }
+.rk-rail-tag { position: absolute; font-size: 11.5px; color: var(--ink-2); white-space: nowrap; transform: translateX(-50%); }
+.rk-rail-tag.top { top: -10px; }
+.rk-rail-tag.bottom { top: 32px; }
+.rk-rail-tag b { font-family: var(--fig); font-weight: 600; color: var(--ink); }
+.rk-rail-scale { position: absolute; top: 32px; font-family: var(--fig); font-size: 11px; color: var(--ink-3); }
+.rk-hero-reading { font-size: 13.5px; color: var(--ink-2); margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid var(--rule-soft); max-width: 120ch; line-height: 1.5; }
+.rk-hero-reading b { color: var(--ink); font-weight: 600; }
+
+/* ---------- KPI strip ----------------------------------------------------- */
+.rk-kpis { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: 6px; }
+.rk-kpi { padding: 12px 18px 12px 18px; border-left: 1px solid var(--rule-soft); min-width: 0; }
+.rk-kpi:first-child { border-left: none; }
+.rk-kpi .lab { font-size: 12px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rk-kpi .val { font-family: var(--fig); font-size: 24px; font-weight: 500; color: var(--ink); margin-top: 2px;
+  font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rk-kpi .sub { font-size: 12px; color: var(--ink-2); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- state ---------------------------------------------------------- */
+.rk-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.rk-state-within { color: var(--within); } .rk-state-watch { color: var(--watch); } .rk-state-breach { color: var(--breach); }
+.bg-within { background: var(--within); } .bg-watch { background: var(--watch); } .bg-breach { background: var(--breach); }
+.bg-neutral { background: var(--ink-3); }
+.rk-pill { display: inline-block; font-size: 11.5px; font-weight: 500; padding: 1px 8px; border-radius: 10px;
+  background: var(--rule-soft); color: var(--ink-2); }
+
+/* ---------- tables -------------------------------------------------------- */
+.rk-table-wrap { overflow-x: auto; }
+.rk-table-wrap.scroll { overflow-y: auto; }
+.rk-table-wrap.scroll thead th { position: sticky; top: 0; background: var(--surface); z-index: 1; }
+table.rk-table { width: 100%; border-collapse: collapse; font-size: 13px; color: var(--ink); }
+.rk-table thead th { font-weight: 500; font-size: 12px; color: var(--ink-3); text-align: left; padding: 6px 10px;
+  border-bottom: 1px solid var(--rule); white-space: nowrap; }
+.rk-table tbody td { padding: 6px 10px; border-bottom: 1px solid var(--rule-soft); vertical-align: middle; white-space: nowrap; }
+.rk-table tbody tr:last-child td { border-bottom: none; }
+.rk-table tbody tr:hover td { background: #F7F7F4; }
+.rk-table .num { text-align: right; font-family: var(--fig); font-variant-numeric: tabular-nums; }
+.rk-table thead th.num { text-align: right; }
+.rk-table .key { font-weight: 500; }
+.rk-table .dim { color: var(--ink-3); }
+.rk-table tr.hl td { background: #EEF4F4; }
+.rk-table tr.hl td.key { color: var(--accent); }
+.rk-bar { position: relative; height: 8px; min-width: 90px; background: var(--rule-soft); border-radius: 2px; }
+.rk-bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; background: var(--accent); }
+.rk-bar u { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink); }
+.rk-swatch { display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 8px; vertical-align: 3px; }
+
+/* checks list */
+.rk-checks { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 12.5px; color: var(--ink-2); }
+.rk-checks span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  margin-right: 7px; vertical-align: 1px; background: var(--within); }
+.rk-checks span.fail::before { background: var(--breach); }
+
+/* definition list */
+.rk-dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 13px; margin: 0; }
+.rk-dl dt { color: var(--ink-3); }
+.rk-dl dd { margin: 0; color: var(--ink); font-family: var(--fig); font-variant-numeric: tabular-nums; }
+
+/* methodology */
+.rk-prose { max-width: 78ch; font-size: 14px; line-height: 1.6; color: var(--ink); }
+
+/* body copy and one-line flags */
+.rk-para { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); max-width: 92ch; }
+.rk-para b { color: var(--ink); font-weight: 600; }
+.rk-flagline { font-size: 13px; color: var(--ink-2); }
+.rk-title p b { color: var(--ink); font-weight: 600; }
+.rk-part { margin: 18px 0 0 0; padding-top: 16px; border-top: 1px solid var(--rule); }
+.rk-part h2 { font-size: 17px; font-weight: 600; margin: 0; padding: 0; line-height: 1.3; }
+.rk-part p { margin: 4px 0 0 0; font-size: 13.5px; color: var(--ink-2); max-width: 92ch; }
+.rk-part p b { color: var(--ink); font-weight: 600; }
+.rk-table td.dim:not(.num) { white-space: normal; min-width: 160px; }
+
+/* multiselect tags: quiet chips, not filled accent blocks */
+[data-testid="stMultiSelect"] [data-tag] { background: var(--rule-soft) !important; color: var(--ink) !important;
+  border: 1px solid var(--rule); }
+[data-testid="stMultiSelect"] [data-tag] span { color: var(--ink) !important; }
+[data-testid="stMultiSelect"] [data-tag] button, [data-testid="stMultiSelect"] [data-tag] svg { color: var(--ink-3) !important; fill: var(--ink-3) !important; }

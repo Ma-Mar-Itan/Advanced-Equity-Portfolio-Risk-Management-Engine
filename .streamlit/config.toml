@@ -1,0 +1,60 @@
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[server]
+headless = true
+runOnSave = false
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0E5A63"
+backgroundColor = "#EFEFEC"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#161616"
+linkColor = "#0E5A63"
+borderColor = "#DADAD5"
+dataframeBorderColor = "#E6E6E1"
+showWidgetBorder = true
+baseRadius = "6px"
+buttonRadius = "6px"
+baseFontSize = 14
+font = "IBM Plex Sans, system-ui, sans-serif"
+headingFont = "IBM Plex Sans, system-ui, sans-serif"
+headingFontWeights = 600
+headingFontSizes = ["1.45rem", "1.1rem", "1rem", "0.95rem", "0.9rem", "0.85rem"]
+chartCategoricalColors = ["#0E5A63", "#4B4B48", "#B07A1E", "#6E4F86", "#55803F", "#9A4E3C", "#3E6F9C", "#7D7A3A"]
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/ibm-plex-sans-latin-400-normal.woff2"
+weight = 400
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/ibm-plex-sans-latin-500-normal.woff2"
+weight = 500
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/ibm-plex-sans-latin-600-normal.woff2"
+weight = 600
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans Condensed"
+url = "app/static/fonts/ibm-plex-sans-condensed-latin-400-normal.woff2"
+weight = 400
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans Condensed"
+url = "app/static/fonts/ibm-plex-sans-condensed-latin-500-normal.woff2"
+weight = 500
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans Condensed"
+url = "app/static/fonts/ibm-plex-sans-condensed-latin-600-normal.woff2"
+weight = 600

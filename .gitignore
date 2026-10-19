@@ -1,0 +1,5 @@
+tiingo_key.txt
+data/cache/
+__pycache__/
+.venv/
+.pytest_cache/

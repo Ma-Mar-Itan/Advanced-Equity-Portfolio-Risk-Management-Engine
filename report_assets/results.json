@@ -1,0 +1,969 @@
+{
+ "value": 10000000.0,
+ "confidence": 0.99,
+ "window": 500,
+ "data": {
+  "start": "04 June 2012",
+  "end": "16 October 2026",
+  "days": 3614,
+  "filled": 0,
+  "stale": 0,
+  "checks_passed": 6,
+  "checks": 6,
+  "stocks": [
+   {
+    "stock": "AAPL",
+    "name": "Apple",
+    "sector": "Technology",
+    "ann_return": 0.23430411303920085,
+    "ann_vol": 0.2820090936033547,
+    "skew": -0.23190120584859664,
+    "kurt": 9.601701810722181,
+    "min": -0.1377081512049621,
+    "max": 0.14261735272251114
+   },
+   {
+    "stock": "MSFT",
+    "name": "Microsoft",
+    "sector": "Technology",
+    "ann_return": 0.2465532871381592,
+    "ann_vol": 0.26571901994956815,
+    "skew": -0.0409071271324671,
+    "kurt": 12.216373536026373,
+    "min": -0.15945363902265797,
+    "max": 0.14415869002494103
+   },
+   {
+    "stock": "NVDA",
+    "name": "NVIDIA",
+    "sector": "Technology",
+    "ann_return": 0.5912039531103088,
+    "ann_vol": 0.44575821522429115,
+    "skew": 0.1689170146705634,
+    "kurt": 10.732384468716646,
+    "min": -0.20771159838304462,
+    "max": 0.26087626834797517
+   },
+   {
+    "stock": "JPM",
+    "name": "JPMorgan Chase",
+    "sector": "Financial Services",
+    "ann_return": 0.21143276587571688,
+    "ann_vol": 0.25749057637694717,
+    "skew": -0.08783026312571797,
+    "kurt": 15.512271394801218,
+    "min": -0.1621057621864694,
+    "max": 0.16562030828049518
+   },
+   {
+    "stock": "XOM",
+    "name": "Exxon Mobil",
+    "sector": "Energy",
+    "ann_return": 0.10183899122201466,
+    "ann_vol": 0.25685259128269405,
+    "skew": -0.20961013017125746,
+    "kurt": 9.769271229276217,
+    "min": -0.13039096983275525,
+    "max": 0.1194421767641147
+   },
+   {
+    "stock": "AMZN",
+    "name": "Amazon",
+    "sector": "Consumer Cyclical",
+    "ann_return": 0.24812187790444756,
+    "ann_vol": 0.32243436848091983,
+    "skew": 0.12327628000575416,
+    "kurt": 9.231831385186911,
+    "min": -0.15139791287665294,
+    "max": 0.1425457923711586
+   },
+   {
+    "stock": "META",
+    "name": "Meta Platforms",
+    "sector": "Communication Services",
+    "ann_return": 0.25450009334959867,
+    "ann_vol": 0.3961466696679129,
+    "skew": -0.3313017753672808,
+    "kurt": 23.87729248128148,
+    "min": -0.3063904933066644,
+    "max": 0.2593710744051495
+   },
+   {
+    "stock": "GOOGL",
+    "name": "Alphabet",
+    "sector": "Communication Services",
+    "ann_return": 0.24830264758502174,
+    "ann_vol": 0.2774852404982856,
+    "skew": 0.14778318768045284,
+    "kurt": 9.531603637172207,
+    "min": -0.12368450151963947,
+    "max": 0.15064534595893617
+   },
+   {
+    "stock": "TSLA",
+    "name": "Tesla",
+    "sector": "Consumer Cyclical",
+    "ann_return": 0.44124422140407754,
+    "ann_vol": 0.5664670850015526,
+    "skew": 0.029309855737537166,
+    "kurt": 7.577705746199285,
+    "min": -0.23651789445767657,
+    "max": 0.21829241013013823
+   },
+   {
+    "stock": "UNH",
+    "name": "UnitedHealth",
+    "sector": "Healthcare",
+    "ann_return": 0.16797712006105092,
+    "ann_vol": 0.28280921399923226,
+    "skew": -1.8902807860524327,
+    "kurt": 32.614956189541275,
+    "min": -0.25334083316890926,
+    "max": 0.120436777397883
+   }
+  ]
+ },
+ "risk_free_source": "flat 2% a year (T-bill data unavailable)",
+ "winsor": {
+  "total": 740,
+  "year_2020": 209,
+  "busiest_month": "March 2020",
+  "busiest_count": 92
+ },
+ "portfolio": {
+  "start value": 195481.21167913222,
+  "end value": 10000000.0,
+  "total return": 50.15581141585234,
+  "annual return": 0.3157072001351755,
+  "annual volatility": 0.21926160297148392,
+  "sharpe": 1.270724834222688,
+  "max drawdown": -0.34907522366119037,
+  "best day": 0.11880948974364847,
+  "worst day": -0.13808198517393333,
+  "positive days": 0.5683453237410072,
+  "worst day $": -368803.85963134374,
+  "total costs": 0.0,
+  "average turnover": 0.056170195416849984,
+  "beta": 1.1888587495845406,
+  "correlation": 0.9001850200168701,
+  "tracking error": 0.10050607823361692,
+  "benchmark annual return": 0.15244598816918997,
+  "excess annual return": 0.16326121196598553
+ },
+ "drawdowns": [
+  {
+   "peak": "19 Feb 2020",
+   "trough": "23 Mar 2020",
+   "recovery": "05 Jun 2020",
+   "depth": -0.349075,
+   "days_down": 23,
+   "days_to_recover": 52.0
+  },
+  {
+   "peak": "03 Jan 2022",
+   "trough": "05 Jan 2023",
+   "recovery": "26 May 2023",
+   "depth": -0.328052,
+   "days_down": 253,
+   "days_to_recover": 98.0
+  },
+  {
+   "peak": "01 Oct 2018",
+   "trough": "24 Dec 2018",
+   "recovery": "24 Oct 2019",
+   "depth": -0.247338,
+   "days_down": 58,
+   "days_to_recover": 210.0
+  }
+ ],
+ "schemes": [
+  {
+   "scheme": "Equal weight, monthly rebalancing",
+   "ann_return": 0.3157072001351755,
+   "ann_vol": 0.21926160297148392,
+   "sharpe": 1.270724834222688,
+   "mdd": -0.34907522366119037
+  },
+  {
+   "scheme": "Equal weight, buy and hold",
+   "ann_return": 0.3893878330531839,
+   "ann_vol": 0.3316210864841788,
+   "sharpe": 1.0979934026439475,
+   "mdd": -0.5953411987483377
+  },
+  {
+   "scheme": "Market-cap weight, monthly",
+   "ann_return": 0.24922067927602098,
+   "ann_vol": 0.22535251051869645,
+   "sharpe": 1.0118650833725669,
+   "mdd": -0.396672581519115
+  },
+  {
+   "scheme": "Inverse-volatility weight, monthly",
+   "ann_return": 0.26631298751756693,
+   "ann_vol": 0.2001936234118083,
+   "sharpe": 1.1804098971232557,
+   "mdd": -0.33692418380003786
+  }
+ ],
+ "diagnostics": {
+  "mean": 0.0010887869676569184,
+  "sd": 0.013839359770497127,
+  "skew": -0.5322461438372664,
+  "kurt": 12.03967157215689,
+  "jb": 12475.649364592067,
+  "jb_p": 0.0,
+  "lb_r": 134.26272662475515,
+  "lb_r_p": 6.2946063614962504e-24,
+  "lb_r2": 2291.103674511878,
+  "lb_r2_p": 0.0,
+  "arch_lm": 700.0315156653909,
+  "arch_p": 4.835516113239354e-149
+ },
+ "vol_today": {
+  "Rolling 63d": 0.14545785778899895,
+  "EWMA": 0.12087745383866905,
+  "GARCH": 0.1388411741848974,
+  "GJR-GARCH": 0.14645948481462318
+ },
+ "vol_10d": {
+  "Rolling 63d": 0.14545785778899895,
+  "EWMA": 0.12087745383866905,
+  "GARCH": 0.16070507810857837,
+  "GJR-GARCH": 0.16956173462152097
+ },
+ "garch": {
+  "GARCH": {
+   "omega": 5.742813888560288e-06,
+   "alpha": 0.11694521351641789,
+   "gamma": 0.0,
+   "beta": 0.8508571426419572,
+   "persistence": 0.9678023561583751,
+   "long-run vol (yearly)": 0.21200719270911836,
+   "half-life (days)": 21.179421242334605,
+   "log-likelihood": -5781.9415942604355,
+   "AIC": 11569.883188520871
+  },
+  "GJR-GARCH": {
+   "omega": 6.468603877124106e-06,
+   "alpha": 0.024391909221125687,
+   "gamma": 0.1547268353321373,
+   "beta": 0.8653257762249907,
+   "persistence": 0.9670811031121851,
+   "long-run vol (yearly)": 0.22252710193642045,
+   "half-life (days)": 20.707702206473158,
+   "log-likelihood": -5733.084271727158,
+   "AIC": 11474.168543454316
+  }
+ },
+ "resid": {
+  "kurt_raw": 12.03967157215689,
+  "kurt_z": 4.458972148602288,
+  "lb_z2": 11.746817472227642,
+  "lb_z2_p": 0.3023584156294224
+ },
+ "leverage": [
+  {
+   "move": "below -3%",
+   "avg move next 5 days": 0.021908,
+   "days": 77
+  },
+  {
+   "move": "-3% to -1.5%",
+   "avg move next 5 days": 0.01271,
+   "days": 250
+  },
+  {
+   "move": "-1.5% to -0.5%",
+   "avg move next 5 days": 0.009987,
+   "days": 615
+  },
+  {
+   "move": "-0.5% to +0.5%",
+   "avg move next 5 days": 0.008471,
+   "days": 1342
+  },
+  {
+   "move": "+0.5% to +1.5%",
+   "avg move next 5 days": 0.008646,
+   "days": 936
+  },
+  {
+   "move": "+1.5% to +3%",
+   "avg move next 5 days": 0.0106,
+   "days": 327
+  },
+  {
+   "move": "above +3%",
+   "avg move next 5 days": 0.018324,
+   "days": 62
+  }
+ ],
+ "regimes": [
+  {
+   "regime": "Calm",
+   "share of days": 0.333426,
+   "typical move": 0.008757,
+   "worst day": -0.048865,
+   "days below -3%": 5
+  },
+  {
+   "regime": "Normal",
+   "share of days": 0.333149,
+   "typical move": 0.010779,
+   "worst day": -0.060352,
+   "days below -3%": 6
+  },
+  {
+   "regime": "Stormy",
+   "share of days": 0.333426,
+   "typical move": 0.019531,
+   "worst day": -0.148595,
+   "days below -3%": 66
+  }
+ ],
+ "var_today": [
+  {
+   "model": "HS",
+   "var": 0.03365357373422062,
+   "es": 0.04633373688861995,
+   "var10": 0.10642194440455521,
+   "es10": 0.1465201410750024
+  },
+  {
+   "model": "EWMA-HS",
+   "var": 0.024713240619321054,
+   "es": 0.028482465308338922,
+   "var10": 0.07815012872084473,
+   "es10": 0.09006946375108105
+  },
+  {
+   "model": "GARCH-HS",
+   "var": 0.02787505731219006,
+   "es": 0.03235322479262047,
+   "var10": 0.08814867101425186,
+   "es10": 0.10230987999610947
+  },
+  {
+   "model": "GJR-HS",
+   "var": 0.029680885687781263,
+   "es": 0.03384454186985836,
+   "var10": 0.09385920174448208,
+   "es10": 0.10702583867368644
+  }
+ ],
+ "var_grid": {
+  "rows": [
+   "95.0%",
+   "99.0%",
+   "99.5%"
+  ],
+  "cols": [
+   "250 days",
+   "500 days",
+   "750 days"
+  ],
+  "values": [
+   [
+    0.013432868590415719,
+    0.014580920724424226,
+    0.01376013753981213
+   ],
+   [
+    0.02303332373669304,
+    0.029680885687781263,
+    0.02742570291797957
+   ],
+   [
+    0.02742570291797957,
+    0.03340392437444498,
+    0.03227326303221905
+   ]
+  ]
+ },
+ "brief_start": "29 May 2015",
+ "bt99": [
+  {
+   "model": "GJR-HS",
+   "exceptions": 34,
+   "expected": 31.14,
+   "ratio": 1.091843,
+   "average VaR": 362612.295286,
+   "VaR volatility": 186672.779015,
+   "worst daily loss": 1380819.851739,
+   "average ES": 419182.266122,
+   "Kupiec p": 0.61175,
+   "Christoffersen p": 0.056441,
+   "Coverage p": 0.142514,
+   "zone": "green",
+   "passes all": true,
+   "rank": 1
+  },
+  {
+   "model": "EWMA-HS",
+   "exceptions": 32,
+   "expected": 31.14,
+   "ratio": 1.027617,
+   "average VaR": 389407.430526,
+   "VaR volatility": 198949.791213,
+   "worst daily loss": 1380819.851739,
+   "average ES": 446911.414685,
+   "Kupiec p": 0.877459,
+   "Christoffersen p": 0.043952,
+   "Coverage p": 0.129888,
+   "zone": "green",
+   "passes all": false,
+   "rank": 2
+  },
+  {
+   "model": "GARCH-HS",
+   "exceptions": 33,
+   "expected": 31.14,
+   "ratio": 1.05973,
+   "average VaR": 361252.886119,
+   "VaR volatility": 166944.062388,
+   "worst daily loss": 1380819.851739,
+   "average ES": 411654.394084,
+   "Kupiec p": 0.740062,
+   "Christoffersen p": 0.004581,
+   "Coverage p": 0.017009,
+   "zone": "green",
+   "passes all": false,
+   "rank": 3
+  },
+  {
+   "model": "HS",
+   "exceptions": 36,
+   "expected": 31.14,
+   "ratio": 1.156069,
+   "average VaR": 401264.885616,
+   "VaR volatility": 113407.62856,
+   "worst daily loss": 1380819.851739,
+   "average ES": 489012.983818,
+   "Kupiec p": 0.393038,
+   "Christoffersen p": 0.00063,
+   "Coverage p": 0.002015,
+   "zone": "green",
+   "passes all": false,
+   "rank": 4
+  }
+ ],
+ "bt99_brief": [
+  {
+   "model": "EWMA-HS",
+   "exceptions": 28,
+   "expected": 28.64,
+   "ratio": 0.977654,
+   "average VaR": 400589.444641,
+   "VaR volatility": 203114.72458,
+   "worst daily loss": 1380819.851739,
+   "average ES": 461562.669252,
+   "Kupiec p": 0.903977,
+   "Christoffersen p": 0.029784,
+   "Coverage p": 0.093655,
+   "zone": "green",
+   "passes all": false,
+   "rank": 1
+  },
+  {
+   "model": "GARCH-HS",
+   "exceptions": 31,
+   "expected": 28.64,
+   "ratio": 1.082402,
+   "average VaR": 371472.851479,
+   "VaR volatility": 170059.816998,
+   "worst daily loss": 1380819.851739,
+   "average ES": 424384.884149,
+   "Kupiec p": 0.661835,
+   "Christoffersen p": 0.003981,
+   "Coverage p": 0.014381,
+   "zone": "green",
+   "passes all": false,
+   "rank": 2
+  },
+  {
+   "model": "GJR-HS",
+   "exceptions": 31,
+   "expected": 28.64,
+   "ratio": 1.082402,
+   "average VaR": 373044.255708,
+   "VaR volatility": 190761.419024,
+   "worst daily loss": 1380819.851739,
+   "average ES": 432661.669672,
+   "Kupiec p": 0.661835,
+   "Christoffersen p": 0.045621,
+   "Coverage p": 0.123265,
+   "zone": "green",
+   "passes all": false,
+   "rank": 3
+  },
+  {
+   "model": "HS",
+   "exceptions": 33,
+   "expected": 28.64,
+   "ratio": 1.152235,
+   "average VaR": 414398.230592,
+   "VaR volatility": 108756.818112,
+   "worst daily loss": 1380819.851739,
+   "average ES": 507495.389842,
+   "Kupiec p": 0.424029,
+   "Christoffersen p": 0.000424,
+   "Coverage p": 0.001457,
+   "zone": "green",
+   "passes all": false,
+   "rank": 4
+  }
+ ],
+ "bt95": [
+  {
+   "model": "GJR-HS",
+   "exceptions": 158,
+   "expected": 155.7,
+   "ratio": 1.014772,
+   "average VaR": 215670.634277,
+   "VaR volatility": 113198.544172,
+   "worst daily loss": 1380819.851739,
+   "average ES": 294051.038139,
+   "Kupiec p": 0.850348,
+   "Christoffersen p": 0.698906,
+   "Coverage p": 0.911553,
+   "zone": "green",
+   "passes all": true,
+   "rank": 1
+  },
+  {
+   "model": "GARCH-HS",
+   "exceptions": 151,
+   "expected": 155.7,
+   "ratio": 0.969814,
+   "average VaR": 217092.079073,
+   "VaR volatility": 101300.809005,
+   "worst daily loss": 1380819.851739,
+   "average ES": 296185.462475,
+   "Kupiec p": 0.697783,
+   "Christoffersen p": 0.899061,
+   "Coverage p": 0.919947,
+   "zone": "green",
+   "passes all": true,
+   "rank": 2
+  },
+  {
+   "model": "EWMA-HS",
+   "exceptions": 148,
+   "expected": 155.7,
+   "ratio": 0.950546,
+   "average VaR": 220866.54381,
+   "VaR volatility": 113934.670108,
+   "worst daily loss": 1380819.851739,
+   "average ES": 313595.923004,
+   "Kupiec p": 0.523364,
+   "Christoffersen p": 0.071561,
+   "Coverage p": 0.160887,
+   "zone": "green",
+   "passes all": true,
+   "rank": 3
+  },
+  {
+   "model": "HS",
+   "exceptions": 167,
+   "expected": 155.7,
+   "ratio": 1.072575,
+   "average VaR": 222291.715416,
+   "VaR volatility": 58620.057559,
+   "worst daily loss": 1380819.851739,
+   "average ES": 324041.170219,
+   "Kupiec p": 0.358206,
+   "Christoffersen p": 7.3e-05,
+   "Coverage p": 0.000253,
+   "zone": "green",
+   "passes all": false,
+   "rank": 4
+  }
+ ],
+ "bt95_brief": [
+  {
+   "model": "GJR-HS",
+   "exceptions": 147,
+   "expected": 143.2,
+   "ratio": 1.026536,
+   "average VaR": 219163.901933,
+   "VaR volatility": 117008.568898,
+   "worst daily loss": 1380819.851739,
+   "average ES": 300708.962422,
+   "Kupiec p": 0.745598,
+   "Christoffersen p": 0.831726,
+   "Coverage p": 0.927549,
+   "zone": "green",
+   "passes all": true,
+   "rank": 1
+  },
+  {
+   "model": "GARCH-HS",
+   "exceptions": 137,
+   "expected": 143.2,
+   "ratio": 0.956704,
+   "average VaR": 221687.119445,
+   "VaR volatility": 104208.155311,
+   "worst daily loss": 1380819.851739,
+   "average ES": 303193.78238,
+   "Kupiec p": 0.592464,
+   "Christoffersen p": 0.817344,
+   "Coverage p": 0.843725,
+   "zone": "green",
+   "passes all": true,
+   "rank": 2
+  },
+  {
+   "model": "EWMA-HS",
+   "exceptions": 133,
+   "expected": 143.2,
+   "ratio": 0.928771,
+   "average VaR": 225052.994228,
+   "VaR volatility": 117493.218443,
+   "worst daily loss": 1380819.851739,
+   "average ES": 321688.432977,
+   "Kupiec p": 0.376341,
+   "Christoffersen p": 0.064126,
+   "Coverage p": 0.121849,
+   "zone": "green",
+   "passes all": true,
+   "rank": 3
+  },
+  {
+   "model": "HS",
+   "exceptions": 157,
+   "expected": 143.2,
+   "ratio": 1.096369,
+   "average VaR": 227364.881995,
+   "VaR volatility": 58438.869801,
+   "worst daily loss": 1380819.851739,
+   "average ES": 333279.60964,
+   "Kupiec p": 0.243671,
+   "Christoffersen p": 0.000116,
+   "Coverage p": 0.000301,
+   "zone": "green",
+   "passes all": false,
+   "rank": 4
+  }
+ ],
+ "brief_days": 2864,
+ "bt_days": 3114,
+ "bt_start": "02 June 2014",
+ "yellow_days": {
+  "HS": 980,
+  "EWMA-HS": 327,
+  "GARCH-HS": 545,
+  "GJR-HS": 262
+ },
+ "stress": [
+  {
+   "rank": 1,
+   "scenario": "2008 financial crisis",
+   "kind": "Historical",
+   "loss": 0.440907,
+   "worst_day": 0.131408,
+   "stressed_var": 0.095955,
+   "stressed_es": 0.110605
+  },
+  {
+   "rank": 2,
+   "scenario": "COVID crash 2020",
+   "kind": "Historical",
+   "loss": 0.345996,
+   "worst_day": 0.136989,
+   "stressed_var": 0.083446,
+   "stressed_es": 0.106285
+  },
+  {
+   "rank": 3,
+   "scenario": "Inflation shock 2022",
+   "kind": "Historical",
+   "loss": 0.252122,
+   "worst_day": 0.049643,
+   "stressed_var": 0.049292,
+   "stressed_es": 0.051662
+  },
+  {
+   "rank": 4,
+   "scenario": "Tech selloff 2021-22",
+   "kind": "Historical",
+   "loss": 0.232912,
+   "worst_day": 0.049264,
+   "stressed_var": 0.049292,
+   "stressed_es": 0.051662
+  },
+  {
+   "rank": 5,
+   "scenario": "Market -20%",
+   "kind": "Hypothetical",
+   "loss": 0.22357,
+   "worst_day": 0.22357,
+   "stressed_var": null,
+   "stressed_es": null
+  },
+  {
+   "rank": 6,
+   "scenario": "Tariff shock April 2025",
+   "kind": "Historical",
+   "loss": 0.117365,
+   "worst_day": 0.05814,
+   "stressed_var": 0.04288,
+   "stressed_es": 0.05209
+  },
+  {
+   "rank": 7,
+   "scenario": "Market -10%",
+   "kind": "Hypothetical",
+   "loss": 0.111785,
+   "worst_day": 0.111785,
+   "stressed_var": null,
+   "stressed_es": null
+  },
+  {
+   "rank": 8,
+   "scenario": "Volatility x2",
+   "kind": "Hypothetical",
+   "loss": 0.058481,
+   "worst_day": 0.058481,
+   "stressed_var": 0.058481,
+   "stressed_es": 0.066535
+  },
+  {
+   "rank": 9,
+   "scenario": "Market -5%",
+   "kind": "Hypothetical",
+   "loss": 0.055892,
+   "worst_day": 0.055892,
+   "stressed_var": null,
+   "stressed_es": null
+  },
+  {
+   "rank": 10,
+   "scenario": "Technology -15%",
+   "kind": "Hypothetical",
+   "loss": 0.044138,
+   "worst_day": 0.044138,
+   "stressed_var": null,
+   "stressed_es": null
+  },
+  {
+   "rank": 11,
+   "scenario": "Correlation spike (50% to 1)",
+   "kind": "Hypothetical",
+   "loss": 0.041951,
+   "worst_day": 0.041951,
+   "stressed_var": 0.041951,
+   "stressed_es": 0.047836
+  },
+  {
+   "rank": 12,
+   "scenario": "Banking stress 2023",
+   "kind": "Historical",
+   "loss": -0.016292,
+   "worst_day": 0.022831,
+   "stressed_var": 0.049292,
+   "stressed_es": 0.051662
+  }
+ ],
+ "basel_svar": 0.09595510087963625,
+ "basel_svar_end": "December 2008",
+ "betas": {
+  "AAPL": 1.06,
+  "MSFT": 0.941,
+  "NVDA": 1.855,
+  "JPM": 0.918,
+  "XOM": 0.17,
+  "AMZN": 1.363,
+  "META": 1.404,
+  "GOOGL": 1.123,
+  "TSLA": 2.283,
+  "UNH": 0.299
+ },
+ "attribution": [
+  {
+   "stock": "TSLA",
+   "sector": "Consumer Cyclical",
+   "weight": 0.098044,
+   "var_usd": 73444.008774,
+   "es_usd": 65769.261413,
+   "var_share": 0.239042,
+   "es_share": 0.199216,
+   "standalone_usd": 81083.648449,
+   "marginal": 0.074909
+  },
+  {
+   "stock": "AMZN",
+   "sector": "Consumer Cyclical",
+   "weight": 0.098404,
+   "var_usd": 49461.240713,
+   "es_usd": 57439.477023,
+   "var_share": 0.160984,
+   "es_share": 0.173985,
+   "standalone_usd": 41993.799523,
+   "marginal": 0.050264
+  },
+  {
+   "stock": "META",
+   "sector": "Communication Services",
+   "weight": 0.095926,
+   "var_usd": 35377.547183,
+   "es_usd": 38362.936123,
+   "var_share": 0.115145,
+   "es_share": 0.116202,
+   "standalone_usd": 55337.897522,
+   "marginal": 0.03688
+  },
+  {
+   "stock": "GOOGL",
+   "sector": "Communication Services",
+   "weight": 0.097074,
+   "var_usd": 31726.550541,
+   "es_usd": 32687.886676,
+   "var_share": 0.103262,
+   "es_share": 0.099012,
+   "standalone_usd": 38449.164133,
+   "marginal": 0.032683
+  },
+  {
+   "stock": "AAPL",
+   "sector": "Technology",
+   "weight": 0.101143,
+   "var_usd": 16202.184906,
+   "es_usd": 31660.883405,
+   "var_share": 0.052734,
+   "es_share": 0.095901,
+   "standalone_usd": 40209.495086,
+   "marginal": 0.016019
+  },
+  {
+   "stock": "NVDA",
+   "sector": "Technology",
+   "weight": 0.09195,
+   "var_usd": 29844.523025,
+   "es_usd": 28369.071558,
+   "var_share": 0.097136,
+   "es_share": 0.08593,
+   "standalone_usd": 47069.829658,
+   "marginal": 0.032457
+  },
+  {
+   "stock": "MSFT",
+   "sector": "Technology",
+   "weight": 0.101157,
+   "var_usd": 26750.23179,
+   "es_usd": 24208.144579,
+   "var_share": 0.087065,
+   "es_share": 0.073327,
+   "standalone_usd": 43531.879007,
+   "marginal": 0.026444
+  },
+  {
+   "stock": "JPM",
+   "sector": "Financial Services",
+   "weight": 0.101207,
+   "var_usd": 12837.486015,
+   "es_usd": 23333.653248,
+   "var_share": 0.041783,
+   "es_share": 0.070678,
+   "standalone_usd": 36664.01686,
+   "marginal": 0.012684
+  },
+  {
+   "stock": "XOM",
+   "sector": "Energy",
+   "weight": 0.107849,
+   "var_usd": 10392.051922,
+   "es_usd": 15899.453213,
+   "var_share": 0.033824,
+   "es_share": 0.04816,
+   "standalone_usd": 39588.237032,
+   "marginal": 0.009636
+  },
+  {
+   "stock": "UNH",
+   "sector": "Healthcare",
+   "weight": 0.107246,
+   "var_usd": 21207.405557,
+   "es_usd": 12409.755684,
+   "var_share": 0.069025,
+   "es_share": 0.037589,
+   "standalone_usd": 71703.081478,
+   "marginal": 0.019775
+  }
+ ],
+ "diversification": {
+  "var": 307243.23042524664,
+  "es": 330140.52292223956,
+  "sum_standalone": 495631.04874835315,
+  "benefit": 188387.81832310648,
+  "benefit_share": 0.3800968861794546
+ },
+ "active": {
+  "tracking error": 0.0930459906352013,
+  "active VaR": 125640.8803262922,
+  "active ES": 152426.8225743393,
+  "beta": 1.1350234877596155,
+  "information ratio": 0.8421398449438032
+ },
+ "hedges": [
+  {
+   "instrument": "SPY",
+   "size": -1.03,
+   "amount": -10300000.0,
+   "var_before": 307243.230425,
+   "var_after": 125213.594208,
+   "reduction": 0.592461
+  },
+  {
+   "instrument": "TSLA",
+   "size": -0.25,
+   "amount": -2500000.0,
+   "var_before": 307243.230425,
+   "var_after": 168287.680069,
+   "reduction": 0.452266
+  },
+  {
+   "instrument": "AMZN",
+   "size": -0.3,
+   "amount": -3000000.0,
+   "var_before": 307243.230425,
+   "var_after": 174021.27972,
+   "reduction": 0.433604
+  },
+  {
+   "instrument": "JPM",
+   "size": -0.6,
+   "amount": -6000000.0,
+   "var_before": 307243.230425,
+   "var_after": 198696.480155,
+   "reduction": 0.353293
+  }
+ ],
+ "optimizer": {
+  "weights": {
+   "MSFT": 0.2146,
+   "JPM": 0.1348,
+   "XOM": 0.25,
+   "GOOGL": 0.2407,
+   "UNH": 0.1598
+  },
+  "compare": [
+   {
+    "split": "Today's split",
+    "VaR": 307243.230425,
+    "ES": 330140.522922,
+    "volatility": 0.216899,
+    "return": 0.293946,
+    "largest weight": 0.107849
+   },
+   {
+    "split": "Optimized split",
+    "VaR": 189143.972134,
+    "ES": 229418.001399,
+    "volatility": 0.187311,
+    "return": 0.211583,
+    "largest weight": 0.25
+   }
+  ]
+ }
+}
