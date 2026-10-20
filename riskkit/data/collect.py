@@ -7,7 +7,7 @@ piece came from. Nothing here is cleaned yet: that is Module 2.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import pandas as pd
 
@@ -15,8 +15,8 @@ from riskkit.config import RiskConfig
 from riskkit.data.cache import load_prices, seed_from_snapshot
 from riskkit.data.fx import convert_prices, fx_ticker, major_currency, needs_conversion
 from riskkit.data.reference import StockProfile, load_profile, risk_free_daily
+from riskkit.data.shares import load_shares
 from riskkit.data.sources import DataUnavailableError, PriceSource, get_source
-from riskkit.data.sources.tiingo import TiingoSource
 
 
 @dataclass(frozen=True)
@@ -30,6 +30,7 @@ class MarketData:
     profiles: dict[str, StockProfile]
     origin: dict[str, str]          # ticker (or 'risk-free', 'fx:EUR') -> where it came from
     failed: tuple[str, ...]         # tickers nothing could be found for
+    shares: pd.DataFrame = field(default_factory=pd.DataFrame)  # point-in-time shares for size weighting
 
     @property
     def as_of(self) -> pd.Timestamp:
@@ -42,7 +43,7 @@ def build_sources(cfg: RiskConfig) -> list[PriceSource]:
     sources = [get_source(cfg.source)]
     if cfg.fallback_source and cfg.fallback_source != cfg.source:
         fallback = get_source(cfg.fallback_source)
-        if not isinstance(fallback, TiingoSource) or fallback.available:
+        if getattr(fallback, "available", True):
             sources.append(fallback)
     return sources
 
@@ -68,6 +69,7 @@ def collect_market_data(cfg: RiskConfig, refresh: bool = False) -> MarketData:
     sources = build_sources(cfg)
     columns: dict[str, pd.Series] = {}
     profiles: dict[str, StockProfile] = {}
+    shares: dict[str, pd.Series] = {}
     origin: dict[str, str] = {}
     failed: list[str] = []
 
@@ -77,11 +79,20 @@ def collect_market_data(cfg: RiskConfig, refresh: bool = False) -> MarketData:
         except DataUnavailableError:
             failed.append(ticker)
             continue
-        profile, _ = load_profile(ticker, cfg.cache_dir, offline=cfg.offline)
+        profile, _ = load_profile(ticker, cfg.cache_dir, offline=cfg.offline, refresh=refresh)
         currency = "USD" if where.startswith("tiingo") else profile.currency
         columns[ticker] = price_in_base(ticker, table["adj_close"], currency, cfg, sources, origin)
         profiles[ticker] = profile
         origin[ticker] = where
+        if ticker in cfg.tickers and cfg.portfolio.scheme == "market_cap":
+            try:
+                shares[ticker], origin[f"shares:{ticker}"] = load_shares(
+                    ticker, cfg.cache_dir, refresh=refresh, offline=cfg.offline
+                )
+            except DataUnavailableError:
+                # The portfolio builder reports all missing point-in-time histories
+                # together with a precise corrective action.
+                pass
 
     if cfg.benchmark in failed:
         raise DataUnavailableError(f"Could not load the benchmark {cfg.benchmark}.")
@@ -94,7 +105,8 @@ def collect_market_data(cfg: RiskConfig, refresh: bool = False) -> MarketData:
     if cfg.end is not None:
         cut = pd.Timestamp(cfg.end)
         prices, benchmark, risk_free = prices.loc[:cut], benchmark.loc[:cut], risk_free.loc[:cut]
-    return MarketData(prices, benchmark, risk_free, profiles, origin, tuple(failed))
+    share_frame = pd.DataFrame(shares).sort_index() if shares else pd.DataFrame(columns=stocks)
+    return MarketData(prices, benchmark, risk_free, profiles, origin, tuple(failed), share_frame)
 
 
 def summary_table(md: MarketData, cfg: RiskConfig) -> pd.DataFrame:

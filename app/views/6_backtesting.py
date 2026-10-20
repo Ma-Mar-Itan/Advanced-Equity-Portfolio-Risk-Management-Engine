@@ -10,6 +10,7 @@ from app.components import kit
 from riskkit.backtest.checks import backtest_checks
 from riskkit.backtest.compare import backtest, comparison_table, exceptions_table
 from riskkit.backtest.traffic_light import rolling_zone
+from riskkit.backtest.traffic_light import zone_limits
 
 cfg = state.config()
 kit.page_title("Backtesting", "Each evening's VaR, made with only the data known then, checked against the "
@@ -61,14 +62,16 @@ with right:
                           kit.Col("Christoffersen p", "Christoffersen p", kind="test", num=True),
                           kit.Col("Coverage p", "Coverage p", kind="test", num=True),
                           kit.Col("zone", "Zone")], highlight=lambda r: r["model"] == cfg.var.model,
-                  download="model_ranking")
-        kit.note(f"Test columns show Pass when p ≥ 5%. Ranking uses your {sig:.0%} significance.")
+                  download="model_ranking", test_threshold=sig)
+        kit.note(f"Test columns show Pass when p ≥ {sig:.0%}. The ranking uses the same threshold.")
     c1, c2 = st.columns(2)
     with c1:
         kit.chart(charts.exceptions_by_model(table), "Exceptions by model", key="bym")
     with c2:
+        yellow, red = zone_limits(250, p)
         kit.chart(charts.traffic_light_chart(rolling_zone(bt.hits, 250, p), p), "Basel traffic light over time",
-                  "Green 0–4, yellow 5–9, red 10+ exceptions in 250 days (at 99%).", key="traffic")
+                  f"Green 0–{yellow - 1}, yellow {yellow}–{red - 1}, red {red}+ exceptions in 250 days "
+                  f"(at {cfg.confidence:.1%}).", key="traffic")
     with kit.panel("exc_table"):
         kit.section("Every exception", aside=cfg.var.model)
         kit.table(exceptions_table(window[cfg.var.model], cfg.portfolio_value),

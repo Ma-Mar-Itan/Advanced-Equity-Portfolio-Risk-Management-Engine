@@ -77,7 +77,7 @@ def rebalance_dates(index: pd.DatetimeIndex, frequency: str) -> pd.DatetimeIndex
 
 
 def target_weights(cfg: RiskConfig, prices: pd.DataFrame, returns: pd.DataFrame,
-                   shares: pd.Series, dates: pd.DatetimeIndex) -> pd.DataFrame:
+                   shares: pd.DataFrame | pd.Series, dates: pd.DatetimeIndex) -> pd.DataFrame:
     """Target weights on each date in `dates` (one row per date), using only data up to that date.
 
     inverse_vol uses equal weights until `vol_lookback` days of history exist.
@@ -91,7 +91,13 @@ def target_weights(cfg: RiskConfig, prices: pd.DataFrame, returns: pd.DataFrame,
         elif spec.scheme == "custom":
             w = custom_weights(cfg, tickers)
         elif spec.scheme == "market_cap":
-            w = market_cap_weights(prices.loc[d], shares)
+            if isinstance(shares, pd.Series):
+                # Retained for the small pure-function API; production code passes
+                # a dated table and never uses current profile shares historically.
+                share_row = shares
+            else:
+                share_row = shares.reindex(index=dates, method="ffill").loc[d]
+            w = market_cap_weights(prices.loc[d], share_row)
         else:
             past = returns.loc[:d].tail(spec.vol_lookback)
             w = inverse_vol_weights(past) if len(past) >= spec.vol_lookback else equal_weights(tickers)

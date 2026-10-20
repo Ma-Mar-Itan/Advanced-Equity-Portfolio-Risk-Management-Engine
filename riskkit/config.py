@@ -158,7 +158,7 @@ class RiskConfig:
     portfolio_value: float = 10_000_000.0   # dollars
     confidence: float = 0.99                # 99% VaR = the loss we expect to beat 99 days out of 100
     window: int = 500                       # trading days of history behind each VaR estimate
-    source: str = "yahoo"                   # primary price source: "yahoo" or "tiingo"
+    source: str = "yahoo"                   # primary price source registered in riskkit.data.sources
     fallback_source: str | None = "tiingo"  # tried when the primary fails (needs a Tiingo key)
     benchmark: str = "SPY"                  # S&P 500 tracker, used as "the whole market"
     base_currency: str = "USD"              # every price is converted into this currency

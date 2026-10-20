@@ -2,8 +2,9 @@
 
 One file per source and ticker: data/cache/<source>/<ticker>.parquet, holding the
 full history since HISTORY_START (so the 2008 crisis is always available).
-A file written today counts as fresh; older files are refreshed on the next run,
-and if the download then fails the old file is used rather than nothing.
+Normal dashboard loads are cache-first, even when a saved file is older than a
+day.  A network request only happens when the user explicitly refreshes data or
+when no saved copy exists.  This keeps startup deterministic and usable offline.
 """
 
 from __future__ import annotations
@@ -95,16 +96,17 @@ def load_prices(ticker: str, sources: list[PriceSource], cache_dir: Path,
                 refresh: bool = False, offline: bool = False) -> tuple[pd.DataFrame, str]:
     """Full price history for one ticker, plus a label saying where it came from.
 
-    Order: today's saved file -> each source in turn (saving the result) -> any older
-    saved file. With offline=True only saved files are used.
+    Order: any saved file -> each source in turn (saving the result) -> any older
+    saved file after a failed explicit refresh. With offline=True only saved files
+    are used. Network access therefore never delays an ordinary cached startup.
     """
     saved = [(s.name, cache_path(cache_dir, s.name, ticker)) for s in sources]
     if not refresh or offline:
         for name, path in saved:
-            if offline or is_fresh(path):
-                df = read_cache(path)
-                if df is not None:
-                    return df, f"{name} (saved)"
+            df = read_cache(path)
+            if df is not None:
+                freshness = "saved" if is_fresh(path) else "saved, refresh available"
+                return df, f"{name} ({freshness})"
     if not offline:
         for source, (name, path) in zip(sources, saved):
             try:

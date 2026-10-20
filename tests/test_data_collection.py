@@ -9,6 +9,7 @@ import pytest
 from riskkit.config import RiskConfig
 from riskkit.data import cache, collect, fx, search
 from riskkit.data.sources.base import DataUnavailableError, standardize
+from riskkit.data.sources import SOURCES
 
 
 class FakeSource:
@@ -60,6 +61,20 @@ def test_cache_is_used_on_second_call(tmp_path):
     assert src.calls == 1 and where == "fake (saved)" and len(df) == 10
 
 
+def test_stale_cache_is_used_until_refresh_is_requested(tmp_path):
+    """Ordinary startup is cache-first; only an explicit refresh reaches the network."""
+    src = FakeSource()
+    cache.load_prices("AAA", [src], tmp_path)
+    path = cache.cache_path(tmp_path, "fake", "AAA")
+    old = pd.Timestamp("2020-01-01").timestamp()
+    import os
+    os.utime(path, (old, old))
+    _, where = cache.load_prices("AAA", [src], tmp_path)
+    assert src.calls == 1 and "refresh available" in where
+    cache.load_prices("AAA", [src], tmp_path, refresh=True)
+    assert src.calls == 2
+
+
 def test_fallback_source_used_when_primary_fails(tmp_path):
     """If the first shop is closed, the second one is tried."""
     primary, backup = FakeSource("p", fail={"AAA"}), FakeSource("b")
@@ -90,6 +105,11 @@ def test_search_keeps_only_tradeable_types():
             {"symbol": "XYZ", "quoteType": "OPTION"}]
     table = search.quotes_to_table(hits)
     assert table["symbol"].tolist() == ["NESN.SW"]
+
+
+def test_brief_price_sources_are_registered():
+    """The source selector exposes the public and keyed adapters promised by the brief."""
+    assert {"yahoo", "stooq", "tiingo", "alpha_vantage", "polygon"} <= set(SOURCES)
 
 
 def test_collect_market_data_offline(tmp_path, monkeypatch):

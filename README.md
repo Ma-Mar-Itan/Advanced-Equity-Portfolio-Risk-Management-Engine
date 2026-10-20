@@ -29,15 +29,16 @@ Then:
     python -m tools.module6_demo      # Module 6: backtest and rank the four VaR models, save chart
     python -m tools.module7_demo      # Module 7: run every stress scenario, save chart
     python -m tools.module8_demo      # Module 8: risk by stock, what-if, hedges, optimizer, save chart
-    python -m tools.build_deck        # rebuild QFI_V2_slides.pptx from slide_notes.md
+    %USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe tools\build_deck_artifact.mjs
+                                      # rebuild and validate the 15-slide editable deck
     python -m tools.build_report_assets  # recompute every number, table and figure for the report
     python -m tools.build_report      # rebuild QFI_V2_report.docx from those results
     python -m pytest tests            # unit tests (no internet needed)
     streamlit run app/app.py          # the dashboard
 
-Optional: put a free Tiingo key (tiingo.com) in a one-line file `tiingo_key.txt`
-next to this README, or in the TIINGO_API_KEY environment variable. Without it,
-Yahoo is the only source.
+Optional data providers: set `TIINGO_API_KEY`, `ALPHAVANTAGE_API_KEY`, or
+`POLYGON_API_KEY`. Stooq is available without a key. Yahoo remains the primary
+source; available providers are tried through the same cache-first interface.
 
 ## Dashboard pages (one per module)
 

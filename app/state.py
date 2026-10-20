@@ -57,6 +57,11 @@ def refresh_market_data(cfg: RiskConfig) -> None:
     _market_data.clear()
 
 
+def clear_market_data() -> None:
+    """Forget the in-memory market-data result before a user-requested retry."""
+    _market_data.clear()
+
+
 @st.cache_data(show_spinner="Cleaning...", max_entries=16)
 def clean_data(cfg: RiskConfig) -> CleanData:
     """Module 2 output for these settings (cached)."""
@@ -111,7 +116,7 @@ def var_grid(cfg: RiskConfig) -> pd.DataFrame:
 def stress(cfg: RiskConfig) -> StressResults:
     """Module 7: every scenario on today's portfolio (cached)."""
     base = next(r for r in var_today(cfg) if r.model == cfg.var.model)
-    return run_stress(cfg, market_data(cfg), portfolio(cfg), base)
+    return run_stress(cfg, market_data(cfg), clean_data(cfg), portfolio(cfg), base)
 
 
 @st.cache_data(show_spinner="Building scenarios...", max_entries=16)

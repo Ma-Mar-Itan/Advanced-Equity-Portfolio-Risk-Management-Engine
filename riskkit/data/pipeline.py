@@ -61,6 +61,10 @@ def clean_market_data(md: MarketData, cfg: RiskConfig) -> CleanData:
     before_formula = returns
     returns = apply_custom_expression(returns, spec.custom_expression)
     log_formula = log_from_mask(changed_cells(before_formula, returns), "formula", "return changed by custom formula")
-    log = pd.concat([log_cal, log_stale, log_fill, log_win, log_formula], ignore_index=True)
-    log["date"] = pd.to_datetime(log["date"])
+    logs = [x for x in (log_cal, log_stale, log_fill, log_win, log_formula) if not x.empty]
+    log = pd.concat(logs, ignore_index=True) if logs else log_cal.iloc[0:0].copy()
+    # Mixed timestamp/ISO values are expected because different cleaning stages
+    # contribute to one audit log.  Declaring that format avoids pandas' ambiguous
+    # parsing warning while preserving invalid summary rows as missing dates.
+    log["date"] = pd.to_datetime(log["date"], format="mixed", errors="coerce")
     return CleanData(prices, raw_returns, returns, log, run_checks(cfg, prices, raw_returns, returns))

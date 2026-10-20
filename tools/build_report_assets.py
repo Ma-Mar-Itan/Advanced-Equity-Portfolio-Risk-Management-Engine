@@ -172,7 +172,7 @@ def main() -> None:
 
     # Stress
     base = next(v for v in today if v.model == cfg.var.model)
-    st_res = run_stress(cfg, md, p, base)
+    st_res = run_stress(cfg, md, cd, p, base)
     res["stress"] = records(st_res.table[["rank", "scenario", "kind", "loss", "worst_day", "stressed_var", "stressed_es"]])
     res["basel_svar"] = st_res.basel_svar
     res["basel_svar_end"] = f"{st_res.basel_svar_end:%B %Y}"

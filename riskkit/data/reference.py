@@ -63,9 +63,8 @@ def unknown_profile(ticker: str) -> StockProfile:
 
 def fetch_profile(ticker: str) -> StockProfile:
     """Ask Yahoo for a ticker's name, sector, country, currency and size."""
-    import yfinance as yf
-
     try:
+        import yfinance as yf
         info = yf.Ticker(ticker).get_info() or {}
     except Exception as exc:
         raise DataUnavailableError(f"No profile for {ticker}: {exc}") from exc
@@ -88,13 +87,14 @@ def _profile_path(cache_dir: Path, ticker: str) -> Path:
     return Path(cache_dir) / "profiles" / f"{ticker.replace('^', '_')}.json"
 
 
-def load_profile(ticker: str, cache_dir: Path, offline: bool = False) -> tuple[StockProfile, str]:
-    """A ticker's profile and where it came from: saved file (under a week old) -> Yahoo -> built-in table."""
+def load_profile(ticker: str, cache_dir: Path, offline: bool = False,
+                 refresh: bool = False) -> tuple[StockProfile, str]:
+    """A ticker's profile, using any saved copy unless refresh is explicit."""
     path = _profile_path(cache_dir, ticker)
     saved = StockProfile(**json.loads(path.read_text())) if path.exists() else None
     age = date.today() - date.fromtimestamp(path.stat().st_mtime) if path.exists() else None
-    if saved and (offline or age <= PROFILE_MAX_AGE):
-        return saved, "saved"
+    if saved and (offline or not refresh):
+        return saved, "saved" if age <= PROFILE_MAX_AGE else "saved, refresh available"
     if not offline:
         try:
             profile = fetch_profile(ticker)

@@ -13,7 +13,8 @@ import pandas as pd
 
 from riskkit.config import RiskConfig
 from riskkit.data.collect import MarketData
-from riskkit.portfolio.construction import Portfolio
+from riskkit.data.pipeline import CleanData
+from riskkit.portfolio.construction import Portfolio, simple_asset_returns
 from riskkit.stress import historical, hypothetical
 from riskkit.stress.scenarios import LIBRARY
 from riskkit.var.engine import VarResult
@@ -32,12 +33,13 @@ class StressResults:
     value: float
 
 
-def run_stress(cfg: RiskConfig, md: MarketData, p: Portfolio, base: VarResult) -> StressResults:
+def run_stress(cfg: RiskConfig, md: MarketData, cd: CleanData, p: Portfolio, base: VarResult) -> StressResults:
     """Run the historical replays and the hypothetical shocks chosen in the config."""
     spec, value, conf = cfg.stress, float(p.value.iloc[-1]), cfg.confidence
     weights = p.current_weights
-    assets = md.prices[weights.index].pct_change()
-    bench = md.benchmark.pct_change()
+    assets = simple_asset_returns(cd, cfg.cleaning.return_type).reindex(columns=weights.index)
+    benchmark_prices = md.benchmark.reindex(cd.prices.index).ffill()
+    bench = benchmark_prices.pct_change(fill_method=None)
     beta = historical.betas(assets.dropna(), bench, cfg.window)
     sectors = pd.Series({t: md.profiles[t].sector for t in weights.index})
     history = historical.todays_portfolio_history(weights, assets, bench, beta)

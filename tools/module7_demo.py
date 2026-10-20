@@ -24,9 +24,10 @@ def main() -> None:
     """Run, print and save."""
     cfg = RiskConfig(offline="offline" in sys.argv)
     md = collect_market_data(cfg)
-    p = build_portfolio(clean_market_data(md, cfg), md, cfg)
+    cd = clean_market_data(md, cfg)
+    p = build_portfolio(cd, md, cfg)
     base = today_var(p.log_returns, cfg)
-    s = run_stress(cfg, md, p, base)
+    s = run_stress(cfg, md, cd, p, base)
     cols = ["rank", "scenario", "kind", "loss_usd", "loss", "worst_day", "stressed_var"]
     with pd.option_context("display.width", 200, "display.float_format", "{:,.3f}".format):
         print(s.table[cols].to_string(index=False))

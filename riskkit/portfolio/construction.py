@@ -21,7 +21,7 @@ from riskkit.config import RiskConfig
 from riskkit.data.collect import MarketData
 from riskkit.data.pipeline import CleanData
 from riskkit.data.returns import log_to_simple
-from riskkit.portfolio.weights import rebalance_dates, shares_from_profiles, target_weights
+from riskkit.portfolio.weights import rebalance_dates, target_weights
 
 
 @dataclass(frozen=True)
@@ -95,7 +95,14 @@ def build_portfolio(cd: CleanData, md: MarketData, cfg: RiskConfig) -> Portfolio
     prices = cd.prices.reindex(columns=asset_returns.columns)
     start = prices.index[prices.index < asset_returns.index[0]][-1]
     dates = pd.DatetimeIndex([start]).append(rebalance_dates(asset_returns.index, cfg.portfolio.rebalance))
-    shares = shares_from_profiles(md.profiles, list(asset_returns.columns))
+    shares = md.shares.reindex(columns=asset_returns.columns)
+    if cfg.portfolio.scheme == "market_cap":
+        missing = [t for t in asset_returns.columns if t not in shares or shares[t].dropna().empty]
+        if missing:
+            raise ValueError(
+                "Market-cap weighting needs dated shares outstanding for every stock. "
+                f"Missing: {', '.join(missing)}. Refresh online or choose another weighting scheme."
+            )
     targets = target_weights(cfg, prices, asset_returns, shares, dates)
     sim = simulate(asset_returns, targets, cfg.portfolio.cost_bps, start)
     k = scale_factor(sim["value"], cfg)

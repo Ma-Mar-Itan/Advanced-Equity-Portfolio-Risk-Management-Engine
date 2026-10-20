@@ -156,7 +156,9 @@ class Report:
         par.alignment = WD_ALIGN_PARAGRAPH.CENTER
         par.paragraph_format.keep_with_next = True
         par.paragraph_format.space_after = Pt(2)
-        par.add_run().add_picture(str(ASSETS / file), width=Cm(width_cm))
+        picture = par.add_run().add_picture(str(ASSETS / file), width=Cm(width_cm))
+        picture._inline.docPr.set("title", f"Figure {self.fig}")
+        picture._inline.docPr.set("descr", caption)
         cap = self.doc.add_paragraph()
         cap.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         lab = cap.add_run(f"Figure {self.fig}. ")
@@ -177,6 +179,10 @@ class Report:
         t = self.doc.add_table(rows=len(rows) + 1, cols=len(header))
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         t.autofit = False
+        tr_pr = t.rows[0]._tr.get_or_add_trPr()
+        tbl_header = OxmlElement("w:tblHeader")
+        tbl_header.set(qn("w:val"), "true")
+        tr_pr.append(tbl_header)
         for i, row in enumerate([header, *rows]):
             for j, value in enumerate(row):
                 cell = t.cell(i, j)
@@ -291,8 +297,7 @@ def build() -> None:
     stock = {x["stock"]: x for x in d["stocks"]}
     att_by = {x["stock"]: x for x in att}
 
-    rp.title("Volatility-Scaled Historical Simulation for an Equity Portfolio: "
-             "Value at Risk, Expected Shortfall, Backtesting and Stress Testing",
+    rp.title("Advanced Equity Portfolio Risk Management",
              "Marwan Itani", "QFI Internship Project #3, October 2026")
     rp.abstract(
         f"We measure the market risk of an equally weighted portfolio of ten large US stocks over "
@@ -311,7 +316,7 @@ def build() -> None:
         "Value at Risk; Expected Shortfall; filtered historical simulation; GJR-GARCH; backtesting; stress testing")
 
     # 1 ---------------------------------------------------------------
-    rp.h1("1. Introduction and summary")
+    rp.h1("1 Executive Summary")
     rp.p("A single risk number is only useful if it reacts when conditions change. Historical simulation, the method "
          "most banks still use for regulatory VaR, treats every day in its estimation window as equally likely to "
          "repeat tomorrow. When volatility rises quickly, as in February 2020, the window is still dominated by calm "
@@ -337,7 +342,8 @@ def build() -> None:
 
     # 2 ---------------------------------------------------------------
     rp.h1("2. Data")
-    rp.p("Daily adjusted closing prices are taken from Yahoo Finance, with Tiingo configured as a fallback source. "
+    rp.p("Daily adjusted closing prices are taken from Yahoo Finance. The platform also supports Stooq, Tiingo, "
+         "Alpha Vantage and Polygon through the same source interface, with local cache fallback. "
          "Adjusted prices correct for splits and dividends, so a stock split does not appear as a price collapse. The "
          "sample begins in June 2012 because Meta, the most recent listing among the ten names, started trading in "
          "May 2012; starting earlier would leave one series incomplete for the first part of the sample. The SPDR S&P "
@@ -378,12 +384,14 @@ def build() -> None:
          "scaled so that the portfolio is worth $10 million today, which keeps the risk figures in later sections "
          "comparable with the position actually held. Two checks confirm the accounting: target weights sum to one at "
          "every rebalance, and the daily P&L equals the sum of the stock-level contributions on every day.")
-    rows = [[k, pct(x["ann_return"]), pct(x["ann_vol"]), num(x["sharpe"]), pct(x["mdd"])] for k, x in sch.items()]
+    rows = [[k, pct(x["ann_return"]), pct(x["ann_vol"]), num(x["sharpe"]), pct(x["mdd"])]
+            for k, x in sch.items() if not k.startswith("Market-cap")]
     t2 = rp.table("Performance of alternative weighting rules, June 2012 to October 2026.",
                   ["Weighting rule", "Return p.a.", "Volatility p.a.", "Sharpe ratio", "Max drawdown"], rows,
                   [6.4, 2.4, 2.7, 2.2, 2.6],
                   f"{rf_note} The S&P 500 (SPY) returned {pct(pf['benchmark annual return'])} "
-                  "a year over the same period. Market-cap weights use current share counts throughout.")
+                  "a year over the same period. The platform's market-capitalisation rule is excluded from this "
+                  "retrospective table unless dated shares outstanding cover every rebalance date.")
     eq_m, bh = sch["Equal weight, monthly rebalancing"], sch["Equal weight, buy and hold"]
     rp.p(f"The equally weighted, monthly rebalanced portfolio earned {pct(pf['annual return'])} a year with "
          f"volatility of {pct(pf['annual volatility'])}, against {pct(pf['benchmark annual return'])} for the S&P 500, "
@@ -644,16 +652,19 @@ def build() -> None:
          "for the reported results. With roughly 31 expected exceptions at 99%, the backtests have limited power, and "
          "the independence test in particular can only detect fairly strong clustering; Section 7 shows that a later "
          "start date is enough to move the 99% verdict on GJR-HS across the 5% line. Stand-ins for stocks that "
-         "did not trade in 2008 assume that their market sensitivity was the same then as now. Market-capitalisation "
-         "weights use today's share counts throughout the sample. Finally, the data come from a single free vendor; "
-         "the Tiingo fallback reduces but does not remove that dependence.")
+         "did not trade in 2008 assume that their market sensitivity was the same then as now. A historical "
+         "market-capitalisation portfolio can only be built when dated shares outstanding cover every rebalance "
+         "date; the implementation stops when that history is missing rather than carrying today's share count into "
+         "the past. The reported results use one vendor's saved prices, so a production process should reconcile "
+         "prices against an independent source.")
     rp.h1("11. Future improvements")
     rp.p("Four extensions would address these points. Simulating ten-day paths from the fitted GJR model, rather than "
          "scaling the one-day figure, would capture mean reversion in volatility. A Student-t or skewed-t innovation "
          "distribution could be compared with the normal specification using the same backtests. An ES backtest, "
          "such as that of Acerbi and Szekely (2014), would test the tail beyond VaR directly, which matters now that "
-         "the Basel framework uses ES for capital. A point-in-time universe, rebuilt from historical index "
-         "membership, would remove the survivorship bias.")
+         "the Basel framework uses ES for capital. A point-in-time universe rebuilt from historical index "
+         "membership would remove survivorship bias. Historical share counts should also be archived with each "
+         "research run so market-capitalisation weights remain reproducible.")
 
     rp.h1("References")
     rp.references([

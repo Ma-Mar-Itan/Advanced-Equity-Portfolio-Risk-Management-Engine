@@ -199,7 +199,7 @@ def _fmt(v: object, f) -> str:
 
 
 def table(df: pd.DataFrame, cols: Sequence[Col], highlight: Callable[[pd.Series], bool] | None = None,
-          download: str | None = None, height: int | None = None) -> None:
+          download: str | None = None, height: int | None = None, test_threshold: float = 0.05) -> None:
     head = "".join(f'<th class="{"num" if c.num else ""}">{esc(c.label)}</th>' for c in cols)
     rows = []
     for _, r in df.iterrows():
@@ -227,7 +227,7 @@ def table(df: pd.DataFrame, cols: Sequence[Col], highlight: Callable[[pd.Series]
                 swatch = theme.ACCENT if str(v) == theme.focus() else "transparent"
                 cell = f'<span class="rk-swatch" style="background:{swatch}"></span>{esc(v)}'
             elif c.kind == "test":
-                cell = (status("within", "Pass") if v >= 0.05 else status("breach", "Reject")) if v == v else "–"
+                cell = (status("within", "Pass") if v >= test_threshold else status("breach", "Reject")) if v == v else "–"
             elif c.kind == "html":
                 cell = str(v)
             else:

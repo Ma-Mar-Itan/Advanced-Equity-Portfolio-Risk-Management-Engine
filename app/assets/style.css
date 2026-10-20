@@ -7,7 +7,7 @@
   --surface: #FFFFFF;
   --ink: #161616;
   --ink-2: #4B4B48;
-  --ink-3: #8B8B86;
+  --ink-3: #666662;
   --rule: #DADAD5;
   --rule-soft: #ECECE8;
   --accent: #0E5A63;
@@ -30,6 +30,10 @@
 [data-testid="stHorizontalBlock"] { gap: 1rem; }
 h1, h2, h3, h4 { letter-spacing: -0.01em; color: var(--ink); }
 p, li { color: var(--ink); }
+[data-testid="stAppViewContainer"] * { box-sizing: border-box; }
+::selection { background: #C9DFE1; color: var(--ink); }
+* { scrollbar-color: var(--ink-3) var(--rule-soft); scrollbar-width: thin; }
+*:focus-visible { outline: 3px solid #197987 !important; outline-offset: 2px !important; }
 [data-testid="stCaptionContainer"] p { color: var(--ink-3); font-size: 12px; }
 hr { margin: 0.4rem 0; border-color: var(--rule); }
 
@@ -52,7 +56,7 @@ div[data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"][class*="bor
 [data-testid="stWidgetLabel"] p { font-size: 12px; color: var(--ink-3); }
 .stSelectbox div[data-baseweb="select"] > div { min-height: 34px; font-size: 13px; }
 .stButton button, .stDownloadButton button, .stPopover button {
-  min-height: 34px; padding: 0 14px; font-size: 13px; font-weight: 500;
+  min-height: 38px; padding: 0 14px; font-size: 13px; font-weight: 500;
 }
 [data-testid="stDownloadButton"] button { border: none !important; background: transparent !important; color: var(--ink-3);
   padding: 0 !important; min-height: 22px !important; font-size: 12px; box-shadow: none !important; }
@@ -177,3 +181,57 @@ table.rk-table { width: 100%; border-collapse: collapse; font-size: 13px; color:
   border: 1px solid var(--rule); }
 [data-testid="stMultiSelect"] [data-tag] span { color: var(--ink) !important; }
 [data-testid="stMultiSelect"] [data-tag] button, [data-testid="stMultiSelect"] [data-tag] svg { color: var(--ink-3) !important; fill: var(--ink-3) !important; }
+
+/* ---------- responsive and input adaptation ----------------------------- */
+@media (max-width: 1000px) {
+  [data-testid="stMainBlockContainer"], .block-container {
+    padding: 3.7rem 1.15rem 3rem 1.15rem !important;
+  }
+  .rk-kpis { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rk-kpi { border-left: none; border-top: 1px solid var(--rule-soft); }
+  .rk-kpi:nth-child(-n+2) { border-top: none; }
+  .rk-kpi:nth-child(even) { border-left: 1px solid var(--rule-soft); }
+  .rk-hero-side { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+}
+
+@media (max-width: 760px) {
+  [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
+  [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+    flex: 1 1 100% !important; width: 100% !important; min-width: 0 !important;
+  }
+  .rk-title h1 { font-size: clamp(20px, 6vw, 24px); }
+  .rk-title p, .rk-para, .rk-hero-reading { font-size: 16px; }
+  .rk-ident-meta { gap: 4px 12px; }
+  .rk-hero { padding: 16px; }
+  .rk-hero-fig { font-size: clamp(36px, 12vw, 46px); }
+  .rk-hero-side { gap: 10px 22px; }
+  .rk-table { min-width: 680px; }
+  .rk-table-wrap { margin-inline: -4px; padding-inline: 4px; }
+  input, textarea, [data-baseweb="select"] { font-size: 16px !important; }
+}
+
+@media (max-width: 540px) {
+  [data-testid="stMainBlockContainer"], .block-container {
+    padding-inline: max(0.8rem, env(safe-area-inset-left)) !important;
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom)) !important;
+  }
+  .rk-kpis { grid-template-columns: minmax(0, 1fr); }
+  .rk-kpi, .rk-kpi:nth-child(even) { border-left: none; border-top: 1px solid var(--rule-soft); }
+  .rk-kpi:first-child { border-top: none; }
+  .rk-kpi .lab, .rk-kpi .sub { white-space: normal; overflow: visible; }
+  .rk-sec { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .rk-sec .rk-sec-aside { white-space: normal; }
+  .rk-hero-side { grid-template-columns: minmax(0, 1fr); }
+  .rk-rail-tag { font-size: 10.5px; }
+}
+
+@media (pointer: coarse) {
+  .stButton button, .stDownloadButton button, .stPopover button,
+  [data-baseweb="select"] > div { min-height: 44px !important; }
+  [data-testid="stDownloadButton"] button { min-height: 44px !important; padding-inline: 8px !important; }
+}
+
+@media (forced-colors: active) {
+  .rk-dot, .rk-checks span::before { border: 1px solid CanvasText; }
+  .rk-table tr.hl td { outline: 1px solid Highlight; }
+}

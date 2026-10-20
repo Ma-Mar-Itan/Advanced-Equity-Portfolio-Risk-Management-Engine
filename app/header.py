@@ -14,7 +14,15 @@ def render() -> None:
     try:
         md = state.market_data(cfg)
     except Exception as exc:  # no data at all: say so plainly and stop the page
-        st.error(f"Could not load prices: {exc}")
+        st.error(f"Could not load prices: {exc}. Check the ticker or connection, then retry. Saved data remains untouched.")
+        c1, c2 = st.columns(2)
+        if c1.button("Retry data load", type="primary", key="header_retry"):
+            state.clear_market_data()
+            st.rerun()
+        if c2.button("Use saved data only", key="header_offline"):
+            state.update_config(offline=True)
+            state.clear_market_data()
+            st.rerun()
         st.stop()
     sources = sorted({v.split(" ")[0] for k, v in md.origin.items() if k in md.prices.columns})
     failed = f'<span class="rk-flag">Not found: {kit.esc(", ".join(md.failed))}</span>' if md.failed else ""

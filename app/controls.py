@@ -25,7 +25,8 @@ def data_settings(cfg: RiskConfig) -> dict | None:
                                  accept_new_options=True, help="Type any Yahoo ticker and press Enter, "
                                  "or use the search box below to find one by company name.")
         start = c2.date_input("From", cfg.start, min_value=date(2000, 1, 1))
-        source = c3.selectbox("Price source", list(SOURCES), index=list(SOURCES).index(cfg.source))
+        source = c3.selectbox("Price source", list(SOURCES), index=list(SOURCES).index(cfg.source),
+                              format_func=lambda s: s.replace("_", " ").title())
         benchmark = c4.text_input("Benchmark", cfg.benchmark, help="SPY tracks the S&P 500 (the whole US market).")
         offline = c5.toggle("Offline", cfg.offline, help="Use saved prices only.")
         if st.form_submit_button("Load data", type="primary"):
@@ -159,6 +160,9 @@ def portfolio_controls(cfg: RiskConfig) -> dict | str:
                                help="1.00 = no cap. The excess goes to the other stocks.")
         if scheme == "inverse_vol":
             lookback = st.select_slider("Measure calmness over (trading days)", [21, 63, 126, 252], spec.vol_lookback)
+        else:
+            st.caption("Uses dated shares outstanding available at each rebalance. If that history is unavailable, "
+                       "the calculation stops instead of inserting today's share count into the past.")
     st.markdown("**Managing it over time**")
     rebalance = _pick("Rebalance to the target split", REBALANCE_LABELS, spec.rebalance,
                       "Between rebalances the weights drift: winners become bigger slices.")

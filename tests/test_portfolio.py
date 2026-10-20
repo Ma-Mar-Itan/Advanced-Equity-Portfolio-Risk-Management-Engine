@@ -26,6 +26,18 @@ def test_market_cap_and_inverse_vol():
     assert weights.inverse_vol_weights(r)["A"] == pytest.approx(2 / 3)
 
 
+def test_market_cap_targets_use_only_dated_share_history():
+    """A later buyback must not alter an earlier rebalance weight."""
+    idx = pd.to_datetime(["2024-01-02", "2024-02-01"])
+    prices = pd.DataFrame({"A": [10.0, 10.0], "B": [10.0, 10.0]}, index=idx)
+    returns = prices.pct_change(fill_method=None).fillna(0.0)
+    shares = pd.DataFrame({"A": [3.0, 1.0], "B": [1.0, 1.0]}, index=idx)
+    cfg = RiskConfig(tickers=("A", "B"), portfolio=PortfolioSpec(scheme="market_cap"))
+    out = weights.target_weights(cfg, prices, returns, shares, idx)
+    assert out.loc[idx[0], "A"] == pytest.approx(0.75)
+    assert out.loc[idx[1], "A"] == pytest.approx(0.50)
+
+
 def test_rebalance_dates_skip_unfinished_period():
     """Month ends only; the running month (February here) is not a rebalance yet."""
     idx = pd.bdate_range("2024-01-01", "2024-02-15")
