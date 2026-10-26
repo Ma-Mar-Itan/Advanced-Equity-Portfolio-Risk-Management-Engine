@@ -15,7 +15,7 @@ if errorlevel 1 goto :installfail
 exit /b 0
 
 :nopython
-echo Python was not found. Install Python 3.11 or newer from python.org
+echo Python was not found. Install Python 3.10 or newer from python.org
 echo and tick "Add python.exe to PATH" during the installation, then try again.
 exit /b 1
 

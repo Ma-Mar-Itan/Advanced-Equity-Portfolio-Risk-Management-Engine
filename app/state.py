@@ -1,19 +1,16 @@
-"""The dashboard's memory: the one RiskConfig, plus cached calls into the engine.
-
-Pages never compute anything themselves; they ask this module, which asks riskkit.
-"""
+"""Shared dashboard configuration and cached analytics services."""
 
 from __future__ import annotations
 
 import pandas as pd
 import streamlit as st
 
+from riskkit.attribution.scenarios import Scenarios, build_scenarios
 from riskkit.config import VAR_MODELS, CleaningSpec, RiskConfig
 from riskkit.data.collect import MarketData, collect_market_data
 from riskkit.data.pipeline import CleanData, clean_market_data
 from riskkit.data.search import search_tickers
 from riskkit.portfolio.construction import Portfolio, build_portfolio
-from riskkit.attribution.scenarios import Scenarios, build_scenarios
 from riskkit.stress.engine import StressResults, run_stress
 from riskkit.var.engine import VarResult, all_models_today, confidence_window_grid, rolling_var
 from riskkit.volatility.analysis import fit_all
@@ -21,14 +18,14 @@ from riskkit.volatility.base import VolFit
 
 
 def config() -> RiskConfig:
-    """The current settings form (the default portfolio on first visit)."""
+    """Return the active configuration, creating the default on first access."""
     if "cfg" not in st.session_state:
         st.session_state["cfg"] = RiskConfig()
     return st.session_state["cfg"]
 
 
 def update_config(**changes: object) -> None:
-    """Change some settings. New stocks reset the weights to equal."""
+    """Apply configuration changes and reset custom weights when tickers change."""
     cfg = config()
     if "tickers" in changes and tuple(changes["tickers"]) != cfg.tickers:
         changes["weights"] = None
@@ -36,7 +33,7 @@ def update_config(**changes: object) -> None:
 
 
 def _data_key(cfg: RiskConfig) -> RiskConfig:
-    """The config without the cleaning options, so changing a cleaning option never re-downloads."""
+    """Return a cache key that excludes transformations applied after collection."""
     return cfg.updated(cleaning=CleaningSpec())
 
 
@@ -47,7 +44,7 @@ def _market_data(cfg: RiskConfig) -> MarketData:
 
 
 def market_data(cfg: RiskConfig) -> MarketData:
-    """Module 1 output for these settings (cached)."""
+    """Return cached market data for the active collection settings."""
     return _market_data(_data_key(cfg))
 
 
@@ -64,7 +61,7 @@ def clear_market_data() -> None:
 
 @st.cache_data(show_spinner="Cleaning...", max_entries=16)
 def clean_data(cfg: RiskConfig) -> CleanData:
-    """Module 2 output for these settings (cached)."""
+    """Return cleaned prices, returns, and validation results."""
     return clean_market_data(market_data(cfg), cfg)
 
 
@@ -76,12 +73,12 @@ def search(query: str) -> pd.DataFrame:
 
 @st.cache_data(show_spinner="Building the portfolio...", max_entries=16)
 def portfolio(cfg: RiskConfig) -> Portfolio:
-    """Module 3 output for these settings (cached)."""
+    """Build and cache the configured portfolio history."""
     return build_portfolio(clean_data(cfg), market_data(cfg), cfg)
 
 
 def series_for(cfg: RiskConfig, name: str) -> pd.Series:
-    """Daily returns of the portfolio (log) or of one stock, as cleaned in Module 2."""
+    """Return cleaned log returns for the portfolio or a selected stock."""
     if name == "Portfolio":
         return portfolio(cfg).log_returns.rename("Portfolio")
     return clean_data(cfg).returns[name]
@@ -89,39 +86,39 @@ def series_for(cfg: RiskConfig, name: str) -> pd.Series:
 
 @st.cache_data(show_spinner="Fitting volatility models...", max_entries=16)
 def vol_fits(cfg: RiskConfig, name: str) -> dict[str, VolFit]:
-    """Module 4 output (all four models) for the portfolio or one stock (cached)."""
+    """Fit and cache every configured volatility model for a return series."""
     return fit_all(series_for(cfg, name), cfg.volatility)
 
 
 @st.cache_data(show_spinner="Computing today's VaR...", max_entries=16)
 def var_today(cfg: RiskConfig) -> list[VarResult]:
-    """Module 5: today's VaR/ES for all four models (cached)."""
+    """Return current VaR and Expected Shortfall for every model."""
     return all_models_today(portfolio(cfg).log_returns, cfg)
 
 
 @st.cache_data(show_spinner="Computing VaR for every past day (refitting models)...", max_entries=8)
 def var_rolling(cfg: RiskConfig) -> dict[str, pd.DataFrame]:
-    """Module 5: rolling 1-day VaR/ES for all four models, no look-ahead (cached)."""
+    """Return look-ahead-safe rolling VaR and Expected Shortfall forecasts."""
     r = portfolio(cfg).log_returns
     return {m: rolling_var(r, cfg, m) for m in VAR_MODELS}
 
 
 @st.cache_data(show_spinner=False, max_entries=16)
 def var_grid(cfg: RiskConfig) -> pd.DataFrame:
-    """Module 5: today's VaR for every confidence x window pair (cached)."""
+    """Return current VaR across the supported confidence levels and windows."""
     return confidence_window_grid(portfolio(cfg).log_returns, cfg, cfg.var.model)
 
 
 @st.cache_data(show_spinner="Running stress tests...", max_entries=16)
 def stress(cfg: RiskConfig) -> StressResults:
-    """Module 7: every scenario on today's portfolio (cached)."""
+    """Run and cache the configured stress scenarios."""
     base = next(r for r in var_today(cfg) if r.model == cfg.var.model)
     return run_stress(cfg, market_data(cfg), clean_data(cfg), portfolio(cfg), base)
 
 
 @st.cache_data(show_spinner="Building scenarios...", max_entries=16)
 def scenarios(cfg: RiskConfig) -> Scenarios:
-    """Module 8: stock-level scenarios behind today's VaR (cached)."""
+    """Return stock-level scenarios used for risk attribution."""
     return build_scenarios(clean_data(cfg), market_data(cfg), portfolio(cfg), cfg)
 
 
@@ -132,5 +129,6 @@ def apply_custom_weights(weights: tuple[float, ...]) -> None:
     for key in [k for k in st.session_state if str(k).startswith("typed_weights_")]:
         del st.session_state[key]
     cfg = config()
-    st.session_state["cfg"] = cfg.updated(weights=weights, portfolio=replace(cfg.portfolio, scheme="custom",
-                                                                             allow_short=False))
+    st.session_state["cfg"] = cfg.updated(
+        weights=weights, portfolio=replace(cfg.portfolio, scheme="custom", allow_short=False)
+    )

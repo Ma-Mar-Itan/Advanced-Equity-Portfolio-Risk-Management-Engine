@@ -1,15 +1,11 @@
-"""Streamlit entry point. Run from the V2 folder:  streamlit run app/app.py
-
-Thin on purpose: page setup, theme, navigation, header. One page per module.
-"""
+"""Streamlit entry point for the QFI Risk Platform dashboard."""
 
 import os
 import sys
 from pathlib import Path
 
-# Streamlit puts this script's folder (app/) first on sys.path, so a bare
-# `import app` would find this file (app.py) instead of the app/ package and
-# import itself. Drop app/ from the path and always put the V2 root first.
+# Streamlit places the script directory before the project root. Normalize the
+# import path so ``app`` resolves to the package instead of this entry-point file.
 APP_DIR = Path(__file__).resolve().parent
 ROOT = APP_DIR.parent
 
@@ -21,13 +17,14 @@ def _norm(p):
 sys.path[:] = [p for p in sys.path if _norm(p) not in (_norm(APP_DIR), _norm(ROOT))]
 sys.path.insert(0, str(ROOT))
 _cached = sys.modules.get("app")
-if _cached is not None and not hasattr(_cached, "__path__"):  # stale app.py module, not the package
+if _cached is not None and not hasattr(_cached, "__path__"):  # Remove an entry-point module cached as ``app``.
     del sys.modules["app"]
 
 import streamlit as st  # noqa: E402
 
-st.set_page_config(page_title="Equity Risk", page_icon=":material/monitoring:", layout="wide",
-                   initial_sidebar_state="collapsed")
+st.set_page_config(
+    page_title="Equity Risk", page_icon=":material/monitoring:", layout="wide", initial_sidebar_state="collapsed"
+)
 
 from app import header  # noqa: E402
 from app.components import kit  # noqa: E402

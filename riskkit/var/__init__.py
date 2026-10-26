@@ -1,1 +1,1 @@
-"""Module 5: Value at Risk and Expected Shortfall (historical simulation, plain and volatility-scaled)."""
+"""Historical and volatility-scaled Value at Risk and Expected Shortfall."""

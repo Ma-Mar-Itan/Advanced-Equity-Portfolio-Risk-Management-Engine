@@ -73,11 +73,16 @@ def rebalance_dates(index: pd.DatetimeIndex, frequency: str) -> pd.DatetimeIndex
         return index
     period = {"monthly": "M", "quarterly": "Q", "yearly": "Y"}[frequency]
     ends = index.to_series().groupby(index.to_period(period)).max()
-    return pd.DatetimeIndex(ends.values[:-1])     # the last period is still running: no rebalance yet
+    return pd.DatetimeIndex(ends.values[:-1])  # the last period is still running: no rebalance yet
 
 
-def target_weights(cfg: RiskConfig, prices: pd.DataFrame, returns: pd.DataFrame,
-                   shares: pd.DataFrame | pd.Series, dates: pd.DatetimeIndex) -> pd.DataFrame:
+def target_weights(
+    cfg: RiskConfig,
+    prices: pd.DataFrame,
+    returns: pd.DataFrame,
+    shares: pd.DataFrame | pd.Series,
+    dates: pd.DatetimeIndex,
+) -> pd.DataFrame:
     """Target weights on each date in `dates` (one row per date), using only data up to that date.
 
     inverse_vol uses equal weights until `vol_lookback` days of history exist.
@@ -114,6 +119,7 @@ def exposure(w: pd.Series) -> dict[str, float]:
 
 
 def shares_from_profiles(profiles: dict, tickers: list[str]) -> pd.Series:
-    """Shares outstanding per ticker from the Module 1 profiles (NaN when unknown)."""
-    return pd.Series({t: (profiles[t].shares_outstanding if t in profiles else None) for t in tickers},
-                     dtype=float).replace(0, np.nan)
+    """Return profile share counts by ticker, using NaN when unavailable."""
+    return pd.Series(
+        {t: (profiles[t].shares_outstanding if t in profiles else None) for t in tickers}, dtype=float
+    ).replace(0, np.nan)

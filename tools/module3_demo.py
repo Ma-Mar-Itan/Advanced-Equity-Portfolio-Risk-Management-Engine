@@ -18,8 +18,12 @@ from riskkit.portfolio.drawdown import drawdown_episodes, drawdown_series
 from riskkit.portfolio.performance import benchmark_comparison, portfolio_checks, summary_stats
 
 OUT = Path(__file__).resolve().parents[1] / "slides_assets"
-SCHEMES = {"Equal, monthly": PortfolioSpec(), "Equal, buy and hold": PortfolioSpec(rebalance="none"),
-           "By company size": PortfolioSpec(scheme="market_cap"), "By calmness": PortfolioSpec(scheme="inverse_vol")}
+SCHEMES = {
+    "Equal, monthly": PortfolioSpec(),
+    "Equal, buy and hold": PortfolioSpec(rebalance="none"),
+    "By company size": PortfolioSpec(scheme="market_cap"),
+    "By calmness": PortfolioSpec(scheme="inverse_vol"),
+}
 
 
 def main() -> None:
@@ -31,8 +35,12 @@ def main() -> None:
     for name, spec in SCHEMES.items():
         p = build_portfolio(cd, md, cfg.updated(portfolio=spec))
         s = summary_stats(p, md.risk_free)
-        rows[name] = {"return/yr": f"{s['annual return']:.1%}", "volatility/yr": f"{s['annual volatility']:.1%}",
-                      "sharpe": f"{s['sharpe']:.2f}", "worst fall": f"{s['max drawdown']:.1%}"}
+        rows[name] = {
+            "return/yr": f"{s['annual return']:.1%}",
+            "volatility/yr": f"{s['annual volatility']:.1%}",
+            "sharpe": f"{s['sharpe']:.2f}",
+            "worst fall": f"{s['max drawdown']:.1%}",
+        }
     print(pd.DataFrame(rows).T.to_string())
     p = build_portfolio(cd, md, cfg)
     b = benchmark_comparison(p, md.benchmark)

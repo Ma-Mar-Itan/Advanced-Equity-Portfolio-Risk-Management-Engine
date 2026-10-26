@@ -1,54 +1,92 @@
-# QFI Risk Platform V2
+# QFI Risk Platform
 
-Rebuilt from scratch, one module at a time. See PLAN.md for the full plan and
-slide_notes.md / QFI_V2_slides.pptx for the presentation as it grows.
+A modular Python platform for portfolio construction, market-risk measurement, model validation, and stress testing. The project includes a Streamlit dashboard and a reusable analytics package that has no dependency on the user interface.
 
-## Run it on Windows: double-click
+## Features
 
-- **Start dashboard.bat**: opens the dashboard in your browser (the first run sets everything up, a few minutes).
-- **Update data, report and slides.bat**: downloads the latest prices and rebuilds the charts, the Word report and the deck.
-- **Run tests.bat**: runs the unit tests.
+- Cache-first market-data collection from Yahoo Finance, Stooq, Alpha Vantage, and Polygon
+- Adjusted-price cleaning, calendar alignment, stale-price detection, missing-value handling, and return transformation
+- Equal-weighted, custom, market-cap-weighted, inverse-volatility, and long-short portfolios
+- Historical Simulation, EWMA-scaled, GARCH-scaled, and GJR-GARCH-scaled VaR
+- Expected Shortfall, rolling forecasts, and multi-day risk horizons
+- Kupiec, Christoffersen independence, conditional-coverage, and Basel traffic-light backtests
+- Historical and hypothetical stress scenarios
+- Stock- and sector-level risk attribution, hedge analysis, and portfolio optimization
+- CSV and PNG exports for dashboard data and charts
 
-Python 3.11+ must be installed (python.org, tick "Add python.exe to PATH").
+## Architecture
 
-## Run it from a terminal (Windows, from this V2 folder)
+```text
+riskkit/               Analytics package; independent of Streamlit
+  data/                Collection, caching, cleaning, and validation
+  portfolio/           Weighting, rebalancing, value, returns, and P&L
+  volatility/          Rolling, EWMA, GARCH, and GJR-GARCH models
+  var/                 Historical and volatility-scaled VaR/ES
+  backtest/            Statistical tests and model comparison
+  stress/              Historical and hypothetical scenarios
+  attribution/         Risk decomposition
+  decisions/           What-if, hedging, and optimization tools
+app/                   Streamlit application
+  views/               Dashboard pages
+  charts/              Plotly figure builders
+  components/          Reusable interface components and downloads
+tests/                 Offline unit and integration tests
+tools/                 Data, report, slide, and demonstration utilities
+data/snapshot/         Versioned offline data used by the default dashboard
+```
 
-One-time setup (a few minutes):
+`RiskConfig` is the shared immutable configuration object. Dashboard pages call the cached functions in `app/state.py`; those functions delegate all calculations to `riskkit`.
 
-    python -m venv .venv
-    .venv\Scripts\activate
-    pip install -r requirements.txt
+## Quick start
 
-Then:
+Python 3.10 or newer is required.
 
-    python -m tools.module1_demo      # Module 1: download prices, print summary, save chart
-    python -m tools.module2_demo      # Module 2: clean, run the checks, save chart
-    python -m tools.module3_demo      # Module 3: build the portfolio, compare weighting schemes, save chart
-    python -m tools.module4_demo      # Module 4: fit the four volatility models, save charts
-    python -m tools.module5_demo      # Module 5: VaR and ES for the four models, quick breach count, charts
-    python -m tools.module6_demo      # Module 6: backtest and rank the four VaR models, save chart
-    python -m tools.module7_demo      # Module 7: run every stress scenario, save chart
-    python -m tools.module8_demo      # Module 8: risk by stock, what-if, hedges, optimizer, save chart
-    %USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe tools\build_deck_artifact.mjs
-                                      # rebuild and validate the 15-slide editable deck
-    python -m tools.build_report_assets  # recompute every number, table and figure for the report
-    python -m tools.build_report      # rebuild QFI_V2_report.docx from those results
-    python -m pytest tests            # unit tests (no internet needed)
-    streamlit run app/app.py          # the dashboard
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev,reports]"
+streamlit run app/app.py
+```
 
-Optional data providers: set `TIINGO_API_KEY`, `ALPHAVANTAGE_API_KEY`, or
-`POLYGON_API_KEY`. Stooq is available without a key. Yahoo remains the primary
-source; available providers are tried through the same cache-first interface.
+On Windows, `Start dashboard.bat` performs the initial setup and starts the application. `Run tests.bat` runs the offline test suite.
 
-## Dashboard pages (one per module)
+## Data sources
 
-1 Data · 2 Cleaning · 3 Portfolio · 4 Volatility · 5 VaR & ES · 6 Backtesting · 7 Stress ·
-8 Risk sources · 9 Decisions. Every setting lives in one RiskConfig object, so a change on
-any page (stocks, weights, model, confidence...) flows through every other page.
+The dashboard works without API keys by using Yahoo Finance, Stooq, and the versioned offline snapshot. Optional providers use environment variables:
 
-## Layout
+```text
+ALPHAVANTAGE_API_KEY
+POLYGON_API_KEY
+TIINGO_API_KEY
+```
 
-    riskkit/   the maths engine (never imports Streamlit)
-    app/       the Streamlit dashboard (thin: inputs -> engine -> charts)
-    tests/     unit tests, one file per module
-    tools/     demo scripts and the slide builder
+Provider-specific cached files take priority over network requests. If a selected provider is unavailable, the collection pipeline records the actual fallback source rather than relabeling the data. WRDS is displayed only when an adapter and credentials are available.
+
+Do not commit API keys, `.env` files, WRDS credentials, or local agent configuration. The repository `.gitignore` excludes these files.
+
+## Testing
+
+The test suite does not require network access:
+
+```powershell
+python -m pytest
+```
+
+The tests cover cleaning and alignment, portfolio arithmetic, volatility models, VaR ordering and look-ahead protection, backtesting statistics, stress scenarios, data-source fallbacks, dashboard data exports, and chart metadata.
+
+## Reports and presentations
+
+The repository includes optional tooling for regenerating the report and presentation assets:
+
+```powershell
+python -m tools.build_report_assets
+python -m tools.build_report
+python -m tools.build_deck
+```
+
+Generated intermediate files and timestamped deliverables are intentionally excluded from version control.
+
+## Disclaimer
+
+This software is intended for research and educational use. It is not investment advice and should not be used as the sole basis for financial decisions.

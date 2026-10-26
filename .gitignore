@@ -1,8 +1,63 @@
-tiingo_key.txt
-data/cache/
-__pycache__/
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*_key.txt
+*_token.txt
+credentials*.json
+secrets*.toml
+.pgpass
+.pg_service.conf
+
+# Local AI and editor metadata
+.codex/
+.claude/
+.cursor/
+.windsurf/
+.aider*
+AGENTS.md
+CLAUDE.md
+
+# Python environments and caches
 .venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
 .pytest_cache/
-extra/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# JavaScript dependencies
 node_modules/
-streamlit-smoke.*
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Runtime data and logs
+data/cache/
+*.log
+*.err
+*.pid
+
+# Local and intermediate deliverables
+extra/
+deliverables/
+QFI_V2_slides_updated.pptx
+report_assets/presentation_*.json
+slides_assets/dashboard/
+slides_assets/dashboard_var_raw.png
+tools/build_plain_english_deck_artifact.mjs
+tools/build_quant_deck_artifact.mjs

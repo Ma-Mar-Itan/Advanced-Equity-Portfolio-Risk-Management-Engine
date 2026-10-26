@@ -20,7 +20,7 @@ def main() -> None:
     """Collect data, print the summary and save the chart for the slides."""
     cfg = RiskConfig(offline="offline" in sys.argv)
     md = collect_market_data(cfg)
-    prices = md.prices.loc[pd.Timestamp(cfg.start):]
+    prices = md.prices.loc[pd.Timestamp(cfg.start) :]
     print(f"Stocks loaded: {len(prices.columns)}   failed: {list(md.failed) or 'none'}")
     print(f"Dates: {prices.index.min().date()} to {md.as_of.date()}   ({len(prices)} trading days)")
     print(f"Benchmark: {cfg.benchmark} ({md.origin[cfg.benchmark]})   Risk-free: {md.origin['risk-free']}")
@@ -32,7 +32,9 @@ def main() -> None:
     print(growth.iloc[-1].sort_values(ascending=False).map("${:,.2f}".format).to_string())
     OUT.mkdir(exist_ok=True)
     try:
-        growth_chart(growth).update_layout(width=1000, height=560).write_image(OUT / "m1_growth_of_1_dollar.png", scale=2)
+        growth_chart(growth).update_layout(width=1000, height=560).write_image(
+            OUT / "m1_growth_of_1_dollar.png", scale=2
+        )
         print(f"\nChart saved: {OUT / 'm1_growth_of_1_dollar.png'}")
     except Exception as exc:  # kaleido or Chrome missing: the data part still worked
         print(f"\nChart not saved ({exc.__class__.__name__}): pip install kaleido, and have Chrome installed.")

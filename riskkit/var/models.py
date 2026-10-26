@@ -1,4 +1,4 @@
-"""The four VaR models of the brief, and the volatility path each one uses.
+"""Historical and volatility-scaled VaR scenario models.
 
 HS        - plain historical simulation (no scaling)
 EWMA-HS   - past returns rescaled by EWMA volatility
@@ -20,16 +20,16 @@ from riskkit.config import RiskConfig
 from riskkit.volatility.ewma import ewma_variance
 from riskkit.volatility.garch import GarchVol, garch_filter
 
-MIN_TRAIN = 500   # days of history needed before the first GARCH fit
+MIN_TRAIN = 500  # Minimum history required before the first GARCH fit.
 
 
 def vol_kind(model: str) -> str | None:
-    """Which volatility model a VaR model rescales with (None for plain HS)."""
+    """Return the volatility model used for scaling, or ``None`` for plain HS."""
     return {"HS": None, "EWMA-HS": "ewma", "GARCH-HS": "garch", "GJR-HS": "gjr"}[model]
 
 
 def fit_garch_params(returns: np.ndarray, kind: str, cfg: RiskConfig) -> dict[str, float]:
-    """Estimate GARCH or GJR parameters on the returns given (and nothing later)."""
+    """Estimate GARCH or GJR parameters using only the supplied return history."""
     v = cfg.volatility
     model = GarchVol(asymmetric=kind == "gjr", dist=v.garch_dist, mean=v.garch_mean)
     return model.fit(pd.Series(returns), horizon=1).params

@@ -7,7 +7,9 @@ import pandas as pd
 from riskkit.attribution.scenarios import Scenarios, var_es_simple
 
 
-def trade_weights(weights: pd.Series, value: float, ticker: str, amount: float, funding: str) -> tuple[pd.Series, float]:
+def trade_weights(
+    weights: pd.Series, value: float, ticker: str, amount: float, funding: str
+) -> tuple[pd.Series, float]:
     """New weights and value after buying (amount > 0) or selling (amount < 0) `amount` dollars of `ticker`.
 
     funding='cash'     - new money comes in (or goes out): the portfolio grows (or shrinks)
@@ -32,6 +34,12 @@ def what_if(sc: Scenarios, ticker: str, amount: float, funding: str) -> dict[str
     before_var, before_es = var_es_simple(sc.portfolio(), sc.confidence)
     w, v = trade_weights(sc.weights.copy(), sc.value, ticker, amount, funding)
     after_var, after_es = var_es_simple(sc.portfolio(w), sc.confidence)
-    return {"weights_before": sc.weights, "weights_after": w, "value_after": v,
-            "var_before": before_var * sc.value, "var_after": after_var * v,
-            "es_before": before_es * sc.value, "es_after": after_es * v}
+    return {
+        "weights_before": sc.weights,
+        "weights_after": w,
+        "value_after": v,
+        "var_before": before_var * sc.value,
+        "var_after": after_var * v,
+        "es_before": before_es * sc.value,
+        "es_after": after_es * v,
+    }

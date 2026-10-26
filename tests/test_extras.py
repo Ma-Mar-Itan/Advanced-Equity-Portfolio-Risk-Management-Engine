@@ -1,4 +1,4 @@
-"""Tests for Module 8 (risk attribution and decision tools)."""
+"""Tests for risk attribution and portfolio decision tools."""
 
 import numpy as np
 import pandas as pd

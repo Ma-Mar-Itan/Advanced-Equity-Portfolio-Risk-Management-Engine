@@ -1,3 +1,35 @@
+// Compatibility wrapper for users who previously invoked the Node entry point.
+// The maintained presentation builder is the portable Python module.
+import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(here, "..");
+const virtualEnvPython = path.join(
+  root,
+  ".venv",
+  process.platform === "win32" ? "Scripts/python.exe" : "bin/python",
+);
+const candidates = [
+  process.env.PYTHON,
+  existsSync(virtualEnvPython) ? virtualEnvPython : null,
+  process.platform === "win32" ? "python" : "python3",
+].filter(Boolean);
+
+for (const executable of candidates) {
+  const result = spawnSync(executable, ["-m", "tools.build_deck"], {
+    cwd: root,
+    stdio: "inherit",
+  });
+  if (result.status === 0) process.exit(0);
+  if (!result.error || result.error.code !== "ENOENT") process.exit(result.status ?? 1);
+}
+
+console.error("Python 3.10 or newer is required to build the presentation.");
+process.exit(1);
+
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";

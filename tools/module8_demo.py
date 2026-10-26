@@ -35,8 +35,10 @@ def main() -> None:
     with pd.option_context("display.width", 200, "display.float_format", "{:,.3f}".format):
         print(t[["stock", "weight", "es_share", "var_share", "es_usd"]].to_string(index=False))
     d, a = diversification(sc), active_risk(sc, p.returns, md.benchmark)
-    print(f"\nVaR ${d['var']:,.0f}; stand-alone sum ${d['sum_standalone']:,.0f}; saved by mixing "
-          f"${d['benefit']:,.0f} ({d['benefit_share']:.0%}); tracking error {a['tracking error']:.1%}")
+    print(
+        f"\nVaR ${d['var']:,.0f}; stand-alone sum ${d['sum_standalone']:,.0f}; saved by mixing "
+        f"${d['benefit']:,.0f} ({d['benefit_share']:.0%}); tracking error {a['tracking error']:.1%}"
+    )
     w = what_if(sc, "AAPL", 1_000_000, "pro_rata")
     print(f"What-if +$1M AAPL (pro rata): VaR ${w['var_before']:,.0f} -> ${w['var_after']:,.0f}")
     h = best_hedges(sc, cfg.benchmark)

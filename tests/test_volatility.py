@@ -1,4 +1,4 @@
-"""Tests for Module 4 (volatility models)."""
+"""Tests for rolling, EWMA, GARCH, and GJR-GARCH volatility models."""
 
 import numpy as np
 import pandas as pd
@@ -34,7 +34,7 @@ def test_rolling_sigma_uses_only_past_days():
     shocked.iloc[80] = 0.5
     a = rolling.RollingVol(20).fit(r).sigma
     b = rolling.RollingVol(20).fit(shocked).sigma
-    assert a.iloc[:80 - 20 + 1].equals(b.iloc[:80 - 20 + 1]) and a.loc[r.index[80]] == b.loc[r.index[80]]
+    assert a.iloc[: 80 - 20 + 1].equals(b.iloc[: 80 - 20 + 1]) and a.loc[r.index[80]] == b.loc[r.index[80]]
     assert b.loc[r.index[81]] > a.loc[r.index[81]]
 
 

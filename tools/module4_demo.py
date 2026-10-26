@@ -36,8 +36,10 @@ def main() -> None:
     for name, f in fits.items():
         print(f"{name:12s} today {annualize(f.next_day):6.1%} a year   in 10 days {annualize(f.forecast[-1]):6.1%}")
     g = fits["GJR-GARCH"].params
-    print(f"\nGJR: alpha {g['alpha']:.3f}  gamma {g['gamma']:.3f}  beta {g['beta']:.3f}  "
-          f"long-run {g['long-run vol (yearly)']:.1%}  half-life {g['half-life (days)']:.0f} days")
+    print(
+        f"\nGJR: alpha {g['alpha']:.3f}  gamma {g['gamma']:.3f}  beta {g['beta']:.3f}  "
+        f"long-run {g['long-run vol (yearly)']:.1%}  half-life {g['half-life (days)']:.0f} days"
+    )
     z = fits["GJR-GARCH"].std_residuals(r)
     print(f"Kurtosis (normal = 3): raw {r.kurt() + 3:.1f}, after GJR {z.kurt() + 3:.1f}")
     print("\n", regime_table(r, volatility_regimes(fits["GJR-GARCH"].sigma)).to_string(), sep="")

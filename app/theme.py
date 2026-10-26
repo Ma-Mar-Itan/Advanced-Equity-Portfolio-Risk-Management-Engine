@@ -22,8 +22,8 @@ INK_2 = "#4B4B48"
 INK_3 = "#666662"
 RULE = "#DADAD5"
 RULE_SOFT = "#ECECE8"
-ACCENT = "#0E5A63"          # petrol: the selected model, the series that matters
-ACCENT_SOFT = "#9CC1C4"     # its light partner (ES next to VaR, "after" next to "before")
+ACCENT = "#0E5A63"  # petrol: the selected model, the series that matters
+ACCENT_SOFT = "#9CC1C4"  # its light partner (ES next to VaR, "after" next to "before")
 
 WITHIN, WATCH, BREACH = "#2E6B45", "#9A6200", "#A3271B"
 STATE = {"green": WITHIN, "yellow": WATCH, "red": BREACH, "within": WITHIN, "watch": WATCH, "breach": BREACH}
@@ -43,8 +43,18 @@ MUTED, AXIS, GRID = INK_3, "#C8C8C2", RULE_SOFT
 GOOD, WARNING, CRITICAL, SERIOUS = WITHIN, WATCH, BREACH, WATCH
 ZONE_COLOR = {"green": WITHIN, "yellow": WATCH, "red": BREACH}
 
-_ALL_MODELS = ["HS", "AgeWeighted-HS", "EWMA-HS", "GARCH-HS", "GJR-HS", "FHS-GJR-t", "Normal",
-               "Cornish-Fisher", "EVT", "MC-t-Copula"]
+_ALL_MODELS = [
+    "HS",
+    "AgeWeighted-HS",
+    "EWMA-HS",
+    "GARCH-HS",
+    "GJR-HS",
+    "FHS-GJR-t",
+    "Normal",
+    "Cornish-Fisher",
+    "EVT",
+    "MC-t-Copula",
+]
 _focus = {"model": "FHS-GJR-t"}
 
 
@@ -71,12 +81,35 @@ def _template() -> go.layout.Template:
         margin=dict(l=4, r=12, t=28, b=4),
         height=320,
         title=dict(text=""),
-        xaxis=dict(showgrid=False, linecolor=AXIS, tickcolor=AXIS, ticks="outside", ticklen=3,
-                   zeroline=False, tickfont=dict(color=INK_3, family=FONT_FIG, size=11), title_font=dict(size=11)),
-        yaxis=dict(gridcolor=RULE_SOFT, gridwidth=1, zeroline=False, showline=False,
-                   tickfont=dict(color=INK_3, family=FONT_FIG, size=11), title_font=dict(size=11, color=INK_3)),
-        legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="left", x=0, title_text="",
-                    font=dict(color=INK_2, size=11.5), bgcolor="rgba(0,0,0,0)", itemwidth=30),
+        xaxis=dict(
+            showgrid=False,
+            linecolor=AXIS,
+            tickcolor=AXIS,
+            ticks="outside",
+            ticklen=3,
+            zeroline=False,
+            tickfont=dict(color=INK_3, family=FONT_FIG, size=11),
+            title_font=dict(size=11),
+        ),
+        yaxis=dict(
+            gridcolor=RULE_SOFT,
+            gridwidth=1,
+            zeroline=False,
+            showline=False,
+            tickfont=dict(color=INK_3, family=FONT_FIG, size=11),
+            title_font=dict(size=11, color=INK_3),
+        ),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.0,
+            xanchor="left",
+            x=0,
+            title_text="",
+            font=dict(color=INK_2, size=11.5),
+            bgcolor="rgba(0,0,0,0)",
+            itemwidth=30,
+        ),
         hoverlabel=dict(bgcolor=SURFACE, bordercolor=RULE, font=dict(family=FONT, color=INK, size=12)),
         bargap=0.3,
         coloraxis=dict(colorbar=dict(thickness=10, outlinewidth=0, tickfont=dict(color=INK_3, size=11))),

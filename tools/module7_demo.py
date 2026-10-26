@@ -31,8 +31,10 @@ def main() -> None:
     cols = ["rank", "scenario", "kind", "loss_usd", "loss", "worst_day", "stressed_var"]
     with pd.option_context("display.width", 200, "display.float_format", "{:,.3f}".format):
         print(s.table[cols].to_string(index=False))
-    print(f"\nToday's 1-day VaR {base.var_1d:.2%}; Basel stressed VaR {s.basel_svar:.2%} "
-          f"(250 days ending {s.basel_svar_end:%d %b %Y}), {s.basel_svar / base.var_1d:.1f}x today")
+    print(
+        f"\nToday's 1-day VaR {base.var_1d:.2%}; Basel stressed VaR {s.basel_svar:.2%} "
+        f"(250 days ending {s.basel_svar_end:%d %b %Y}), {s.basel_svar / base.var_1d:.1f}x today"
+    )
     print("Betas:", s.betas.round(2).to_dict())
     try:
         loss_chart(s.table).update_layout(width=1000, height=520).write_image(OUT / "m7_scenarios.png", scale=2)

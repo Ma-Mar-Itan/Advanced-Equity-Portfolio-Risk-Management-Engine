@@ -54,6 +54,6 @@ def build_scenarios(cd: CleanData, md: MarketData, p: Portfolio, cfg: RiskConfig
     assets = simple_asset_returns(cd, cfg.cleaning.return_type).reindex(p.log_returns.index)
     sigma = sigma_today(p.log_returns.to_numpy(), cfg.var.model, cfg)
     factor = np.ones(len(assets)) if sigma is None else sigma[-1] / sigma[:-1]
-    scaled = assets.mul(factor, axis=0).iloc[-cfg.window:]
+    scaled = assets.mul(factor, axis=0).iloc[-cfg.window :]
     bench = md.benchmark.pct_change().reindex(p.log_returns.index).fillna(0.0) * factor
-    return Scenarios(scaled, bench.iloc[-cfg.window:], p.current_weights, float(p.value.iloc[-1]), cfg.confidence)
+    return Scenarios(scaled, bench.iloc[-cfg.window :], p.current_weights, float(p.value.iloc[-1]), cfg.confidence)

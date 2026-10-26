@@ -1,9 +1,10 @@
-"""Tests for Module 7 (stress testing)."""
+"""Tests for historical and hypothetical stress scenarios."""
 
 import numpy as np
 import pandas as pd
 import pytest
 
+from app.charts.stress import loss_chart
 from riskkit.stress import historical, hypothetical
 from riskkit.stress.scenarios import HistoricalScenario
 
@@ -52,3 +53,18 @@ def test_volatility_shock_doubles_var():
     scen = rng.standard_normal(1000) * 0.01
     base = hypothetical.volatility_shock(scen, 1.0, 0.99)[0]
     assert hypothetical.volatility_shock(scen, 2.0, 0.99)[0] == pytest.approx(2 * base, rel=0.03)
+
+
+def test_loss_chart_legend_explains_both_scenario_colours():
+    table = pd.DataFrame(
+        {
+            "scenario": ["Crisis", "Market -10%"],
+            "kind": ["Historical", "Hypothetical"],
+            "loss_usd": [2_000_000.0, 1_000_000.0],
+        }
+    )
+
+    figure = loss_chart(table)
+
+    legend_traces = [trace for trace in figure.data if trace.showlegend is not False]
+    assert [trace.name for trace in legend_traces] == ["Historical crisis replay", "Hypothetical shock"]

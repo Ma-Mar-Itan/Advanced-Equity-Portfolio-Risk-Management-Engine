@@ -13,7 +13,7 @@ import pandas as pd
 
 from riskkit.data.sources.base import DataUnavailableError, standardize
 
-PAUSE_SECONDS = 0.6      # polite gap between Yahoo calls
+PAUSE_SECONDS = 0.6  # polite gap between Yahoo calls
 RETRIES = 3
 
 _YAHOO_COLUMNS = {"Close": "close", "Adj Close": "adj_close", "Volume": "volume"}
@@ -43,8 +43,9 @@ class YahooSource:
         stop = (end or date.today()) + timedelta(days=1)  # Yahoo's end date is exclusive
 
         def download() -> pd.DataFrame:
-            df = yf.download(ticker, start=start, end=stop, auto_adjust=False,
-                             progress=False, threads=False, multi_level_index=False)
+            df = yf.download(
+                ticker, start=start, end=stop, auto_adjust=False, progress=False, threads=False, multi_level_index=False
+            )
             if df is None or df.empty:
                 raise DataUnavailableError(f"Yahoo returned no rows for {ticker}.")
             return df

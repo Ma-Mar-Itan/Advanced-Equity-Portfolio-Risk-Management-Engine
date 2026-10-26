@@ -19,10 +19,16 @@ def var_checks(log_returns: pd.Series, cfg: RiskConfig, results: list[VarResult]
     by_regime = rolling["var"].groupby(stormy.reindex(rolling.index)).mean()
     return [
         Check("VaR is a positive loss", all(r.var_1d > 0 for r in results), "all models"),
-        Check("Higher confidence gives larger VaR", levels[0] < levels[1] < levels[2],
-              " < ".join(f"{v:.2%}" for v in levels) + f" ({model})"),
+        Check(
+            "Higher confidence gives larger VaR",
+            levels[0] < levels[1] < levels[2],
+            " < ".join(f"{v:.2%}" for v in levels) + f" ({model})",
+        ),
         Check(f"{cfg.var.horizon}-day VaR > 1-day VaR", all(r.var_h > r.var_1d for r in results), "all models"),
         Check("ES ≥ VaR", all(r.es_1d >= r.var_1d for r in results), "all models"),
-        Check("VaR rises when volatility is high", by_regime.get("Stormy", 0) > by_regime.get("Calm", 0),
-              f"average VaR {by_regime.get('Calm', float('nan')):.2%} calm vs {by_regime.get('Stormy', float('nan')):.2%} stormy"),
+        Check(
+            "VaR rises when volatility is high",
+            by_regime.get("Stormy", 0) > by_regime.get("Calm", 0),
+            f"average VaR {by_regime.get('Calm', float('nan')):.2%} calm vs {by_regime.get('Stormy', float('nan')):.2%} stormy",
+        ),
     ]

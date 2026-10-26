@@ -2,8 +2,8 @@
 
 Rule used everywhere: with N scenarios and tail probability p = 1 - confidence,
 the tail holds k = ceil(p x N) scenarios (at least 1).
-  VaR = the k-th worst loss        (the edge of the cliff)
-  ES  = the average of the k worst (how far the fall is, on average)
+  VaR = the least severe loss within the selected tail
+  ES  = the average loss within the selected tail
 Returns are LOG returns; losses are reported as positive SIMPLE losses (0.02 = 2% of value).
 """
 
@@ -29,5 +29,5 @@ def var_es(log_returns: np.ndarray, confidence: float) -> tuple[float, float]:
     losses = losses_from_log_returns(np.asarray(log_returns, dtype=float))
     losses = losses[~np.isnan(losses)]
     k = tail_size(len(losses), confidence)
-    worst = np.partition(losses, len(losses) - k)[len(losses) - k:]   # the k largest losses
+    worst = np.partition(losses, len(losses) - k)[len(losses) - k :]  # the k largest losses
     return float(worst.min()), float(worst.mean())

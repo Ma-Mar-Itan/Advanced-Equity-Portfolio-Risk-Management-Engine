@@ -1,4 +1,4 @@
-"""Tests for Module 6 (backtesting)."""
+"""Tests for VaR backtesting statistics and model ranking."""
 
 import numpy as np
 import pandas as pd
@@ -36,10 +36,12 @@ def test_ranking_prefers_honest_model():
     idx = pd.bdate_range("2015-01-01", periods=1500)
     actual = pd.Series(0.01, index=idx)
     good_var = pd.Series(0.02, index=idx)
-    good_var.iloc[::100] = 0.005           # 15 spread exceptions (expected 15)
+    good_var.iloc[::100] = 0.005  # 15 spread exceptions (expected 15)
     bad_var = pd.Series(0.02, index=idx)
-    bad_var.iloc[700:740] = 0.005          # 40 exceptions in a row
-    roll = {m: pd.DataFrame({"var": v, "es": v * 1.2, "actual": actual}) for m, v in (("good", good_var), ("bad", bad_var))}
+    bad_var.iloc[700:740] = 0.005  # 40 exceptions in a row
+    roll = {
+        m: pd.DataFrame({"var": v, "es": v * 1.2, "actual": actual}) for m, v in (("good", good_var), ("bad", bad_var))
+    }
     table = compare.comparison_table(roll, 0.99, 1.0)
     assert table.loc[0, "model"] == "good" and table.loc[0, "passes all"]
     assert compare.exceptions_table(roll["good"], 1.0)["excess"].gt(0).all()

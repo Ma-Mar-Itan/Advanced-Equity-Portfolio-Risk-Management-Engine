@@ -19,7 +19,7 @@ import pandas as pd
 
 from riskkit.volatility.base import TRADING_DAYS, VolFit
 
-SCALE = 100.0   # arch works on percent returns
+SCALE = 100.0  # arch works on percent returns
 
 
 class GarchVol:
@@ -33,9 +33,16 @@ class GarchVol:
         """Estimate the parameters on all returns given, then filter sigma and forecast ahead."""
         from arch import arch_model
 
-        model = arch_model(returns * SCALE, mean="Zero" if self.mean == "zero" else "Constant",
-                           vol="GARCH", p=1, o=1 if self.asymmetric else 0, q=1,
-                           dist="t" if self.dist == "t" else "normal", rescale=False)
+        model = arch_model(
+            returns * SCALE,
+            mean="Zero" if self.mean == "zero" else "Constant",
+            vol="GARCH",
+            p=1,
+            o=1 if self.asymmetric else 0,
+            q=1,
+            dist="t" if self.dist == "t" else "normal",
+            rescale=False,
+        )
         res = model.fit(disp="off", show_warning=False)
         sigma = res.conditional_volatility / SCALE
         variance_path = res.forecast(horizon=horizon, reindex=False).variance.to_numpy()[-1]

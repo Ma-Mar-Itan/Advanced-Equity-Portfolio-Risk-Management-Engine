@@ -1,4 +1,4 @@
-"""Tests for Module 1 (data collection). They use a fake source, so no internet is needed."""
+"""Offline tests for market-data collection and source fallbacks."""
 
 from datetime import date
 
@@ -8,8 +8,8 @@ import pytest
 
 from riskkit.config import RiskConfig
 from riskkit.data import cache, collect, fx, search
+from riskkit.data.sources import DASHBOARD_SOURCES, SOURCES, dashboard_source_names
 from riskkit.data.sources.base import DataUnavailableError, standardize
-from riskkit.data.sources import SOURCES
 
 
 class FakeSource:
@@ -19,7 +19,7 @@ class FakeSource:
         self.name, self.fail, self.calls = name, set(fail), 0
 
     def fetch_prices(self, ticker, start, end):
-        """Return 10 days of made-up prices (or fail on purpose)."""
+        """Return a deterministic ten-day fixture or raise the configured failure."""
         self.calls += 1
         if ticker in self.fail:
             raise DataUnavailableError(ticker)
@@ -68,6 +68,7 @@ def test_stale_cache_is_used_until_refresh_is_requested(tmp_path):
     path = cache.cache_path(tmp_path, "fake", "AAA")
     old = pd.Timestamp("2020-01-01").timestamp()
     import os
+
     os.utime(path, (old, old))
     _, where = cache.load_prices("AAA", [src], tmp_path)
     assert src.calls == 1 and "refresh available" in where
@@ -101,15 +102,42 @@ def test_fx_conversion_and_pence():
 
 def test_search_keeps_only_tradeable_types():
     """News items and odd types from Yahoo's search are dropped."""
-    hits = [{"symbol": "NESN.SW", "shortname": "Nestle", "exchDisp": "Swiss", "quoteType": "EQUITY"},
-            {"symbol": "XYZ", "quoteType": "OPTION"}]
+    hits = [
+        {"symbol": "NESN.SW", "shortname": "Nestle", "exchDisp": "Swiss", "quoteType": "EQUITY"},
+        {"symbol": "XYZ", "quoteType": "OPTION"},
+    ]
     table = search.quotes_to_table(hits)
     assert table["symbol"].tolist() == ["NESN.SW"]
 
 
 def test_brief_price_sources_are_registered():
-    """The source selector exposes the public and keyed adapters promised by the brief."""
+    """The source selector exposes the supported public and keyed adapters."""
     assert {"yahoo", "stooq", "tiingo", "alpha_vantage", "polygon"} <= set(SOURCES)
+
+
+def test_requested_dashboard_sources_are_exposed():
+    """All requested providers are selectable; WRDS stays conditional."""
+    assert DASHBOARD_SOURCES == ("yahoo", "stooq", "alpha_vantage", "polygon")
+    assert dashboard_source_names() == DASHBOARD_SOURCES
+
+
+@pytest.mark.parametrize("provider", ["stooq", "alpha_vantage", "polygon"])
+def test_provider_uses_saved_yahoo_as_public_fallback(tmp_path, provider):
+    """Unavailable providers load public saved data with honest provenance."""
+    yahoo = FakeSource("yahoo")
+    cache.load_prices("SPY", [yahoo], tmp_path)
+    primary = FakeSource(provider, fail={"SPY"})
+    frame, where = cache.load_prices("SPY", [primary, yahoo], tmp_path)
+    assert primary.calls == 0
+    assert len(frame) == 10
+    assert where == "yahoo (saved)"
+
+
+@pytest.mark.parametrize("provider", ["stooq", "alpha_vantage", "polygon"])
+def test_source_chain_always_ends_with_public_yahoo_fallback(provider):
+    """Changing the dashboard provider never strands the shipped public cache."""
+    cfg = RiskConfig(source=provider, fallback_source=None)
+    assert [source.name for source in collect.build_sources(cfg)] == [provider, "yahoo"]
 
 
 def test_collect_market_data_offline(tmp_path, monkeypatch):

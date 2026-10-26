@@ -14,7 +14,9 @@ def render() -> None:
     try:
         md = state.market_data(cfg)
     except Exception as exc:  # no data at all: say so plainly and stop the page
-        st.error(f"Could not load prices: {exc}. Check the ticker or connection, then retry. Saved data remains untouched.")
+        st.error(
+            f"Could not load prices: {exc}. Check the ticker or connection, then retry. Saved data remains untouched."
+        )
         c1, c2 = st.columns(2)
         if c1.button("Retry data load", type="primary", key="header_retry"):
             state.clear_market_data()

@@ -1,4 +1,4 @@
-"""Module 2 in one call: raw market data in, clean prices and returns out.
+"""Price cleaning and return transformation pipeline.
 
 Order: cut to the chosen dates -> one calendar -> stale prices -> fill gaps ->
 returns -> winsorize (optional) -> custom formula (optional) -> validation checks.
@@ -20,12 +20,12 @@ from riskkit.data.validation import Check, run_checks
 
 @dataclass(frozen=True)
 class CleanData:
-    """Everything Module 2 produces."""
+    """Cleaned prices, transformed returns, audit log, and validation results."""
 
-    prices: pd.DataFrame        # clean price matrix (dates x stocks)
-    raw_returns: pd.DataFrame   # returns straight from the clean prices
-    returns: pd.DataFrame       # after winsorizing and the custom formula (what later modules use)
-    log: pd.DataFrame           # every change made, one row each
+    prices: pd.DataFrame  # clean price matrix (dates x stocks)
+    raw_returns: pd.DataFrame  # returns straight from the clean prices
+    returns: pd.DataFrame  # after winsorizing and the custom formula (what later modules use)
+    log: pd.DataFrame  # every change made, one row each
     checks: list[Check]
 
     def changed_returns(self) -> int:
@@ -46,7 +46,7 @@ def changed_cells(before: pd.DataFrame, after: pd.DataFrame) -> pd.DataFrame:
 
 def window(md: MarketData, cfg: RiskConfig) -> pd.DataFrame:
     """The raw prices between the config's start and end dates."""
-    return md.prices.loc[pd.Timestamp(cfg.start): pd.Timestamp(cfg.end) if cfg.end else None]
+    return md.prices.loc[pd.Timestamp(cfg.start) : pd.Timestamp(cfg.end) if cfg.end else None]
 
 
 def clean_market_data(md: MarketData, cfg: RiskConfig) -> CleanData:
@@ -56,8 +56,14 @@ def clean_market_data(md: MarketData, cfg: RiskConfig) -> CleanData:
     prices, log_stale = handle_stale(prices, spec.stale_days, spec.stale_action)
     prices, log_fill = fill_missing(prices, spec.fill_method, spec.fill_limit)
     raw_returns = to_returns(prices, spec.return_type)
-    returns, log_win = winsorize(raw_returns, spec.winsor_method, lower=spec.winsor_lower,
-                                 upper=spec.winsor_upper, k=spec.winsor_k, cap=spec.winsor_cap)
+    returns, log_win = winsorize(
+        raw_returns,
+        spec.winsor_method,
+        lower=spec.winsor_lower,
+        upper=spec.winsor_upper,
+        k=spec.winsor_k,
+        cap=spec.winsor_cap,
+    )
     before_formula = returns
     returns = apply_custom_expression(returns, spec.custom_expression)
     log_formula = log_from_mask(changed_cells(before_formula, returns), "formula", "return changed by custom formula")

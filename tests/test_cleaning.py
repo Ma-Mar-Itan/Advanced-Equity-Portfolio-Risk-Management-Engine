@@ -1,4 +1,4 @@
-"""Tests for Module 2 (cleaning and returns) on a tiny made-up price table."""
+"""Tests for price cleaning and return calculation on a deterministic fixture."""
 
 import numpy as np
 import pandas as pd
@@ -99,7 +99,8 @@ def test_pipeline_logs_formula_changes(tmp_path):
     idx = pd.bdate_range("2024-01-01", periods=6)
     px = pd.DataFrame({"A": [100, 120, 100, 101, 102, 103.0], "B": [50, 51, 52, 53, 54, 55.0]}, index=idx)
     md = MarketData(px, px["A"], pd.Series(0.0, index=idx), {}, {}, ())
-    cfg = RiskConfig(tickers=("A", "B"), start=date(2024, 1, 1),
-                     cleaning=CleaningSpec(custom_expression="clip(r, -0.1, 0.1)"))
+    cfg = RiskConfig(
+        tickers=("A", "B"), start=date(2024, 1, 1), cleaning=CleaningSpec(custom_expression="clip(r, -0.1, 0.1)")
+    )
     cd = clean_market_data(md, cfg)
     assert cd.count("formula") == 2 and cd.changed_returns() == 2 and all(c.passed for c in cd.checks)

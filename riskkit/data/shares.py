@@ -49,8 +49,7 @@ def fetch_shares(ticker: str, start: date = HISTORY_START) -> pd.Series:
     return _standardize(raw, ticker)
 
 
-def load_shares(ticker: str, cache_dir: Path, refresh: bool = False,
-                offline: bool = False) -> tuple[pd.Series, str]:
+def load_shares(ticker: str, cache_dir: Path, refresh: bool = False, offline: bool = False) -> tuple[pd.Series, str]:
     """Return dated shares from cache first, refreshing only when requested."""
     path = shares_cache_path(cache_dir, ticker)
     saved = None

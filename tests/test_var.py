@@ -1,9 +1,10 @@
-"""Tests for Module 5 (VaR and ES)."""
+"""Tests for Value at Risk and Expected Shortfall."""
 
 import numpy as np
 import pandas as pd
 import pytest
 
+from app.charts.var import scenario_histogram
 from riskkit.config import RiskConfig, VarSpec
 from riskkit.var import engine, historical, models
 
@@ -71,3 +72,16 @@ def test_overlapping_horizon_runs():
     cfg = RiskConfig(window=500, var=VarSpec(horizon_method="overlapping"))
     res = engine.today_var(returns(), cfg, "HS")
     assert res.var_h > res.var_1d > 0
+
+
+def test_distribution_chart_switches_between_returns_and_dollars():
+    res = engine.today_var(returns(), RiskConfig(window=500), "HS")
+
+    percent = scenario_histogram(res)
+    dollars = scenario_histogram(res, dollars=True)
+
+    assert percent.layout.xaxis.title.text == "Portfolio return"
+    assert percent.layout.xaxis.ticksuffix == "%"
+    assert dollars.layout.xaxis.title.text == "Portfolio profit or loss"
+    assert dollars.layout.xaxis.tickprefix == "$"
+    assert percent.data[0].x[0] == pytest.approx(np.expm1(res.scenarios[0]) * 100)

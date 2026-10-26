@@ -38,5 +38,9 @@ class EWMAVol:
         var = ewma_variance(returns.to_numpy(), self.lam)
         sigma = pd.Series(np.sqrt(var[:-1]), index=returns.index).iloc[SEED_DAYS:]
         half_life = np.log(0.5) / np.log(self.lam)
-        return VolFit(self.name, sigma, np.full(horizon, np.sqrt(var[-1])),
-                      {"lambda": self.lam, "half-life (days)": float(half_life)})
+        return VolFit(
+            self.name,
+            sigma,
+            np.full(horizon, np.sqrt(var[-1])),
+            {"lambda": self.lam, "half-life (days)": float(half_life)},
+        )

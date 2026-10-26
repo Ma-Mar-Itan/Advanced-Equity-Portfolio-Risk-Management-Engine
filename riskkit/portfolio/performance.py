@@ -39,12 +39,18 @@ def summary_stats(p: Portfolio, risk_free_daily: pd.Series) -> dict[str, float]:
     """The headline numbers shown at the top of the Portfolio page."""
     r = p.returns
     return {
-        "start value": float(p.value.iloc[0]), "end value": float(p.value.iloc[-1]),
+        "start value": float(p.value.iloc[0]),
+        "end value": float(p.value.iloc[-1]),
         "total return": float(p.value.iloc[-1] / p.value.iloc[0] - 1),
-        "annual return": annual_return(p.value), "annual volatility": annual_volatility(r),
-        "sharpe": sharpe_ratio(r, risk_free_daily), "max drawdown": max_drawdown(p.value),
-        "best day": float(r.max()), "worst day": float(r.min()), "positive days": float((r > 0).mean()),
-        "worst day $": float(p.pnl.min()), "total costs": float(p.costs.sum()),
+        "annual return": annual_return(p.value),
+        "annual volatility": annual_volatility(r),
+        "sharpe": sharpe_ratio(r, risk_free_daily),
+        "max drawdown": max_drawdown(p.value),
+        "best day": float(r.max()),
+        "worst day": float(r.min()),
+        "positive days": float((r > 0).mean()),
+        "worst day $": float(p.pnl.min()),
+        "total costs": float(p.costs.sum()),
         "average turnover": float(p.turnover[p.turnover > 0].mean()) if (p.turnover > 0).any() else 0.0,
     }
 
@@ -62,10 +68,13 @@ def benchmark_comparison(p: Portfolio, benchmark_prices: pd.Series) -> dict[str,
     beta = both["p"].cov(both["b"]) / both["b"].var()
     gap = both["p"] - both["b"]
     bvalue = benchmark_value(benchmark_prices, p.value)
-    return {"beta": float(beta), "correlation": float(both["p"].corr(both["b"])),
-            "tracking error": float(gap.std() * np.sqrt(TRADING_DAYS)),
-            "benchmark annual return": annual_return(bvalue),
-            "excess annual return": annual_return(p.value) - annual_return(bvalue)}
+    return {
+        "beta": float(beta),
+        "correlation": float(both["p"].corr(both["b"])),
+        "tracking error": float(gap.std() * np.sqrt(TRADING_DAYS)),
+        "benchmark annual return": annual_return(bvalue),
+        "excess annual return": annual_return(p.value) - annual_return(bvalue),
+    }
 
 
 def portfolio_checks(p: Portfolio) -> list[Check]:

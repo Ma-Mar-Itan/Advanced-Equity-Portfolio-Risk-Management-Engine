@@ -6,8 +6,8 @@ How the simulation works, day by day:
   3. On a rebalance date, trade back to the target weights and pay the trading cost.
 Between rebalances the weights drift (winners become bigger slices).
 
-Stocks combine with SIMPLE returns (log returns don't add up across stocks), so
-log returns from Module 2 are converted back first.
+Portfolio holdings are updated with simple returns. Log returns are converted
+before aggregation because they are not additive across assets.
 """
 
 from __future__ import annotations
@@ -26,17 +26,17 @@ from riskkit.portfolio.weights import rebalance_dates, target_weights
 
 @dataclass(frozen=True)
 class Portfolio:
-    """Everything Module 3 produces. Dollar series are already scaled to the chosen value basis."""
+    """Portfolio history scaled to the configured value basis."""
 
-    value: pd.Series            # portfolio value each day ($), starting the day before the first return
-    pnl: pd.Series              # daily profit and loss ($)
-    returns: pd.Series          # daily simple return of the portfolio
-    log_returns: pd.Series      # daily log return (what the risk models will use)
-    weights: pd.DataFrame       # actual weights at each day's close (drift + rebalancing)
-    targets: pd.DataFrame       # target weights on each rebalance date
-    contributions: pd.DataFrame # each stock's daily P&L ($)
-    costs: pd.Series            # trading costs paid each day ($)
-    turnover: pd.Series         # amount traded each day, as a share of portfolio value
+    value: pd.Series  # portfolio value each day ($), starting the day before the first return
+    pnl: pd.Series  # daily profit and loss ($)
+    returns: pd.Series  # daily simple return of the portfolio
+    log_returns: pd.Series  # daily log return (what the risk models will use)
+    weights: pd.DataFrame  # actual weights at each day's close (drift + rebalancing)
+    targets: pd.DataFrame  # target weights on each rebalance date
+    contributions: pd.DataFrame  # each stock's daily P&L ($)
+    costs: pd.Series  # trading costs paid each day ($)
+    turnover: pd.Series  # amount traded each day, as a share of portfolio value
 
     @property
     def current_weights(self) -> pd.Series:
@@ -45,12 +45,13 @@ class Portfolio:
 
 
 def simple_asset_returns(cd: CleanData, kind: str) -> pd.DataFrame:
-    """Module 2's returns as simple returns (converted back if they are log returns)."""
+    """Return asset returns in simple-return form."""
     return log_to_simple(cd.returns) if kind == "log" else cd.returns
 
 
-def simulate(asset_returns: pd.DataFrame, targets: pd.DataFrame, cost_bps: float,
-             start_date: pd.Timestamp) -> dict[str, object]:
+def simulate(
+    asset_returns: pd.DataFrame, targets: pd.DataFrame, cost_bps: float, start_date: pd.Timestamp
+) -> dict[str, object]:
     """Run the holdings day by day starting from $1 at `start_date` (pure arithmetic, no scaling).
 
     `targets` holds the weights to trade to: its first row is the starting split, later rows are
@@ -59,14 +60,14 @@ def simulate(asset_returns: pd.DataFrame, targets: pd.DataFrame, cost_bps: float
     tickers, dates = list(asset_returns.columns), asset_returns.index
     R = asset_returns.to_numpy()
     rebalance_rows = {d: targets.loc[d].to_numpy() for d in targets.index[1:]}
-    holdings = targets.iloc[0].to_numpy() * 1.0            # $1 split by the starting weights
+    holdings = targets.iloc[0].to_numpy() * 1.0  # $1 split by the starting weights
     value = np.empty(len(dates) + 1)
     value[0] = 1.0
     weights = np.empty((len(dates) + 1, len(tickers)))
     weights[0] = holdings
     contrib, costs, turnover = np.zeros_like(R), np.zeros(len(dates)), np.zeros(len(dates))
     for t, d in enumerate(dates):
-        contrib[t] = holdings * R[t]                        # each stock's P&L today
+        contrib[t] = holdings * R[t]  # each stock's P&L today
         holdings = holdings + contrib[t]
         v = holdings.sum()
         if d in rebalance_rows:
@@ -78,9 +79,13 @@ def simulate(asset_returns: pd.DataFrame, targets: pd.DataFrame, cost_bps: float
         value[t + 1] = v
         weights[t + 1] = holdings / v
     all_dates = pd.DatetimeIndex([start_date]).append(dates)
-    return {"value": pd.Series(value, index=all_dates), "weights": pd.DataFrame(weights, all_dates, tickers),
-            "contributions": pd.DataFrame(contrib, dates, tickers), "costs": pd.Series(costs, dates),
-            "turnover": pd.Series(turnover, dates)}
+    return {
+        "value": pd.Series(value, index=all_dates),
+        "weights": pd.DataFrame(weights, all_dates, tickers),
+        "contributions": pd.DataFrame(contrib, dates, tickers),
+        "costs": pd.Series(costs, dates),
+        "turnover": pd.Series(turnover, dates),
+    }
 
 
 def scale_factor(raw_value: pd.Series, cfg: RiskConfig) -> float:
@@ -90,7 +95,7 @@ def scale_factor(raw_value: pd.Series, cfg: RiskConfig) -> float:
 
 
 def build_portfolio(cd: CleanData, md: MarketData, cfg: RiskConfig) -> Portfolio:
-    """Module 3 in one call: clean returns + settings -> the portfolio's daily history."""
+    """Build the daily portfolio history from cleaned returns and configuration."""
     asset_returns = simple_asset_returns(cd, cfg.cleaning.return_type)
     prices = cd.prices.reindex(columns=asset_returns.columns)
     start = prices.index[prices.index < asset_returns.index[0]][-1]
@@ -108,6 +113,14 @@ def build_portfolio(cd: CleanData, md: MarketData, cfg: RiskConfig) -> Portfolio
     k = scale_factor(sim["value"], cfg)
     value = sim["value"] * k
     simple = value.pct_change().iloc[1:]
-    return Portfolio(value=value, pnl=value.diff().iloc[1:], returns=simple, log_returns=np.log1p(simple),
-                     weights=sim["weights"], targets=targets, contributions=sim["contributions"] * k,
-                     costs=sim["costs"] * k, turnover=sim["turnover"])
+    return Portfolio(
+        value=value,
+        pnl=value.diff().iloc[1:],
+        returns=simple,
+        log_returns=np.log1p(simple),
+        weights=sim["weights"],
+        targets=targets,
+        contributions=sim["contributions"] * k,
+        costs=sim["costs"] * k,
+        turnover=sim["turnover"],
+    )

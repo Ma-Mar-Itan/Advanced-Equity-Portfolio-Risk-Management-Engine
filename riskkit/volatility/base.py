@@ -1,8 +1,8 @@
-"""The one interface every volatility model shares.
+"""Common interface and result types for volatility models.
 
-A model takes daily returns in and gives back a VolFit: the volatility it estimated
-for every day, a forecast for the days ahead, and its parameters. The VaR code
-(Module 5) only ever sees VolFit, so it works with any model.
+Each model returns a ``VolFit`` containing the filtered volatility series,
+forward forecasts, and estimated parameters. The VaR engine depends only on
+this interface.
 
 Timing rule (no look-ahead): sigma on day t uses returns up to day t-1 only.
 """
@@ -20,11 +20,14 @@ TRADING_DAYS = 252
 
 @dataclass(frozen=True)
 class VolFit:
-    """What every volatility model returns. All volatilities are DAILY (not yearly)."""
+    """Standard result returned by every volatility model.
+
+    Volatility values use a daily scale.
+    """
 
     name: str
-    sigma: pd.Series                 # volatility for each day, known the evening before
-    forecast: np.ndarray             # forecast volatility for 1, 2, ..., horizon days ahead
+    sigma: pd.Series  # volatility for each day, known the evening before
+    forecast: np.ndarray  # forecast volatility for 1, 2, ..., horizon days ahead
     params: dict[str, float] = field(default_factory=dict)
 
     @property

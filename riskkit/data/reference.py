@@ -18,8 +18,8 @@ import pandas as pd
 from riskkit.data.cache import load_prices
 from riskkit.data.sources.base import DataUnavailableError, PriceSource
 
-RISK_FREE_TICKER = "^IRX"          # 13-week US T-bill yield, in percent per year
-FALLBACK_RISK_FREE = 0.02          # 2% a year, used only if ^IRX cannot be loaded
+RISK_FREE_TICKER = "^IRX"  # 13-week US T-bill yield, in percent per year
+FALLBACK_RISK_FREE = 0.02  # 2% a year, used only if ^IRX cannot be loaded
 TRADING_DAYS = 252
 PROFILE_MAX_AGE = timedelta(days=7)
 
@@ -38,17 +38,22 @@ class StockProfile:
     market_cap: float | None
 
 
-#: Offline fallback for the brief's 10 stocks and the benchmark (approximate share counts).
+# Offline profile fallback for the default portfolio and benchmark.
 KNOWN_PROFILES: dict[str, StockProfile] = {
-    p.ticker: p for p in [
+    p.ticker: p
+    for p in [
         StockProfile("AAPL", "Apple", "Technology", "Consumer Electronics", "United States", "USD", 14.9e9, None),
         StockProfile("MSFT", "Microsoft", "Technology", "Software", "United States", "USD", 7.43e9, None),
         StockProfile("NVDA", "NVIDIA", "Technology", "Semiconductors", "United States", "USD", 24.4e9, None),
         StockProfile("JPM", "JPMorgan Chase", "Financial Services", "Banks", "United States", "USD", 2.78e9, None),
         StockProfile("XOM", "Exxon Mobil", "Energy", "Oil & Gas", "United States", "USD", 4.3e9, None),
         StockProfile("AMZN", "Amazon", "Consumer Cyclical", "Internet Retail", "United States", "USD", 10.6e9, None),
-        StockProfile("META", "Meta Platforms", "Communication Services", "Internet Content", "United States", "USD", 2.52e9, None),
-        StockProfile("GOOGL", "Alphabet", "Communication Services", "Internet Content", "United States", "USD", 12.1e9, None),
+        StockProfile(
+            "META", "Meta Platforms", "Communication Services", "Internet Content", "United States", "USD", 2.52e9, None
+        ),
+        StockProfile(
+            "GOOGL", "Alphabet", "Communication Services", "Internet Content", "United States", "USD", 12.1e9, None
+        ),
         StockProfile("TSLA", "Tesla", "Consumer Cyclical", "Auto Manufacturers", "United States", "USD", 3.22e9, None),
         StockProfile("UNH", "UnitedHealth", "Healthcare", "Healthcare Plans", "United States", "USD", 0.905e9, None),
         StockProfile("SPY", "S&P 500 tracker (SPDR)", "Index fund", "Index fund", "United States", "USD", None, None),
@@ -65,6 +70,7 @@ def fetch_profile(ticker: str) -> StockProfile:
     """Ask Yahoo for a ticker's name, sector, country, currency and size."""
     try:
         import yfinance as yf
+
         info = yf.Ticker(ticker).get_info() or {}
     except Exception as exc:
         raise DataUnavailableError(f"No profile for {ticker}: {exc}") from exc
@@ -87,8 +93,9 @@ def _profile_path(cache_dir: Path, ticker: str) -> Path:
     return Path(cache_dir) / "profiles" / f"{ticker.replace('^', '_')}.json"
 
 
-def load_profile(ticker: str, cache_dir: Path, offline: bool = False,
-                 refresh: bool = False) -> tuple[StockProfile, str]:
+def load_profile(
+    ticker: str, cache_dir: Path, offline: bool = False, refresh: bool = False
+) -> tuple[StockProfile, str]:
     """A ticker's profile, using any saved copy unless refresh is explicit."""
     path = _profile_path(cache_dir, ticker)
     saved = StockProfile(**json.loads(path.read_text())) if path.exists() else None
@@ -110,8 +117,9 @@ def load_profile(ticker: str, cache_dir: Path, offline: bool = False,
     return unknown_profile(ticker), "unknown"
 
 
-def risk_free_daily(index: pd.DatetimeIndex, sources: list[PriceSource], cache_dir: Path,
-                    offline: bool = False) -> tuple[pd.Series, str]:
+def risk_free_daily(
+    index: pd.DatetimeIndex, sources: list[PriceSource], cache_dir: Path, offline: bool = False
+) -> tuple[pd.Series, str]:
     """Daily risk-free return on each date (annual T-bill yield / 252), and where it came from."""
     try:
         bills, origin = load_prices(RISK_FREE_TICKER, sources, cache_dir, offline=offline)

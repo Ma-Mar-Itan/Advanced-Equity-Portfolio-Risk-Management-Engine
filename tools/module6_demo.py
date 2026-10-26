@@ -28,8 +28,18 @@ def main() -> None:
     for c in (0.99, 0.95):
         rollings = {m: rolling_var(r, cfg, m, c) for m in VAR_MODELS}
         t = comparison_table(rollings, c, cfg.portfolio_value)
-        cols = ["rank", "model", "exceptions", "expected", "Kupiec p", "Christoffersen p", "Coverage p", "zone",
-                "average VaR", "passes all"]
+        cols = [
+            "rank",
+            "model",
+            "exceptions",
+            "expected",
+            "Kupiec p",
+            "Christoffersen p",
+            "Coverage p",
+            "zone",
+            "average VaR",
+            "passes all",
+        ]
         print(f"\n{c:.0%} VaR, {t.loc[0, 'expected']:.0f} exceptions expected over {len(rollings['HS']):,} days")
         with pd.option_context("display.width", 200, "display.float_format", "{:,.3f}".format):
             print(t[cols].to_string(index=False))

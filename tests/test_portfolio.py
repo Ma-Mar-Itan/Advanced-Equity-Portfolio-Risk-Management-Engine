@@ -1,13 +1,12 @@
-"""Tests for Module 3 (portfolio) on tiny made-up returns where every answer can be worked out by hand."""
+"""Portfolio tests using small return series with analytically known results."""
 
-import numpy as np
 import pandas as pd
 import pytest
 
 from riskkit.config import PortfolioSpec, RiskConfig
 from riskkit.portfolio import construction, drawdown, weights
 
-DATES = pd.bdate_range("2024-01-31", periods=4)       # Jan 31, Feb 1, Feb 2, Feb 5
+DATES = pd.bdate_range("2024-01-31", periods=4)  # Jan 31, Feb 1, Feb 2, Feb 5
 
 
 def test_cap_weights_redistributes_excess():

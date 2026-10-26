@@ -1,4 +1,4 @@
-"""Charts for the Risk sources and Decisions pages (Module 8). Each function returns a Plotly figure."""
+"""Plotly figures for risk attribution and decision analysis."""
 
 from __future__ import annotations
 
@@ -22,8 +22,17 @@ def share_chart(table: pd.DataFrame, measure: str) -> go.Figure:
 def sector_chart(by_sector: pd.Series, measure: str) -> go.Figure:
     """Dollar risk by sector, largest first."""
     s = by_sector.sort_values()
-    fig = go.Figure(go.Bar(x=s, y=s.index, orientation="h", marker_color=theme.ACCENT,
-                           text=[theme.money(v) for v in s], textposition="outside"))
+    fig = go.Figure(
+        go.Bar(
+            x=s,
+            y=s.index,
+            orientation="h",
+            name=f"Sector {measure}",
+            marker_color=theme.ACCENT,
+            text=[theme.money(v) for v in s],
+            textposition="outside",
+        )
+    )
     fig.update_layout(height=max(220, 34 * len(s)), margin=dict(r=90))
     fig.update_xaxes(tickprefix="$", title_text=f"Share of {measure}")
     return fig
@@ -42,8 +51,17 @@ def weights_compare(before: pd.Series, after: pd.Series, labels: tuple[str, str]
 def hedge_chart(table: pd.DataFrame) -> go.Figure:
     """How much each candidate hedge cuts VaR, best at the top."""
     t = table.iloc[::-1]
-    fig = go.Figure(go.Bar(x=t["reduction"] * 100, y=t["instrument"], orientation="h", marker_color=theme.ACCENT,
-                           text=[f"{v:.0%}" for v in t["reduction"]], textposition="outside"))
+    fig = go.Figure(
+        go.Bar(
+            x=t["reduction"] * 100,
+            y=t["instrument"],
+            orientation="h",
+            name="VaR reduction",
+            marker_color=theme.ACCENT,
+            text=[f"{v:.0%}" for v in t["reduction"]],
+            textposition="outside",
+        )
+    )
     fig.update_layout(height=max(260, 30 * len(t)), margin=dict(r=50))
     fig.update_xaxes(ticksuffix="%", title_text="VaR reduction")
     return fig

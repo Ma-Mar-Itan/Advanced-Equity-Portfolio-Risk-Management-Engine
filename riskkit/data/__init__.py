@@ -1,1 +1,1 @@
-"""Module 1 (data collection) and Module 2 (cleaning and returns)."""
+"""Market-data collection, caching, cleaning, and return calculation."""

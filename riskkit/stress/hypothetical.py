@@ -16,8 +16,9 @@ def market_shock(weights: pd.Series, beta: pd.Series, shock: float) -> pd.Series
     return -(weights * beta * shock)
 
 
-def sector_shock(weights: pd.Series, beta: pd.Series, sectors: pd.Series, sector: str, shock: float,
-                 spillover: float = 0.0) -> pd.Series:
+def sector_shock(
+    weights: pd.Series, beta: pd.Series, sectors: pd.Series, sector: str, shock: float, spillover: float = 0.0
+) -> pd.Series:
     """Stocks in `sector` move `shock`; the others move beta x shock x spillover. Returns each stock's loss."""
     inside = sectors.reindex(weights.index) == sector
     moves = np.where(inside, shock, beta * shock * spillover)

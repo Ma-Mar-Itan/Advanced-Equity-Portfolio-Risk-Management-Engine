@@ -1,1 +1,1 @@
-"""Module 8B: decision tools: what-if trade, best hedge, optimizer."""
+"""Portfolio what-if, hedge-selection, and optimization tools."""

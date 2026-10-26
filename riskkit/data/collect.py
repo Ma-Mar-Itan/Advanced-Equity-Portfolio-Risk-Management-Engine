@@ -1,8 +1,8 @@
-"""Module 1 in one call: config in, everything the later modules need out.
+"""Market-data collection and provenance tracking.
 
-collect_market_data(cfg) fetches each stock's adjusted prices (converted to USD),
-the benchmark, the risk-free rate and each stock's profile, and records where every
-piece came from. Nothing here is cleaned yet: that is Module 2.
+The collector retrieves adjusted prices, benchmark data, the risk-free rate,
+company profiles, and point-in-time share counts. Price cleaning is handled by
+``riskkit.data.pipeline``.
 """
 
 from __future__ import annotations
@@ -21,15 +21,18 @@ from riskkit.data.sources import DataUnavailableError, PriceSource, get_source
 
 @dataclass(frozen=True)
 class MarketData:
-    """Raw market data for one config. Prices keep their full history (from 2000) so
-    crises like 2008 stay available; later modules cut at cfg.start themselves."""
+    """Raw market data and source provenance for one configuration.
 
-    prices: pd.DataFrame            # adjusted close in the base currency, dates x tickers
-    benchmark: pd.Series            # benchmark adjusted close (base currency)
-    risk_free: pd.Series            # daily risk-free return on each date
+    Price histories are retained from 2000 so historical stress periods remain
+    available. Downstream calculations apply the configured analysis window.
+    """
+
+    prices: pd.DataFrame  # adjusted close in the base currency, dates x tickers
+    benchmark: pd.Series  # benchmark adjusted close (base currency)
+    risk_free: pd.Series  # daily risk-free return on each date
     profiles: dict[str, StockProfile]
-    origin: dict[str, str]          # ticker (or 'risk-free', 'fx:EUR') -> where it came from
-    failed: tuple[str, ...]         # tickers nothing could be found for
+    origin: dict[str, str]  # ticker (or 'risk-free', 'fx:EUR') -> where it came from
+    failed: tuple[str, ...]  # tickers nothing could be found for
     shares: pd.DataFrame = field(default_factory=pd.DataFrame)  # point-in-time shares for size weighting
 
     @property
@@ -39,25 +42,32 @@ class MarketData:
 
 
 def build_sources(cfg: RiskConfig) -> list[PriceSource]:
-    """The sources to try, in order: the primary, then the fallback if it is usable."""
-    sources = [get_source(cfg.source)]
-    if cfg.fallback_source and cfg.fallback_source != cfg.source:
-        fallback = get_source(cfg.fallback_source)
-        if getattr(fallback, "available", True):
-            sources.append(fallback)
+    """Build the cache/fetch chain, ending with the public Yahoo snapshot.
+
+    Provider-specific saved files keep priority.  Yahoo is always the final
+    fallback for a non-Yahoo primary so every dashboard choice can use the
+    shipped no-key cache when that provider is down or has no saved file.
+    """
+    sources: list[PriceSource] = []
+    for name in (cfg.source, cfg.fallback_source, "yahoo"):
+        if not name or any(source.name == name for source in sources):
+            continue
+        source = get_source(name)
+        if name == cfg.source or getattr(source, "available", True):
+            sources.append(source)
     return sources
 
 
-def price_in_base(ticker: str, local: pd.Series, currency: str, cfg: RiskConfig,
-                  sources: list[PriceSource], origin: dict[str, str]) -> pd.Series:
+def price_in_base(
+    ticker: str, local: pd.Series, currency: str, cfg: RiskConfig, sources: list[PriceSource], origin: dict[str, str]
+) -> pd.Series:
     """One stock's adjusted prices converted from its quote currency into the base currency."""
     if not needs_conversion(currency, cfg.base_currency):
         return local
     major, divisor = major_currency(currency)
     rate = None
     if major != cfg.base_currency:
-        fx, where = load_prices(fx_ticker(major, cfg.base_currency), sources[:1], cfg.cache_dir,
-                                offline=cfg.offline)
+        fx, where = load_prices(fx_ticker(major, cfg.base_currency), sources[:1], cfg.cache_dir, offline=cfg.offline)
         rate = fx["adj_close"]
         origin[f"fx:{major}"] = where
     return convert_prices(local, rate, divisor)
@@ -111,14 +121,19 @@ def collect_market_data(cfg: RiskConfig, refresh: bool = False) -> MarketData:
 
 def summary_table(md: MarketData, cfg: RiskConfig) -> pd.DataFrame:
     """One row per stock: name, sector, currency, first date, number of days since cfg.start, source."""
-    since = md.prices.loc[pd.Timestamp(cfg.start):]
+    since = md.prices.loc[pd.Timestamp(cfg.start) :]
     rows = []
     for t in md.prices.columns:
         p = md.profiles[t]
-        rows.append({
-            "ticker": t, "name": p.name, "sector": p.sector, "currency": p.currency,
-            "first price": md.prices[t].first_valid_index().date(),
-            "days since start": int(since[t].notna().sum()),
-            "source": md.origin[t],
-        })
+        rows.append(
+            {
+                "ticker": t,
+                "name": p.name,
+                "sector": p.sector,
+                "currency": p.currency,
+                "first price": md.prices[t].first_valid_index().date(),
+                "days since start": int(since[t].notna().sum()),
+                "source": md.origin[t],
+            }
+        )
     return pd.DataFrame(rows).set_index("ticker")

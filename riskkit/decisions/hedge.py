@@ -35,6 +35,14 @@ def best_hedges(sc: Scenarios, benchmark_name: str, max_size: float = 2.0, steps
     rows = []
     for name, r in hedge_candidates(sc, benchmark_name).items():
         size, var = best_size(port, r.to_numpy(), sc.confidence, sizes)
-        rows.append({"instrument": name, "size": size, "amount": size * sc.value, "var_before": base * sc.value,
-                     "var_after": var * sc.value, "reduction": 1 - var / base})
+        rows.append(
+            {
+                "instrument": name,
+                "size": size,
+                "amount": size * sc.value,
+                "var_before": base * sc.value,
+                "var_after": var * sc.value,
+                "reduction": 1 - var / base,
+            }
+        )
     return pd.DataFrame(rows).sort_values("reduction", ascending=False).reset_index(drop=True)

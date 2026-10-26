@@ -12,8 +12,9 @@ import pandas as pd
 from riskkit.volatility.base import TRADING_DAYS, VolFit
 
 
-def rolling_volatility(returns: pd.DataFrame | pd.Series, window: int = 21,
-                       annualize: bool = True) -> pd.DataFrame | pd.Series:
+def rolling_volatility(
+    returns: pd.DataFrame | pd.Series, window: int = 21, annualize: bool = True
+) -> pd.DataFrame | pd.Series:
     """Standard deviation of the last `window` daily returns (including today), yearly if `annualize`."""
     vol = returns.rolling(window).std().dropna(how="all")
     return vol * np.sqrt(TRADING_DAYS) if annualize else vol
@@ -29,5 +30,5 @@ class RollingVol:
     def fit(self, returns: pd.Series, horizon: int = 10) -> VolFit:
         """sigma_t = std of returns t-window ... t-1; the forecast is flat at the latest value."""
         sigma = returns.rolling(self.window).std().shift(1).dropna()
-        latest = float(returns.iloc[-self.window:].std())
+        latest = float(returns.iloc[-self.window :].std())
         return VolFit(self.name, sigma, np.full(horizon, latest), {"window": self.window})

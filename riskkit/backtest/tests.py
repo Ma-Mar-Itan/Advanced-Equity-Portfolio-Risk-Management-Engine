@@ -56,8 +56,9 @@ def christoffersen_independence(hits: np.ndarray, significance: float = 0.05) ->
     pi1 = n11 / (n10 + n11) if n10 + n11 else 0.0
     pi = (n01 + n11) / (n00 + n01 + n10 + n11)
     restricted = _log_likelihood(n01 + n11, n00 + n01 + n10 + n11, pi) if 0 < pi < 1 else 0.0
-    free = (_log_likelihood(n01, n00 + n01, pi0) if 0 < pi0 < 1 else 0.0) + \
-           (_log_likelihood(n11, n10 + n11, pi1) if 0 < pi1 < 1 else 0.0)
+    free = (_log_likelihood(n01, n00 + n01, pi0) if 0 < pi0 < 1 else 0.0) + (
+        _log_likelihood(n11, n10 + n11, pi1) if 0 < pi1 < 1 else 0.0
+    )
     lr = max(0.0, -2 * (restricted - free))
     pv = float(chi2.sf(lr, df=1))
     return TestResult("Christoffersen: timing", float(lr), pv, pv >= significance)

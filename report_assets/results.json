@@ -4,8 +4,8 @@
  "window": 500,
  "data": {
   "start": "04 June 2012",
-  "end": "16 October 2026",
-  "days": 3614,
+  "end": "20 October 2026",
+  "days": 3616,
   "filled": 0,
   "stale": 0,
   "checks_passed": 6,
@@ -13,117 +13,117 @@
   "stocks": [
    {
     "stock": "AAPL",
-    "name": "Apple",
+    "name": "Apple Inc.",
     "sector": "Technology",
-    "ann_return": 0.23430411303920085,
-    "ann_vol": 0.2820090936033547,
-    "skew": -0.23190120584859664,
-    "kurt": 9.601701810722181,
-    "min": -0.1377081512049621,
-    "max": 0.14261735272251114
+    "ann_return": 0.2334981747833848,
+    "ann_vol": 0.28193776833943845,
+    "skew": -0.23152629304675035,
+    "kurt": 9.605971049130023,
+    "min": -0.13770798891292213,
+    "max": 0.14261759617893904
    },
    {
     "stock": "MSFT",
-    "name": "Microsoft",
+    "name": "Microsoft Corporation",
     "sector": "Technology",
-    "ann_return": 0.2465532871381592,
-    "ann_vol": 0.26571901994956815,
-    "skew": -0.0409071271324671,
-    "kurt": 12.216373536026373,
-    "min": -0.15945363902265797,
+    "ann_return": 0.24677008203239262,
+    "ann_vol": 0.26565633201917366,
+    "skew": -0.041014594772005225,
+    "kurt": 12.221133572391226,
+    "min": -0.15945323283846297,
     "max": 0.14415869002494103
    },
    {
     "stock": "NVDA",
-    "name": "NVIDIA",
+    "name": "NVIDIA Corporation",
     "sector": "Technology",
-    "ann_return": 0.5912039531103088,
-    "ann_vol": 0.44575821522429115,
-    "skew": 0.1689170146705634,
-    "kurt": 10.732384468716646,
-    "min": -0.20771159838304462,
-    "max": 0.26087626834797517
+    "ann_return": 0.5928636658786319,
+    "ann_vol": 0.4456466901785251,
+    "skew": 0.16852898491795976,
+    "kurt": 10.737083134997638,
+    "min": -0.20771117296015246,
+    "max": 0.2608760144727619
    },
    {
     "stock": "JPM",
-    "name": "JPMorgan Chase",
+    "name": "JPMorgan Chase & Co.",
     "sector": "Financial Services",
-    "ann_return": 0.21143276587571688,
-    "ann_vol": 0.25749057637694717,
-    "skew": -0.08783026312571797,
-    "kurt": 15.512271394801218,
-    "min": -0.1621057621864694,
-    "max": 0.16562030828049518
+    "ann_return": 0.21091325870180164,
+    "ann_vol": 0.25749183555125027,
+    "skew": -0.08778038806644521,
+    "kurt": 15.503989319430364,
+    "min": -0.16210586536797295,
+    "max": 0.16562020473572803
    },
    {
     "stock": "XOM",
-    "name": "Exxon Mobil",
+    "name": "ExxonMobil Holdings Corporation",
     "sector": "Energy",
-    "ann_return": 0.10183899122201466,
-    "ann_vol": 0.25685259128269405,
-    "skew": -0.20961013017125746,
-    "kurt": 9.769271229276217,
+    "ann_return": 0.10028200723941552,
+    "ann_vol": 0.25681878151671195,
+    "skew": -0.20881134556310543,
+    "kurt": 9.769000892272535,
     "min": -0.13039096983275525,
-    "max": 0.1194421767641147
+    "max": 0.11944225734398344
    },
    {
     "stock": "AMZN",
-    "name": "Amazon",
+    "name": "Amazon.com, Inc.",
     "sector": "Consumer Cyclical",
-    "ann_return": 0.24812187790444756,
-    "ann_vol": 0.32243436848091983,
-    "skew": 0.12327628000575416,
-    "kurt": 9.231831385186911,
+    "ann_return": 0.2528291643336202,
+    "ann_vol": 0.3225954969322003,
+    "skew": 0.1244086938893266,
+    "kurt": 9.216349368836209,
     "min": -0.15139791287665294,
     "max": 0.1425457923711586
    },
    {
     "stock": "META",
-    "name": "Meta Platforms",
+    "name": "Meta Platforms, Inc.",
     "sector": "Communication Services",
-    "ann_return": 0.25450009334959867,
-    "ann_vol": 0.3961466696679129,
-    "skew": -0.3313017753672808,
-    "kurt": 23.87729248128148,
+    "ann_return": 0.25242802326070796,
+    "ann_vol": 0.39606715073894866,
+    "skew": -0.33062538081883414,
+    "kurt": 23.882983393468415,
     "min": -0.3063904933066644,
-    "max": 0.2593710744051495
+    "max": 0.2593710017677806
    },
    {
     "stock": "GOOGL",
-    "name": "Alphabet",
+    "name": "Alphabet Inc.",
     "sector": "Communication Services",
-    "ann_return": 0.24830264758502174,
-    "ann_vol": 0.2774852404982856,
-    "skew": 0.14778318768045284,
-    "kurt": 9.531603637172207,
-    "min": -0.12368450151963947,
-    "max": 0.15064534595893617
+    "ann_return": 0.24881881033861764,
+    "ann_vol": 0.27742174716528595,
+    "skew": 0.14756413540506924,
+    "kurt": 9.535023012084947,
+    "min": -0.12368451822161125,
+    "max": 0.15064539205374597
    },
    {
     "stock": "TSLA",
-    "name": "Tesla",
+    "name": "Tesla, Inc.",
     "sector": "Consumer Cyclical",
-    "ann_return": 0.44124422140407754,
-    "ann_vol": 0.5664670850015526,
-    "skew": 0.029309855737537166,
-    "kurt": 7.577705746199285,
+    "ann_return": 0.44095288772315905,
+    "ann_vol": 0.5663106230804159,
+    "skew": 0.029385359282597952,
+    "kurt": 7.581888056399249,
     "min": -0.23651789445767657,
     "max": 0.21829241013013823
    },
    {
     "stock": "UNH",
-    "name": "UnitedHealth",
+    "name": "UnitedHealth Group Incorporated",
     "sector": "Healthcare",
-    "ann_return": 0.16797712006105092,
-    "ann_vol": 0.28280921399923226,
-    "skew": -1.8902807860524327,
-    "kurt": 32.614956189541275,
-    "min": -0.25334083316890926,
-    "max": 0.120436777397883
+    "ann_return": 0.16787679552651646,
+    "ann_vol": 0.28273100935334755,
+    "skew": -1.890740511622146,
+    "kurt": 32.63276070847876,
+    "min": -0.25334079454429465,
+    "max": 0.12043684518099383
    }
   ]
  },
- "risk_free_source": "flat 2% a year (T-bill data unavailable)",
+ "risk_free_source": "yahoo (saved, refresh available)",
  "winsor": {
   "total": 740,
   "year_2020": 209,
@@ -131,24 +131,24 @@
   "busiest_count": 92
  },
  "portfolio": {
-  "start value": 195481.21167913222,
+  "start value": 194868.10946371936,
   "end value": 10000000.0,
-  "total return": 50.15581141585234,
-  "annual return": 0.3157072001351755,
-  "annual volatility": 0.21926160297148392,
-  "sharpe": 1.270724834222688,
-  "max drawdown": -0.34907522366119037,
-  "best day": 0.11880948974364847,
-  "worst day": -0.13808198517393333,
-  "positive days": 0.5683453237410072,
-  "worst day $": -368803.85963134374,
+  "total return": 50.31675997432409,
+  "annual return": 0.315795569319969,
+  "annual volatility": 0.21920495807120735,
+  "sharpe": 1.2842375097612369,
+  "max drawdown": -0.34907518175656616,
+  "best day": 0.118809538699723,
+  "worst day": -0.13808195344012952,
+  "positive days": 0.5683075221238938,
+  "worst day $": -367646.9278169079,
   "total costs": 0.0,
-  "average turnover": 0.056170195416849984,
-  "beta": 1.1888587495845406,
-  "correlation": 0.9001850200168701,
-  "tracking error": 0.10050607823361692,
-  "benchmark annual return": 0.15244598816918997,
-  "excess annual return": 0.16326121196598553
+  "average turnover": 0.05617018858207041,
+  "beta": 1.188854334601208,
+  "correlation": 0.9001662498836104,
+  "tracking error": 0.10048779669099356,
+  "benchmark annual return": 0.15235553265217594,
+  "excess annual return": 0.16344003666779305
  },
  "drawdowns": [
   {
@@ -179,88 +179,81 @@
  "schemes": [
   {
    "scheme": "Equal weight, monthly rebalancing",
-   "ann_return": 0.3157072001351755,
-   "ann_vol": 0.21926160297148392,
-   "sharpe": 1.270724834222688,
-   "mdd": -0.34907522366119037
+   "ann_return": 0.315795569319969,
+   "ann_vol": 0.21920495807120735,
+   "sharpe": 1.2842375097612369,
+   "mdd": -0.34907518175656616
   },
   {
    "scheme": "Equal weight, buy and hold",
-   "ann_return": 0.3893878330531839,
-   "ann_vol": 0.3316210864841788,
-   "sharpe": 1.0979934026439475,
-   "mdd": -0.5953411987483377
-  },
-  {
-   "scheme": "Market-cap weight, monthly",
-   "ann_return": 0.24922067927602098,
-   "ann_vol": 0.22535251051869645,
-   "sharpe": 1.0118650833725669,
-   "mdd": -0.396672581519115
+   "ann_return": 0.3904698566203977,
+   "ann_vol": 0.33153850279385955,
+   "sharpe": 1.1091226755358292,
+   "mdd": -0.5953411710466611
   },
   {
    "scheme": "Inverse-volatility weight, monthly",
-   "ann_return": 0.26631298751756693,
-   "ann_vol": 0.2001936234118083,
-   "sharpe": 1.1804098971232557,
-   "mdd": -0.33692418380003786
+   "ann_return": 0.26625870301947585,
+   "ann_vol": 0.2001392771137388,
+   "sharpe": 1.194621960795442,
+   "mdd": -0.3369241122748545
   }
  ],
  "diagnostics": {
-  "mean": 0.0010887869676569184,
-  "sd": 0.013839359770497127,
-  "skew": -0.5322461438372664,
-  "kurt": 12.03967157215689,
-  "jb": 12475.649364592067,
+  "mean": 0.0010890534856119276,
+  "sd": 0.013835784093384991,
+  "skew": -0.5324167431881881,
+  "kurt": 12.04549306752524,
+  "jb": 12498.525488378915,
   "jb_p": 0.0,
-  "lb_r": 134.26272662475515,
-  "lb_r_p": 6.2946063614962504e-24,
-  "lb_r2": 2291.103674511878,
+  "lb_r": 134.3463584066714,
+  "lb_r_p": 6.051643418918606e-24,
+  "lb_r2": 2292.8379159428537,
   "lb_r2_p": 0.0,
-  "arch_lm": 700.0315156653909,
-  "arch_p": 4.835516113239354e-149
+  "arch_lm": 700.5105166294456,
+  "arch_p": 3.8095477970889227e-149
  },
  "vol_today": {
-  "Rolling 63d": 0.14545785778899895,
-  "EWMA": 0.12087745383866905,
-  "GARCH": 0.1388411741848974,
-  "GJR-GARCH": 0.14645948481462318
+  "Rolling 63d": 0.14457899463099877,
+  "EWMA": 0.11548387914705223,
+  "GARCH": 0.13180815641389382,
+  "GJR-GARCH": 0.1392322435549965
  },
  "vol_10d": {
-  "Rolling 63d": 0.14545785778899895,
-  "EWMA": 0.12087745383866905,
-  "GARCH": 0.16070507810857837,
-  "GJR-GARCH": 0.16956173462152097
+  "Rolling 63d": 0.14457899463099877,
+  "EWMA": 0.11548387914705223,
+  "GARCH": 0.15614972749962083,
+  "GJR-GARCH": 0.16489796148326719
  },
  "garch": {
   "GARCH": {
-   "omega": 5.742813888560288e-06,
-   "alpha": 0.11694521351641789,
+   "omega": 5.7216655680263896e-06,
+   "alpha": 0.11695489185976826,
    "gamma": 0.0,
-   "beta": 0.8508571426419572,
-   "persistence": 0.9678023561583751,
-   "long-run vol (yearly)": 0.21200719270911836,
-   "half-life (days)": 21.179421242334605,
-   "log-likelihood": -5781.9415942604355,
-   "AIC": 11569.883188520871
+   "beta": 0.8509485813471467,
+   "persistence": 0.9679034732069149,
+   "long-run vol (yearly)": 0.2119495435062016,
+   "half-life (days)": 21.24724882728271,
+   "log-likelihood": -5783.689118981873,
+   "AIC": 11573.378237963747
   },
   "GJR-GARCH": {
-   "omega": 6.468603877124106e-06,
-   "alpha": 0.024391909221125687,
-   "gamma": 0.1547268353321373,
-   "beta": 0.8653257762249907,
-   "persistence": 0.9670811031121851,
-   "long-run vol (yearly)": 0.22252710193642045,
-   "half-life (days)": 20.707702206473158,
-   "log-likelihood": -5733.084271727158,
-   "AIC": 11474.168543454316
+   "omega": 6.4428579918494e-06,
+   "alpha": 0.024452516205411244,
+   "gamma": 0.154425075763967,
+   "beta": 0.8655201265491473,
+   "persistence": 0.9671851806365421,
+   "long-run vol (yearly)": 0.2224357256189586,
+   "half-life (days)": 20.774491606478794,
+   "log-likelihood": -5734.910380901132,
+   "AIC": 11477.820761802264
   }
  },
  "resid": {
-  "kurt_raw": 12.03967157215689,
-  "kurt_z": 4.458972148602288,
-  "lb_z2": 11.746817472227642,
-  "lb_z2_p": 0.3023584156294224
+  "kurt_raw": 12.04549306752524,
+  "kurt_z": 4.460373833364234,
+  "lb_z2": 11.730251734428363,
+  "lb_z2_p": 0.3035153658707948
  },
  "leverage": [
   {
@@ -280,8 +273,8 @@
   },
   {
    "move": "-0.5% to +0.5%",
-   "avg move next 5 days": 0.008471,
-   "days": 1342
+   "avg move next 5 days": 0.008466,
+   "days": 1344
   },
   {
    "move": "+0.5% to +1.5%",
@@ -302,22 +295,22 @@
  "regimes": [
   {
    "regime": "Calm",
-   "share of days": 0.333426,
-   "typical move": 0.008757,
+   "share of days": 0.333241,
+   "typical move": 0.008752,
    "worst day": -0.048865,
    "days below -3%": 5
   },
   {
    "regime": "Normal",
-   "share of days": 0.333149,
-   "typical move": 0.010779,
+   "share of days": 0.333241,
+   "typical move": 0.01077,
    "worst day": -0.060352,
    "days below -3%": 6
   },
   {
    "regime": "Stormy",
-   "share of days": 0.333426,
-   "typical move": 0.019531,
+   "share of days": 0.333518,
+   "typical move": 0.019527,
    "worst day": -0.148595,
    "days below -3%": 66
   }
@@ -325,31 +318,31 @@
  "var_today": [
   {
    "model": "HS",
-   "var": 0.03365357373422062,
-   "es": 0.04633373688861995,
-   "var10": 0.10642194440455521,
-   "es10": 0.1465201410750024
+   "var": 0.033653560214140565,
+   "es": 0.04633375063307179,
+   "var10": 0.1064219016503081,
+   "es10": 0.14652018453877544
   },
   {
    "model": "EWMA-HS",
-   "var": 0.024713240619321054,
-   "es": 0.028482465308338922,
-   "var10": 0.07815012872084473,
-   "es10": 0.09006946375108105
+   "var": 0.023623661426520896,
+   "es": 0.027229350951110752,
+   "var10": 0.0747045767804685,
+   "es10": 0.08610676821358215
   },
   {
    "model": "GARCH-HS",
-   "var": 0.02787505731219006,
-   "es": 0.03235322479262047,
-   "var10": 0.08814867101425186,
-   "es10": 0.10230987999610947
+   "var": 0.026490115930212634,
+   "es": 0.03075337348440078,
+   "var10": 0.08376910182138192,
+   "es10": 0.09725070594453518
   },
   {
    "model": "GJR-HS",
-   "var": 0.029680885687781263,
-   "es": 0.03384454186985836,
-   "var10": 0.09385920174448208,
-   "es10": 0.10702583867368644
+   "var": 0.028245335567370487,
+   "es": 0.032215561581331896,
+   "var10": 0.08931959366865505,
+   "es10": 0.10187455069842456
   }
  ],
  "var_grid": {
@@ -365,19 +358,19 @@
   ],
   "values": [
    [
-    0.013432868590415719,
-    0.014580920724424226,
-    0.01376013753981213
+    0.012780037408848073,
+    0.013870813536766497,
+    0.013085559980521163
    ],
    [
-    0.02303332373669304,
-    0.029680885687781263,
-    0.02742570291797957
+    0.02192468788172186,
+    0.028245335567370487,
+    0.026106300278806942
    ],
    [
-    0.02742570291797957,
-    0.03340392437444498,
-    0.03227326303221905
+    0.026106300278806942,
+    0.031778149933480236,
+    0.030718752659520718
    ]
   ]
  },
@@ -386,15 +379,15 @@
   {
    "model": "GJR-HS",
    "exceptions": 34,
-   "expected": 31.14,
-   "ratio": 1.091843,
-   "average VaR": 362612.295286,
-   "VaR volatility": 186672.779015,
-   "worst daily loss": 1380819.851739,
-   "average ES": 419182.266122,
-   "Kupiec p": 0.61175,
-   "Christoffersen p": 0.056441,
-   "Coverage p": 0.142514,
+   "expected": 31.16,
+   "ratio": 1.091142,
+   "average VaR": 362567.779597,
+   "VaR volatility": 186620.659985,
+   "worst daily loss": 1380819.534401,
+   "average ES": 419127.861282,
+   "Kupiec p": 0.614317,
+   "Christoffersen p": 0.056368,
+   "Coverage p": 0.142625,
    "zone": "green",
    "passes all": true,
    "rank": 1
@@ -402,15 +395,15 @@
   {
    "model": "EWMA-HS",
    "exceptions": 32,
-   "expected": 31.14,
-   "ratio": 1.027617,
-   "average VaR": 389407.430526,
-   "VaR volatility": 198949.791213,
-   "worst daily loss": 1380819.851739,
-   "average ES": 446911.414685,
-   "Kupiec p": 0.877459,
-   "Christoffersen p": 0.043952,
-   "Coverage p": 0.129888,
+   "expected": 31.16,
+   "ratio": 1.026958,
+   "average VaR": 389315.025753,
+   "VaR volatility": 198919.315396,
+   "worst daily loss": 1380819.534401,
+   "average ES": 446805.732329,
+   "Kupiec p": 0.880312,
+   "Christoffersen p": 0.043895,
+   "Coverage p": 0.129817,
    "zone": "green",
    "passes all": false,
    "rank": 2
@@ -418,15 +411,15 @@
   {
    "model": "GARCH-HS",
    "exceptions": 33,
-   "expected": 31.14,
-   "ratio": 1.05973,
-   "average VaR": 361252.886119,
-   "VaR volatility": 166944.062388,
-   "worst daily loss": 1380819.851739,
-   "average ES": 411654.394084,
-   "Kupiec p": 0.740062,
-   "Christoffersen p": 0.004581,
-   "Coverage p": 0.017009,
+   "expected": 31.16,
+   "ratio": 1.05905,
+   "average VaR": 361198.523102,
+   "VaR volatility": 166903.633232,
+   "worst daily loss": 1380819.534401,
+   "average ES": 411596.216111,
+   "Kupiec p": 0.74281,
+   "Christoffersen p": 0.004572,
+   "Coverage p": 0.017,
    "zone": "green",
    "passes all": false,
    "rank": 3
@@ -434,15 +427,15 @@
   {
    "model": "HS",
    "exceptions": 36,
-   "expected": 31.14,
-   "ratio": 1.156069,
-   "average VaR": 401264.885616,
-   "VaR volatility": 113407.62856,
-   "worst daily loss": 1380819.851739,
-   "average ES": 489012.983818,
-   "Kupiec p": 0.393038,
-   "Christoffersen p": 0.00063,
-   "Coverage p": 0.002015,
+   "expected": 31.16,
+   "ratio": 1.155327,
+   "average VaR": 401223.262385,
+   "VaR volatility": 113383.208294,
+   "worst daily loss": 1380819.534401,
+   "average ES": 488996.483548,
+   "Kupiec p": 0.395088,
+   "Christoffersen p": 0.000628,
+   "Coverage p": 0.002016,
    "zone": "green",
    "passes all": false,
    "rank": 4
@@ -452,15 +445,15 @@
   {
    "model": "EWMA-HS",
    "exceptions": 28,
-   "expected": 28.64,
-   "ratio": 0.977654,
-   "average VaR": 400589.444641,
-   "VaR volatility": 203114.72458,
-   "worst daily loss": 1380819.851739,
-   "average ES": 461562.669252,
-   "Kupiec p": 0.903977,
-   "Christoffersen p": 0.029784,
-   "Coverage p": 0.093655,
+   "expected": 28.66,
+   "ratio": 0.976971,
+   "average VaR": 400481.149048,
+   "VaR volatility": 203085.136702,
+   "worst daily loss": 1380819.534401,
+   "average ES": 461437.597491,
+   "Kupiec p": 0.901014,
+   "Christoffersen p": 0.029741,
+   "Coverage p": 0.093497,
    "zone": "green",
    "passes all": false,
    "rank": 1
@@ -468,15 +461,15 @@
   {
    "model": "GARCH-HS",
    "exceptions": 31,
-   "expected": 28.64,
-   "ratio": 1.082402,
-   "average VaR": 371472.851479,
-   "VaR volatility": 170059.816998,
-   "worst daily loss": 1380819.851739,
-   "average ES": 424384.884149,
-   "Kupiec p": 0.661835,
-   "Christoffersen p": 0.003981,
-   "Coverage p": 0.014381,
+   "expected": 28.66,
+   "ratio": 1.081647,
+   "average VaR": 371406.661948,
+   "VaR volatility": 170018.24197,
+   "worst daily loss": 1380819.534401,
+   "average ES": 424312.746842,
+   "Kupiec p": 0.664597,
+   "Christoffersen p": 0.003973,
+   "Coverage p": 0.014377,
    "zone": "green",
    "passes all": false,
    "rank": 2
@@ -484,15 +477,15 @@
   {
    "model": "GJR-HS",
    "exceptions": 31,
-   "expected": 28.64,
-   "ratio": 1.082402,
-   "average VaR": 373044.255708,
-   "VaR volatility": 190761.419024,
-   "worst daily loss": 1380819.851739,
-   "average ES": 432661.669672,
-   "Kupiec p": 0.661835,
-   "Christoffersen p": 0.045621,
-   "Coverage p": 0.123265,
+   "expected": 28.66,
+   "ratio": 1.081647,
+   "average VaR": 372988.560256,
+   "VaR volatility": 190705.999203,
+   "worst daily loss": 1380819.534401,
+   "average ES": 432593.100036,
+   "Kupiec p": 0.664597,
+   "Christoffersen p": 0.045557,
+   "Coverage p": 0.123323,
    "zone": "green",
    "passes all": false,
    "rank": 3
@@ -500,15 +493,15 @@
   {
    "model": "HS",
    "exceptions": 33,
-   "expected": 28.64,
-   "ratio": 1.152235,
-   "average VaR": 414398.230592,
-   "VaR volatility": 108756.818112,
-   "worst daily loss": 1380819.851739,
-   "average ES": 507495.389842,
-   "Kupiec p": 0.424029,
-   "Christoffersen p": 0.000424,
-   "Coverage p": 0.001457,
+   "expected": 28.66,
+   "ratio": 1.151431,
+   "average VaR": 414343.835765,
+   "VaR volatility": 108738.430127,
+   "worst daily loss": 1380819.534401,
+   "average ES": 507464.539637,
+   "Kupiec p": 0.426264,
+   "Christoffersen p": 0.000423,
+   "Coverage p": 0.001458,
    "zone": "green",
    "passes all": false,
    "rank": 4
@@ -518,15 +511,15 @@
   {
    "model": "GJR-HS",
    "exceptions": 158,
-   "expected": 155.7,
-   "ratio": 1.014772,
-   "average VaR": 215670.634277,
-   "VaR volatility": 113198.544172,
-   "worst daily loss": 1380819.851739,
-   "average ES": 294051.038139,
-   "Kupiec p": 0.850348,
-   "Christoffersen p": 0.698906,
-   "Coverage p": 0.911553,
+   "expected": 155.8,
+   "ratio": 1.014121,
+   "average VaR": 215624.494461,
+   "VaR volatility": 113176.591968,
+   "worst daily loss": 1380819.534401,
+   "average ES": 293999.800018,
+   "Kupiec p": 0.856813,
+   "Christoffersen p": 0.700297,
+   "Coverage p": 0.913603,
    "zone": "green",
    "passes all": true,
    "rank": 1
@@ -534,15 +527,15 @@
   {
    "model": "GARCH-HS",
    "exceptions": 151,
-   "expected": 155.7,
-   "ratio": 0.969814,
-   "average VaR": 217092.079073,
-   "VaR volatility": 101300.809005,
-   "worst daily loss": 1380819.851739,
-   "average ES": 296185.462475,
-   "Kupiec p": 0.697783,
-   "Christoffersen p": 0.899061,
-   "Coverage p": 0.919947,
+   "expected": 155.8,
+   "ratio": 0.969191,
+   "average VaR": 217043.458402,
+   "VaR volatility": 101286.193554,
+   "worst daily loss": 1380819.534401,
+   "average ES": 296130.739406,
+   "Kupiec p": 0.691744,
+   "Christoffersen p": 0.900497,
+   "Coverage p": 0.91721,
    "zone": "green",
    "passes all": true,
    "rank": 2
@@ -550,15 +543,15 @@
   {
    "model": "EWMA-HS",
    "exceptions": 148,
-   "expected": 155.7,
-   "ratio": 0.950546,
-   "average VaR": 220866.54381,
-   "VaR volatility": 113934.670108,
-   "worst daily loss": 1380819.851739,
-   "average ES": 313595.923004,
-   "Kupiec p": 0.523364,
-   "Christoffersen p": 0.071561,
-   "Coverage p": 0.160887,
+   "expected": 155.8,
+   "ratio": 0.949936,
+   "average VaR": 220803.04887,
+   "VaR volatility": 113925.616125,
+   "worst daily loss": 1380819.534401,
+   "average ES": 313518.844694,
+   "Kupiec p": 0.518077,
+   "Christoffersen p": 0.071255,
+   "Coverage p": 0.159486,
    "zone": "green",
    "passes all": true,
    "rank": 3
@@ -566,15 +559,15 @@
   {
    "model": "HS",
    "exceptions": 167,
-   "expected": 155.7,
-   "ratio": 1.072575,
-   "average VaR": 222291.715416,
-   "VaR volatility": 58620.057559,
-   "worst daily loss": 1380819.851739,
-   "average ES": 324041.170219,
-   "Kupiec p": 0.358206,
+   "expected": 155.8,
+   "ratio": 1.071887,
+   "average VaR": 222272.296178,
+   "VaR volatility": 58606.22406,
+   "worst daily loss": 1380819.534401,
+   "average ES": 324023.216449,
+   "Kupiec p": 0.36258,
    "Christoffersen p": 7.3e-05,
-   "Coverage p": 0.000253,
+   "Coverage p": 0.000252,
    "zone": "green",
    "passes all": false,
    "rank": 4
@@ -584,15 +577,15 @@
   {
    "model": "GJR-HS",
    "exceptions": 147,
-   "expected": 143.2,
-   "ratio": 1.026536,
-   "average VaR": 219163.901933,
-   "VaR volatility": 117008.568898,
-   "worst daily loss": 1380819.851739,
-   "average ES": 300708.962422,
-   "Kupiec p": 0.745598,
-   "Christoffersen p": 0.831726,
-   "Coverage p": 0.927549,
+   "expected": 143.3,
+   "ratio": 1.02582,
+   "average VaR": 219111.318198,
+   "VaR volatility": 116984.393131,
+   "worst daily loss": 1380819.534401,
+   "average ES": 300648.610999,
+   "Kupiec p": 0.752127,
+   "Christoffersen p": 0.833287,
+   "Coverage p": 0.930504,
    "zone": "green",
    "passes all": true,
    "rank": 1
@@ -600,15 +593,15 @@
   {
    "model": "GARCH-HS",
    "exceptions": 137,
-   "expected": 143.2,
-   "ratio": 0.956704,
-   "average VaR": 221687.119445,
-   "VaR volatility": 104208.155311,
-   "worst daily loss": 1380819.851739,
-   "average ES": 303193.78238,
-   "Kupiec p": 0.592464,
-   "Christoffersen p": 0.817344,
-   "Coverage p": 0.843725,
+   "expected": 143.3,
+   "ratio": 0.956036,
+   "average VaR": 221631.024564,
+   "VaR volatility": 104193.11672,
+   "worst daily loss": 1380819.534401,
+   "average ES": 303129.399242,
+   "Kupiec p": 0.586598,
+   "Christoffersen p": 0.818784,
+   "Coverage p": 0.840222,
    "zone": "green",
    "passes all": true,
    "rank": 2
@@ -616,15 +609,15 @@
   {
    "model": "EWMA-HS",
    "exceptions": 133,
-   "expected": 143.2,
-   "ratio": 0.928771,
-   "average VaR": 225052.994228,
-   "VaR volatility": 117493.218443,
-   "worst daily loss": 1380819.851739,
-   "average ES": 321688.432977,
-   "Kupiec p": 0.376341,
-   "Christoffersen p": 0.064126,
-   "Coverage p": 0.121849,
+   "expected": 143.3,
+   "ratio": 0.928123,
+   "average VaR": 224981.101698,
+   "VaR volatility": 117483.705464,
+   "worst daily loss": 1380819.534401,
+   "average ES": 321599.014164,
+   "Kupiec p": 0.371795,
+   "Christoffersen p": 0.063839,
+   "Coverage p": 0.120489,
    "zone": "green",
    "passes all": true,
    "rank": 3
@@ -632,22 +625,22 @@
   {
    "model": "HS",
    "exceptions": 157,
-   "expected": 143.2,
-   "ratio": 1.096369,
-   "average VaR": 227364.881995,
-   "VaR volatility": 58438.869801,
-   "worst daily loss": 1380819.851739,
-   "average ES": 333279.60964,
-   "Kupiec p": 0.243671,
-   "Christoffersen p": 0.000116,
+   "expected": 143.3,
+   "ratio": 1.095604,
+   "average VaR": 227340.326631,
+   "VaR volatility": 58425.789834,
+   "worst daily loss": 1380819.534401,
+   "average ES": 333253.659769,
+   "Kupiec p": 0.247216,
+   "Christoffersen p": 0.000115,
    "Coverage p": 0.000301,
    "zone": "green",
    "passes all": false,
    "rank": 4
   }
  ],
- "brief_days": 2864,
- "bt_days": 3114,
+ "brief_days": 2866,
+ "bt_days": 3116,
  "bt_start": "02 June 2014",
  "yellow_days": {
   "HS": 980,
@@ -655,49 +648,5351 @@
   "GARCH-HS": 545,
   "GJR-HS": 262
  },
+ "bt_series_gjr": [
+  {
+   "date": "24 Oct 2023",
+   "pnl": 68008.911336,
+   "var_limit": -357193.286003,
+   "es_limit": -414097.575847,
+   "breach": false
+  },
+  {
+   "date": "25 Oct 2023",
+   "pnl": -235541.743888,
+   "var_limit": -340518.658566,
+   "es_limit": -394827.959385,
+   "breach": false
+  },
+  {
+   "date": "26 Oct 2023",
+   "pnl": -217090.725631,
+   "var_limit": -426899.626844,
+   "es_limit": -494586.157681,
+   "breach": false
+  },
+  {
+   "date": "27 Oct 2023",
+   "pnl": 58029.803016,
+   "var_limit": -476572.53398,
+   "es_limit": -551877.49534,
+   "breach": false
+  },
+  {
+   "date": "30 Oct 2023",
+   "pnl": 117839.258982,
+   "var_limit": -449122.371495,
+   "es_limit": -520223.951407,
+   "breach": false
+  },
+  {
+   "date": "31 Oct 2023",
+   "pnl": 28974.189065,
+   "var_limit": -427284.767002,
+   "es_limit": -495030.576025,
+   "breach": false
+  },
+  {
+   "date": "01 Nov 2023",
+   "pnl": 177523.310155,
+   "var_limit": -403064.96614,
+   "es_limit": -467076.696929,
+   "breach": false
+  },
+  {
+   "date": "02 Nov 2023",
+   "pnl": 189554.862514,
+   "var_limit": -391672.096071,
+   "es_limit": -453922.890965,
+   "breach": false
+  },
+  {
+   "date": "03 Nov 2023",
+   "pnl": 67703.058979,
+   "var_limit": -383118.705646,
+   "es_limit": -444045.581059,
+   "breach": false
+  },
+  {
+   "date": "06 Nov 2023",
+   "pnl": 54897.175926,
+   "var_limit": -364049.965393,
+   "es_limit": -422019.56524,
+   "breach": false
+  },
+  {
+   "date": "07 Nov 2023",
+   "pnl": 72971.820978,
+   "var_limit": -346095.673522,
+   "es_limit": -401273.572474,
+   "breach": false
+  },
+  {
+   "date": "08 Nov 2023",
+   "pnl": 24035.923813,
+   "var_limit": -330759.026401,
+   "es_limit": -383546.671171,
+   "breach": false
+  },
+  {
+   "date": "09 Nov 2023",
+   "pnl": -76830.663537,
+   "var_limit": -314823.629114,
+   "es_limit": -365122.273717,
+   "breach": false
+  },
+  {
+   "date": "10 Nov 2023",
+   "pnl": 193963.085502,
+   "var_limit": -313497.271582,
+   "es_limit": -363588.498951,
+   "breach": false
+  },
+  {
+   "date": "13 Nov 2023",
+   "pnl": 29948.343491,
+   "var_limit": -315738.718758,
+   "es_limit": -366180.443753,
+   "breach": false
+  },
+  {
+   "date": "14 Nov 2023",
+   "pnl": 184851.48833,
+   "var_limit": -301351.249529,
+   "es_limit": -349541.288568,
+   "breach": false
+  },
+  {
+   "date": "15 Nov 2023",
+   "pnl": -10883.59123,
+   "var_limit": -303834.011879,
+   "es_limit": -352412.932819,
+   "breach": false
+  },
+  {
+   "date": "16 Nov 2023",
+   "pnl": 20043.077847,
+   "var_limit": -290436.992161,
+   "es_limit": -336915.911593,
+   "breach": false
+  },
+  {
+   "date": "17 Nov 2023",
+   "pnl": 13446.902026,
+   "var_limit": -278254.418061,
+   "es_limit": -322820.316424,
+   "breach": false
+  },
+  {
+   "date": "20 Nov 2023",
+   "pnl": 85970.747124,
+   "var_limit": -267171.197122,
+   "es_limit": -309993.90601,
+   "breach": false
+  },
+  {
+   "date": "21 Nov 2023",
+   "pnl": -14808.129899,
+   "var_limit": -261113.031806,
+   "es_limit": -302981.774795,
+   "breach": false
+  },
+  {
+   "date": "22 Nov 2023",
+   "pnl": 6871.194321,
+   "var_limit": -252295.251098,
+   "es_limit": -292774.055625,
+   "breach": false
+  },
+  {
+   "date": "24 Nov 2023",
+   "pnl": -34342.731597,
+   "var_limit": -203292.160341,
+   "es_limit": -265520.989818,
+   "breach": false
+  },
+  {
+   "date": "27 Nov 2023",
+   "pnl": -4004.63865,
+   "var_limit": -199860.053291,
+   "es_limit": -261054.3391,
+   "breach": false
+  },
+  {
+   "date": "28 Nov 2023",
+   "pnl": 63449.45407,
+   "var_limit": -193945.80306,
+   "es_limit": -253356.053275,
+   "breach": false
+  },
+  {
+   "date": "29 Nov 2023",
+   "pnl": -79145.632334,
+   "var_limit": -190737.015959,
+   "es_limit": -249178.647785,
+   "breach": false
+  },
+  {
+   "date": "30 Nov 2023",
+   "pnl": -34977.142656,
+   "var_limit": -201665.331882,
+   "es_limit": -263403.853644,
+   "breach": false
+  },
+  {
+   "date": "01 Dec 2023",
+   "pnl": -15705.82766,
+   "var_limit": -198541.773808,
+   "es_limit": -259338.542299,
+   "breach": false
+  },
+  {
+   "date": "04 Dec 2023",
+   "pnl": -109499.989824,
+   "var_limit": -193497.659186,
+   "es_limit": -252668.457907,
+   "breach": false
+  },
+  {
+   "date": "05 Dec 2023",
+   "pnl": 72324.73172,
+   "var_limit": -217666.622659,
+   "es_limit": -284105.365289,
+   "breach": false
+  },
+  {
+   "date": "06 Dec 2023",
+   "pnl": -87045.082852,
+   "var_limit": -212200.381484,
+   "es_limit": -276997.744391,
+   "breach": false
+  },
+  {
+   "date": "07 Dec 2023",
+   "pnl": 145274.114259,
+   "var_limit": -222473.875676,
+   "es_limit": -290354.962269,
+   "breach": false
+  },
+  {
+   "date": "08 Dec 2023",
+   "pnl": 73364.018329,
+   "var_limit": -223435.298611,
+   "es_limit": -291604.715676,
+   "breach": false
+  },
+  {
+   "date": "11 Dec 2023",
+   "pnl": -108880.186905,
+   "var_limit": -217373.337738,
+   "es_limit": -283724.049573,
+   "breach": false
+  },
+  {
+   "date": "12 Dec 2023",
+   "pnl": 56944.853876,
+   "var_limit": -235928.034495,
+   "es_limit": -307840.078075,
+   "breach": false
+  },
+  {
+   "date": "13 Dec 2023",
+   "pnl": 64817.716689,
+   "var_limit": -227553.638719,
+   "es_limit": -296957.654322,
+   "breach": false
+  },
+  {
+   "date": "14 Dec 2023",
+   "pnl": 31412.725362,
+   "var_limit": -220503.584482,
+   "es_limit": -287793.64587,
+   "breach": false
+  },
+  {
+   "date": "15 Dec 2023",
+   "pnl": 54372.589656,
+   "var_limit": -212770.046579,
+   "es_limit": -277738.531476,
+   "breach": false
+  },
+  {
+   "date": "18 Dec 2023",
+   "pnl": 101191.354906,
+   "var_limit": -206806.315705,
+   "es_limit": -269982.598676,
+   "breach": false
+  },
+  {
+   "date": "19 Dec 2023",
+   "pnl": 61477.352021,
+   "var_limit": -205017.796027,
+   "es_limit": -267656.273769,
+   "breach": false
+  },
+  {
+   "date": "20 Dec 2023",
+   "pnl": -133056.504557,
+   "var_limit": -200347.457673,
+   "es_limit": -261580.864983,
+   "breach": false
+  },
+  {
+   "date": "21 Dec 2023",
+   "pnl": 113949.88064,
+   "var_limit": -235374.008196,
+   "es_limit": -307120.229382,
+   "breach": false
+  },
+  {
+   "date": "22 Dec 2023",
+   "pnl": -9278.573442,
+   "var_limit": -231180.595681,
+   "es_limit": -301671.243912,
+   "breach": false
+  },
+  {
+   "date": "26 Dec 2023",
+   "pnl": 35403.078899,
+   "var_limit": -222080.021512,
+   "es_limit": -289842.978836,
+   "breach": false
+  },
+  {
+   "date": "27 Dec 2023",
+   "pnl": 27891.663778,
+   "var_limit": -214300.583909,
+   "es_limit": -279728.752372,
+   "breach": false
+  },
+  {
+   "date": "28 Dec 2023",
+   "pnl": -29588.033898,
+   "var_limit": -207136.259056,
+   "es_limit": -270411.73913,
+   "breach": false
+  },
+  {
+   "date": "29 Dec 2023",
+   "pnl": -49138.827639,
+   "var_limit": -202521.674907,
+   "es_limit": -264409.322184,
+   "breach": false
+  },
+  {
+   "date": "02 Jan 2024",
+   "pnl": -63006.648334,
+   "var_limit": -202266.857795,
+   "es_limit": -264077.839948,
+   "breach": false
+  },
+  {
+   "date": "03 Jan 2024",
+   "pnl": -60618.868857,
+   "var_limit": -205833.321713,
+   "es_limit": -268717.045413,
+   "breach": false
+  },
+  {
+   "date": "04 Jan 2024",
+   "pnl": -45388.587035,
+   "var_limit": -207916.0174,
+   "es_limit": -271684.050745,
+   "breach": false
+  },
+  {
+   "date": "05 Jan 2024",
+   "pnl": 22754.078859,
+   "var_limit": -206046.194628,
+   "es_limit": -269249.792097,
+   "breach": false
+  },
+  {
+   "date": "08 Jan 2024",
+   "pnl": 165670.394117,
+   "var_limit": -199641.085449,
+   "es_limit": -260909.950668,
+   "breach": false
+  },
+  {
+   "date": "09 Jan 2024",
+   "pnl": 6086.522474,
+   "var_limit": -206957.637972,
+   "es_limit": -270436.389741,
+   "breach": false
+  },
+  {
+   "date": "10 Jan 2024",
+   "pnl": 96949.960973,
+   "var_limit": -200216.249476,
+   "es_limit": -261658.928114,
+   "breach": false
+  },
+  {
+   "date": "11 Jan 2024",
+   "pnl": -10291.983989,
+   "var_limit": -198866.020767,
+   "es_limit": -259900.638358,
+   "breach": false
+  },
+  {
+   "date": "12 Jan 2024",
+   "pnl": -38526.579542,
+   "var_limit": -193271.088504,
+   "es_limit": -252613.912257,
+   "breach": false
+  },
+  {
+   "date": "16 Jan 2024",
+   "pnl": -32976.57362,
+   "var_limit": -191900.345267,
+   "es_limit": -250828.459449,
+   "breach": false
+  },
+  {
+   "date": "17 Jan 2024",
+   "pnl": -46775.10111,
+   "var_limit": -189679.552925,
+   "es_limit": -247935.592991,
+   "breach": false
+  },
+  {
+   "date": "18 Jan 2024",
+   "pnl": 81099.597706,
+   "var_limit": -190626.801907,
+   "es_limit": -249169.53449,
+   "breach": false
+  },
+  {
+   "date": "19 Jan 2024",
+   "pnl": 124342.393171,
+   "var_limit": -189133.171548,
+   "es_limit": -247223.8257,
+   "breach": false
+  },
+  {
+   "date": "22 Jan 2024",
+   "pnl": 234.400812,
+   "var_limit": -192374.134551,
+   "es_limit": -251445.600639,
+   "breach": false
+  },
+  {
+   "date": "23 Jan 2024",
+   "pnl": 52236.427411,
+   "var_limit": -187245.422494,
+   "es_limit": -244764.559806,
+   "breach": false
+  },
+  {
+   "date": "24 Jan 2024",
+   "pnl": 83403.840985,
+   "var_limit": -184171.724657,
+   "es_limit": -240759.93993,
+   "breach": false
+  },
+  {
+   "date": "25 Jan 2024",
+   "pnl": -52507.90972,
+   "var_limit": -183744.383142,
+   "es_limit": -240203.135531,
+   "breach": false
+  },
+  {
+   "date": "26 Jan 2024",
+   "pnl": 16051.7659,
+   "var_limit": -187071.303819,
+   "es_limit": -244537.718183,
+   "breach": false
+  },
+  {
+   "date": "29 Jan 2024",
+   "pnl": 117641.329557,
+   "var_limit": -182696.500177,
+   "es_limit": -238837.760625,
+   "breach": false
+  },
+  {
+   "date": "30 Jan 2024",
+   "pnl": -8790.770015,
+   "var_limit": -186102.701808,
+   "es_limit": -243275.798484,
+   "breach": false
+  },
+  {
+   "date": "31 Jan 2024",
+   "pnl": -231767.961854,
+   "var_limit": -181912.215622,
+   "es_limit": -237815.816481,
+   "breach": true
+  },
+  {
+   "date": "01 Feb 2024",
+   "pnl": 90757.535411,
+   "var_limit": -350582.119113,
+   "es_limit": -397203.839903,
+   "breach": false
+  },
+  {
+   "date": "02 Feb 2024",
+   "pnl": 358554.03441,
+   "var_limit": -279977.592548,
+   "es_limit": -356116.305405,
+   "breach": false
+  },
+  {
+   "date": "05 Feb 2024",
+   "pnl": -46912.989922,
+   "var_limit": -307978.696687,
+   "es_limit": -391554.621174,
+   "breach": false
+  },
+  {
+   "date": "06 Feb 2024",
+   "pnl": 19942.375914,
+   "var_limit": -295112.376621,
+   "es_limit": -375274.981733,
+   "breach": false
+  },
+  {
+   "date": "07 Feb 2024",
+   "pnl": 136014.162828,
+   "var_limit": -279873.070388,
+   "es_limit": -355983.960943,
+   "breach": false
+  },
+  {
+   "date": "08 Feb 2024",
+   "pnl": 10779.63027,
+   "var_limit": -272482.2466,
+   "es_limit": -346624.660333,
+   "breach": false
+  },
+  {
+   "date": "09 Feb 2024",
+   "pnl": 99606.684332,
+   "var_limit": -259212.786067,
+   "es_limit": -329815.336792,
+   "breach": false
+  },
+  {
+   "date": "12 Feb 2024",
+   "pnl": -51314.828039,
+   "var_limit": -251002.68904,
+   "es_limit": -319411.408285,
+   "breach": false
+  },
+  {
+   "date": "13 Feb 2024",
+   "pnl": -131915.739351,
+   "var_limit": -245060.00243,
+   "es_limit": -311879.031432,
+   "breach": false
+  },
+  {
+   "date": "14 Feb 2024",
+   "pnl": 113298.141604,
+   "var_limit": -268557.982531,
+   "es_limit": -341654.287325,
+   "breach": false
+  },
+  {
+   "date": "15 Feb 2024",
+   "pnl": 83870.016641,
+   "var_limit": -260411.391375,
+   "es_limit": -331333.990174,
+   "breach": false
+  },
+  {
+   "date": "16 Feb 2024",
+   "pnl": -62648.16713,
+   "var_limit": -250963.908899,
+   "es_limit": -319362.259042,
+   "breach": false
+  },
+  {
+   "date": "20 Feb 2024",
+   "pnl": -106939.309985,
+   "var_limit": -247606.716831,
+   "es_limit": -315107.179726,
+   "breach": false
+  },
+  {
+   "date": "21 Feb 2024",
+   "pnl": 15768.049455,
+   "var_limit": -259399.336452,
+   "es_limit": -330051.703213,
+   "breach": false
+  },
+  {
+   "date": "22 Feb 2024",
+   "pnl": 327960.245881,
+   "var_limit": -247415.625161,
+   "es_limit": -314864.966236,
+   "breach": false
+  },
+  {
+   "date": "23 Feb 2024",
+   "pnl": -40307.268313,
+   "var_limit": -276142.055087,
+   "es_limit": -351259.5069,
+   "breach": false
+  },
+  {
+   "date": "26 Feb 2024",
+   "pnl": -24739.84273,
+   "var_limit": -265496.946801,
+   "es_limit": -337776.815466,
+   "breach": false
+  },
+  {
+   "date": "27 Feb 2024",
+   "pnl": -5878.315254,
+   "var_limit": -254017.626801,
+   "es_limit": -323232.295241,
+   "breach": false
+  },
+  {
+   "date": "28 Feb 2024",
+   "pnl": -55532.608512,
+   "var_limit": -242521.255614,
+   "es_limit": -308660.71614,
+   "breach": false
+  },
+  {
+   "date": "29 Feb 2024",
+   "pnl": 83939.00902,
+   "var_limit": -238519.614353,
+   "es_limit": -303587.380551,
+   "breach": false
+  },
+  {
+   "date": "01 Mar 2024",
+   "pnl": 66064.410582,
+   "var_limit": -231450.821936,
+   "es_limit": -294623.854044,
+   "breach": false
+  },
+  {
+   "date": "04 Mar 2024",
+   "pnl": -121847.296579,
+   "var_limit": -224023.003994,
+   "es_limit": -285202.84695,
+   "breach": false
+  },
+  {
+   "date": "05 Mar 2024",
+   "pnl": -121432.96495,
+   "var_limit": -247225.782967,
+   "es_limit": -314624.334996,
+   "breach": false
+  },
+  {
+   "date": "06 Mar 2024",
+   "pnl": 21594.476366,
+   "var_limit": -265935.346212,
+   "es_limit": -338020.959274,
+   "breach": false
+  },
+  {
+   "date": "07 Mar 2024",
+   "pnl": 161968.714622,
+   "var_limit": -253523.735807,
+   "es_limit": -322309.427804,
+   "breach": false
+  },
+  {
+   "date": "08 Mar 2024",
+   "pnl": -81580.051972,
+   "var_limit": -251789.299213,
+   "es_limit": -320113.345621,
+   "breach": false
+  },
+  {
+   "date": "11 Mar 2024",
+   "pnl": -19613.670956,
+   "var_limit": -253954.936722,
+   "es_limit": -322855.379934,
+   "breach": false
+  },
+  {
+   "date": "12 Mar 2024",
+   "pnl": 167176.371089,
+   "var_limit": -243307.055205,
+   "es_limit": -309371.647535,
+   "breach": false
+  },
+  {
+   "date": "13 Mar 2024",
+   "pnl": -40147.127899,
+   "var_limit": -243592.998866,
+   "es_limit": -309733.807477,
+   "breach": false
+  },
+  {
+   "date": "14 Mar 2024",
+   "pnl": -6029.429832,
+   "var_limit": -236585.371676,
+   "es_limit": -300857.378608,
+   "breach": false
+  },
+  {
+   "date": "15 Mar 2024",
+   "pnl": -59126.893264,
+   "var_limit": -226954.928099,
+   "es_limit": -288655.386837,
+   "breach": false
+  },
+  {
+   "date": "18 Mar 2024",
+   "pnl": 155772.179072,
+   "var_limit": -226070.295167,
+   "es_limit": -287534.345731,
+   "breach": false
+  },
+  {
+   "date": "19 Mar 2024",
+   "pnl": 50205.009879,
+   "var_limit": -227397.7756,
+   "es_limit": -289216.56827,
+   "breach": false
+  },
+  {
+   "date": "20 Mar 2024",
+   "pnl": 114017.240914,
+   "var_limit": -219689.886771,
+   "es_limit": -279447.893647,
+   "breach": false
+  },
+  {
+   "date": "21 Mar 2024",
+   "pnl": -19818.999775,
+   "var_limit": -217289.625008,
+   "es_limit": -276405.398498,
+   "breach": false
+  },
+  {
+   "date": "22 Mar 2024",
+   "pnl": 42872.890232,
+   "var_limit": -210511.978826,
+   "es_limit": -267812.994348,
+   "breach": false
+  },
+  {
+   "date": "25 Mar 2024",
+   "pnl": -24237.414245,
+   "var_limit": -204369.293232,
+   "es_limit": -260023.937521,
+   "breach": false
+  },
+  {
+   "date": "26 Mar 2024",
+   "pnl": -22924.966487,
+   "var_limit": -199539.766347,
+   "es_limit": -253898.907386,
+   "breach": false
+  },
+  {
+   "date": "27 Mar 2024",
+   "pnl": 39083.476544,
+   "var_limit": -195126.300867,
+   "es_limit": -248300.709309,
+   "breach": false
+  },
+  {
+   "date": "28 Mar 2024",
+   "pnl": -23559.385787,
+   "var_limit": -190613.447995,
+   "es_limit": -242575.619028,
+   "breach": false
+  },
+  {
+   "date": "01 Apr 2024",
+   "pnl": 32451.55324,
+   "var_limit": -187362.091498,
+   "es_limit": -238450.36953,
+   "breach": false
+  },
+  {
+   "date": "02 Apr 2024",
+   "pnl": -112772.531672,
+   "var_limit": -183542.719994,
+   "es_limit": -233603.881799,
+   "breach": false
+  },
+  {
+   "date": "03 Apr 2024",
+   "pnl": 39068.251252,
+   "var_limit": -212275.095731,
+   "es_limit": -270048.378425,
+   "breach": false
+  },
+  {
+   "date": "04 Apr 2024",
+   "pnl": -76164.967477,
+   "var_limit": -205794.528,
+   "es_limit": -261831.303607,
+   "breach": false
+  },
+  {
+   "date": "05 Apr 2024",
+   "pnl": 110781.053957,
+   "var_limit": -213395.286567,
+   "es_limit": -271468.556481,
+   "breach": false
+  },
+  {
+   "date": "08 Apr 2024",
+   "pnl": 25719.503878,
+   "var_limit": -211506.307778,
+   "es_limit": -269073.679189,
+   "breach": false
+  },
+  {
+   "date": "09 Apr 2024",
+   "pnl": 29253.562151,
+   "var_limit": -204721.040526,
+   "es_limit": -260470.002394,
+   "breach": false
+  },
+  {
+   "date": "10 Apr 2024",
+   "pnl": -43144.776612,
+   "var_limit": -198780.281195,
+   "es_limit": -252935.606039,
+   "breach": false
+  },
+  {
+   "date": "11 Apr 2024",
+   "pnl": 134278.587277,
+   "var_limit": -197860.649096,
+   "es_limit": -251769.148894,
+   "breach": false
+  },
+  {
+   "date": "12 Apr 2024",
+   "pnl": -181408.926405,
+   "var_limit": -200717.787608,
+   "es_limit": -255393.016817,
+   "breach": false
+  },
+  {
+   "date": "15 Apr 2024",
+   "pnl": -170955.439385,
+   "var_limit": -266638.067091,
+   "es_limit": -338910.325635,
+   "breach": false
+  },
+  {
+   "date": "16 Apr 2024",
+   "pnl": -4037.957622,
+   "var_limit": -306092.915434,
+   "es_limit": -388811.925303,
+   "breach": false
+  },
+  {
+   "date": "17 Apr 2024",
+   "pnl": -62229.314684,
+   "var_limit": -289860.862794,
+   "es_limit": -368289.754941,
+   "breach": false
+  },
+  {
+   "date": "18 Apr 2024",
+   "pnl": -6657.650856,
+   "var_limit": -281928.030999,
+   "es_limit": -358256.333809,
+   "breach": false
+  },
+  {
+   "date": "19 Apr 2024",
+   "pnl": -169384.083747,
+   "var_limit": -267933.907415,
+   "es_limit": -340550.29307,
+   "breach": false
+  },
+  {
+   "date": "22 Apr 2024",
+   "pnl": 54252.495895,
+   "var_limit": -306184.679063,
+   "es_limit": -388927.911113,
+   "breach": false
+  },
+  {
+   "date": "23 Apr 2024",
+   "pnl": 137575.424283,
+   "var_limit": -290841.855165,
+   "es_limit": -369530.330986,
+   "breach": false
+  },
+  {
+   "date": "24 Apr 2024",
+   "pnl": 78087.230593,
+   "var_limit": -282100.76029,
+   "es_limit": -358474.828882,
+   "breach": false
+  },
+  {
+   "date": "25 Apr 2024",
+   "pnl": -68703.103415,
+   "var_limit": -270079.358884,
+   "es_limit": -343265.344953,
+   "breach": false
+  },
+  {
+   "date": "26 Apr 2024",
+   "pnl": 181523.008769,
+   "var_limit": -266049.58829,
+   "es_limit": -338165.545888,
+   "breach": false
+  },
+  {
+   "date": "29 Apr 2024",
+   "pnl": 110162.936471,
+   "var_limit": -264967.341405,
+   "es_limit": -336795.815241,
+   "breach": false
+  },
+  {
+   "date": "30 Apr 2024",
+   "pnl": -215597.844203,
+   "var_limit": -256826.767328,
+   "es_limit": -326491.267266,
+   "breach": false
+  },
+  {
+   "date": "01 May 2024",
+   "pnl": -15494.279359,
+   "var_limit": -326582.170653,
+   "es_limit": -414700.963382,
+   "breach": false
+  },
+  {
+   "date": "02 May 2024",
+   "pnl": 136275.709929,
+   "var_limit": -308909.181359,
+   "es_limit": -392371.422406,
+   "breach": false
+  },
+  {
+   "date": "03 May 2024",
+   "pnl": 149570.273016,
+   "var_limit": -298089.116714,
+   "es_limit": -378694.08631,
+   "breach": false
+  },
+  {
+   "date": "06 May 2024",
+   "pnl": 132045.724231,
+   "var_limit": -289617.407655,
+   "es_limit": -367981.872183,
+   "breach": false
+  },
+  {
+   "date": "07 May 2024",
+   "pnl": -28797.887475,
+   "var_limit": -280534.795772,
+   "es_limit": -356493.906674,
+   "breach": false
+  },
+  {
+   "date": "08 May 2024",
+   "pnl": 5495.052736,
+   "var_limit": -268117.563665,
+   "es_limit": -340782.716015,
+   "breach": false
+  },
+  {
+   "date": "09 May 2024",
+   "pnl": 35287.41875,
+   "var_limit": -255340.920248,
+   "es_limit": -324610.149705,
+   "breach": false
+  },
+  {
+   "date": "10 May 2024",
+   "pnl": -10095.816756,
+   "var_limit": -244245.215132,
+   "es_limit": -310559.854851,
+   "breach": false
+  },
+  {
+   "date": "13 May 2024",
+   "pnl": 16318.417248,
+   "var_limit": -233983.440891,
+   "es_limit": -297561.048476,
+   "breach": false
+  },
+  {
+   "date": "14 May 2024",
+   "pnl": 96048.386696,
+   "var_limit": -224647.444474,
+   "es_limit": -285731.186837,
+   "breach": false
+  },
+  {
+   "date": "15 May 2024",
+   "pnl": 93855.052245,
+   "var_limit": -220050.737926,
+   "es_limit": -279905.276599,
+   "breach": false
+  },
+  {
+   "date": "16 May 2024",
+   "pnl": -20892.891199,
+   "var_limit": -215836.974679,
+   "es_limit": -274563.950488,
+   "breach": false
+  },
+  {
+   "date": "17 May 2024",
+   "pnl": 37190.809333,
+   "var_limit": -209324.471753,
+   "es_limit": -266307.330647,
+   "breach": false
+  },
+  {
+   "date": "20 May 2024",
+   "pnl": -44225.959379,
+   "var_limit": -203108.879086,
+   "es_limit": -258425.514044,
+   "breach": false
+  },
+  {
+   "date": "21 May 2024",
+   "pnl": 102046.086791,
+   "var_limit": -201843.547676,
+   "es_limit": -256820.789092,
+   "breach": false
+  },
+  {
+   "date": "22 May 2024",
+   "pnl": -72924.462351,
+   "var_limit": -200662.421075,
+   "es_limit": -255322.79554,
+   "breach": false
+  },
+  {
+   "date": "23 May 2024",
+   "pnl": -30432.243738,
+   "var_limit": -207989.281775,
+   "es_limit": -264614.347782,
+   "breach": false
+  },
+  {
+   "date": "24 May 2024",
+   "pnl": 117445.365752,
+   "var_limit": -203567.263083,
+   "es_limit": -259006.831896,
+   "breach": false
+  },
+  {
+   "date": "28 May 2024",
+   "pnl": 84156.304482,
+   "var_limit": -203679.536039,
+   "es_limit": -259149.213985,
+   "breach": false
+  },
+  {
+   "date": "29 May 2024",
+   "pnl": -62202.701847,
+   "var_limit": -200736.821445,
+   "es_limit": -255417.15737,
+   "breach": false
+  },
+  {
+   "date": "30 May 2024",
+   "pnl": -111653.420029,
+   "var_limit": -204529.186385,
+   "es_limit": -260226.705081,
+   "breach": false
+  },
+  {
+   "date": "31 May 2024",
+   "pnl": 48767.914945,
+   "var_limit": -227573.287106,
+   "es_limit": -289438.976236,
+   "breach": false
+  },
+  {
+   "date": "03 Jun 2024",
+   "pnl": 57987.988896,
+   "var_limit": -219786.863873,
+   "es_limit": -279570.813754,
+   "breach": false
+  },
+  {
+   "date": "04 Jun 2024",
+   "pnl": 8463.725531,
+   "var_limit": -213274.900491,
+   "es_limit": -271315.93347,
+   "breach": false
+  },
+  {
+   "date": "05 Jun 2024",
+   "pnl": 130980.269602,
+   "var_limit": -205888.46463,
+   "es_limit": -262100.115057,
+   "breach": false
+  },
+  {
+   "date": "06 Jun 2024",
+   "pnl": 25891.424342,
+   "var_limit": -207097.185237,
+   "es_limit": -263633.709644,
+   "breach": false
+  },
+  {
+   "date": "07 Jun 2024",
+   "pnl": -28926.595089,
+   "var_limit": -200767.091352,
+   "es_limit": -255601.577535,
+   "breach": false
+  },
+  {
+   "date": "10 Jun 2024",
+   "pnl": 27525.506567,
+   "var_limit": -196973.404021,
+   "es_limit": -250787.052268,
+   "breach": false
+  },
+  {
+   "date": "11 Jun 2024",
+   "pnl": 47523.567706,
+   "var_limit": -191835.367536,
+   "es_limit": -244265.485431,
+   "breach": false
+  },
+  {
+   "date": "12 Jun 2024",
+   "pnl": 101483.488087,
+   "var_limit": -188036.394868,
+   "es_limit": -239442.857256,
+   "breach": false
+  },
+  {
+   "date": "13 Jun 2024",
+   "pnl": 43711.536,
+   "var_limit": -188655.033043,
+   "es_limit": -240228.231554,
+   "breach": false
+  },
+  {
+   "date": "14 Jun 2024",
+   "pnl": -8693.922892,
+   "var_limit": -185072.47209,
+   "es_limit": -235679.876174,
+   "breach": false
+  },
+  {
+   "date": "17 Jun 2024",
+   "pnl": 75315.013001,
+   "var_limit": -181167.22812,
+   "es_limit": -230721.247417,
+   "breach": false
+  },
+  {
+   "date": "18 Jun 2024",
+   "pnl": -21527.15839,
+   "var_limit": -180446.249832,
+   "es_limit": -229805.726831,
+   "breach": false
+  },
+  {
+   "date": "20 Jun 2024",
+   "pnl": -20988.423006,
+   "var_limit": -178200.40891,
+   "es_limit": -226953.751527,
+   "breach": false
+  },
+  {
+   "date": "21 Jun 2024",
+   "pnl": -32997.249376,
+   "var_limit": -176179.221517,
+   "es_limit": -224386.884798,
+   "breach": false
+  },
+  {
+   "date": "24 Jun 2024",
+   "pnl": -37395.35039,
+   "var_limit": -176281.464632,
+   "es_limit": -224516.735496,
+   "breach": false
+  },
+  {
+   "date": "25 Jun 2024",
+   "pnl": 151633.626674,
+   "var_limit": -177251.37059,
+   "es_limit": -225748.513131,
+   "breach": false
+  },
+  {
+   "date": "26 Jun 2024",
+   "pnl": 114076.218731,
+   "var_limit": -185782.347942,
+   "es_limit": -236581.163774,
+   "breach": false
+  },
+  {
+   "date": "27 Jun 2024",
+   "pnl": 51027.900798,
+   "var_limit": -188046.919587,
+   "es_limit": -239456.218742,
+   "breach": false
+  },
+  {
+   "date": "28 Jun 2024",
+   "pnl": -45150.684451,
+   "var_limit": -184884.878968,
+   "es_limit": -235441.696766,
+   "breach": false
+  },
+  {
+   "date": "01 Jul 2024",
+   "pnl": 129336.668342,
+   "var_limit": -186376.070123,
+   "es_limit": -237334.96199,
+   "breach": false
+  },
+  {
+   "date": "02 Jul 2024",
+   "pnl": 168575.522461,
+   "var_limit": -190338.006961,
+   "es_limit": -242364.723076,
+   "breach": false
+  },
+  {
+   "date": "03 Jul 2024",
+   "pnl": 107627.553989,
+   "var_limit": -199075.444465,
+   "es_limit": -253454.800899,
+   "breach": false
+  },
+  {
+   "date": "05 Jul 2024",
+   "pnl": 108252.691455,
+   "var_limit": -198751.033357,
+   "es_limit": -253043.09504,
+   "breach": false
+  },
+  {
+   "date": "08 Jul 2024",
+   "pnl": -8265.806648,
+   "var_limit": -198533.458141,
+   "es_limit": -252766.970778,
+   "breach": false
+  },
+  {
+   "date": "09 Jul 2024",
+   "pnl": 67063.762069,
+   "var_limit": -193029.361264,
+   "es_limit": -245781.085265,
+   "breach": false
+  },
+  {
+   "date": "10 Jul 2024",
+   "pnl": 112500.899245,
+   "var_limit": -190171.45679,
+   "es_limit": -242153.297165,
+   "breach": false
+  },
+  {
+   "date": "11 Jul 2024",
+   "pnl": -286839.124052,
+   "var_limit": -191613.845432,
+   "es_limit": -243984.289181,
+   "breach": true
+  },
+  {
+   "date": "12 Jul 2024",
+   "pnl": 30306.052825,
+   "var_limit": -413153.965046,
+   "es_limit": -471048.778387,
+   "breach": false
+  },
+  {
+   "date": "15 Jul 2024",
+   "pnl": 75111.033972,
+   "var_limit": -389995.766786,
+   "es_limit": -444733.251237,
+   "breach": false
+  },
+  {
+   "date": "16 Jul 2024",
+   "pnl": 57448.832983,
+   "var_limit": -370492.690542,
+   "es_limit": -422563.018462,
+   "breach": false
+  },
+  {
+   "date": "17 Jul 2024",
+   "pnl": -160409.558029,
+   "var_limit": -351934.634284,
+   "es_limit": -401460.127055,
+   "breach": false
+  },
+  {
+   "date": "18 Jul 2024",
+   "pnl": -52640.576471,
+   "var_limit": -385211.065186,
+   "es_limit": -439294.904508,
+   "breach": false
+  },
+  {
+   "date": "19 Jul 2024",
+   "pnl": -103655.730362,
+   "var_limit": -369499.512377,
+   "es_limit": -421433.818157,
+   "breach": false
+  },
+  {
+   "date": "22 Jul 2024",
+   "pnl": 137981.963755,
+   "var_limit": -371087.868605,
+   "es_limit": -423239.700735,
+   "breach": false
+  },
+  {
+   "date": "23 Jul 2024",
+   "pnl": -23698.77513,
+   "var_limit": -358198.131186,
+   "es_limit": -408583.280177,
+   "breach": false
+  },
+  {
+   "date": "24 Jul 2024",
+   "pnl": -392036.911156,
+   "var_limit": -340680.484626,
+   "es_limit": -388659.433604,
+   "breach": true
+  },
+  {
+   "date": "25 Jul 2024",
+   "pnl": -51919.415682,
+   "var_limit": -573522.9238,
+   "es_limit": -668359.090398,
+   "breach": false
+  },
+  {
+   "date": "26 Jul 2024",
+   "pnl": 95787.679826,
+   "var_limit": -540756.336027,
+   "es_limit": -630376.457031,
+   "breach": false
+  },
+  {
+   "date": "29 Jul 2024",
+   "pnl": 49009.710963,
+   "var_limit": -509339.216525,
+   "es_limit": -593934.821586,
+   "breach": false
+  },
+  {
+   "date": "30 Jul 2024",
+   "pnl": -67299.829544,
+   "var_limit": -478720.278464,
+   "es_limit": -558397.132796,
+   "breach": false
+  },
+  {
+   "date": "31 Jul 2024",
+   "pnl": 209928.308227,
+   "var_limit": -456931.64047,
+   "es_limit": -533095.148523,
+   "breach": false
+  },
+  {
+   "date": "01 Aug 2024",
+   "pnl": -166314.384529,
+   "var_limit": -442749.366576,
+   "es_limit": -516620.172749,
+   "breach": false
+  },
+  {
+   "date": "02 Aug 2024",
+   "pnl": -216659.180809,
+   "var_limit": -461768.738222,
+   "es_limit": -538713.154194,
+   "breach": false
+  },
+  {
+   "date": "05 Aug 2024",
+   "pnl": -368023.432681,
+   "var_limit": -505590.704303,
+   "es_limit": -589585.292743,
+   "breach": false
+  },
+  {
+   "date": "06 Aug 2024",
+   "pnl": 104779.254918,
+   "var_limit": -647062.803725,
+   "es_limit": -753515.033368,
+   "breach": false
+  },
+  {
+   "date": "07 Aug 2024",
+   "pnl": -73158.032343,
+   "var_limit": -607569.518261,
+   "es_limit": -707799.155918,
+   "breach": false
+  },
+  {
+   "date": "08 Aug 2024",
+   "pnl": 238983.270392,
+   "var_limit": -575229.170079,
+   "es_limit": -670336.270068,
+   "breach": false
+  },
+  {
+   "date": "09 Aug 2024",
+   "pnl": 63422.944132,
+   "var_limit": -551952.91262,
+   "es_limit": -643358.185853,
+   "breach": false
+  },
+  {
+   "date": "12 Aug 2024",
+   "pnl": 37910.280425,
+   "var_limit": -518360.042997,
+   "es_limit": -604400.672199,
+   "breach": false
+  },
+  {
+   "date": "13 Aug 2024",
+   "pnl": 217782.855958,
+   "var_limit": -486765.729908,
+   "es_limit": -567737.128221,
+   "breach": false
+  },
+  {
+   "date": "14 Aug 2024",
+   "pnl": 521.239092,
+   "var_limit": -470270.532081,
+   "es_limit": -548586.187422,
+   "breach": false
+  },
+  {
+   "date": "15 Aug 2024",
+   "pnl": 204740.301595,
+   "var_limit": -442121.449906,
+   "es_limit": -515890.6406,
+   "breach": false
+  },
+  {
+   "date": "16 Aug 2024",
+   "pnl": 12299.126066,
+   "var_limit": -428955.38422,
+   "es_limit": -500591.834548,
+   "breach": false
+  },
+  {
+   "date": "19 Aug 2024",
+   "pnl": 124570.968183,
+   "var_limit": -404243.694628,
+   "es_limit": -471866.436587,
+   "breach": false
+  },
+  {
+   "date": "20 Aug 2024",
+   "pnl": -52570.375477,
+   "var_limit": -386804.060314,
+   "es_limit": -451585.824587,
+   "breach": false
+  },
+  {
+   "date": "21 Aug 2024",
+   "pnl": 23966.650419,
+   "var_limit": -370977.559676,
+   "es_limit": -433175.118646,
+   "breach": false
+  },
+  {
+   "date": "22 Aug 2024",
+   "pnl": -143987.977465,
+   "var_limit": -351399.613385,
+   "es_limit": -410392.512122,
+   "breach": false
+  },
+  {
+   "date": "23 Aug 2024",
+   "pnl": 141960.871764,
+   "var_limit": -375548.578498,
+   "es_limit": -438493.096267,
+   "breach": false
+  },
+  {
+   "date": "26 Aug 2024",
+   "pnl": -51039.351184,
+   "var_limit": -361723.67712,
+   "es_limit": -423299.248942,
+   "breach": false
+  },
+  {
+   "date": "27 Aug 2024",
+   "pnl": -26723.067609,
+   "var_limit": -348086.871652,
+   "es_limit": -407395.592986,
+   "breach": false
+  },
+  {
+   "date": "28 Aug 2024",
+   "pnl": -82721.586833,
+   "var_limit": -331842.998966,
+   "es_limit": -388445.877492,
+   "breach": false
+  },
+  {
+   "date": "29 Aug 2024",
+   "pnl": -18278.221533,
+   "var_limit": -330731.801707,
+   "es_limit": -387149.358126,
+   "breach": false
+  },
+  {
+   "date": "30 Aug 2024",
+   "pnl": 113730.570233,
+   "var_limit": -315303.943634,
+   "es_limit": -369145.539449,
+   "breach": false
+  },
+  {
+   "date": "03 Sep 2024",
+   "pnl": -251671.843166,
+   "var_limit": -306149.293022,
+   "es_limit": -358459.754415,
+   "breach": false
+  },
+  {
+   "date": "04 Sep 2024",
+   "pnl": -10798.636657,
+   "var_limit": -421021.661055,
+   "es_limit": -492404.183512,
+   "breach": false
+  },
+  {
+   "date": "05 Sep 2024",
+   "pnl": 74496.156937,
+   "var_limit": -392960.134542,
+   "es_limit": -460653.042035,
+   "breach": false
+  },
+  {
+   "date": "06 Sep 2024",
+   "pnl": -287854.255006,
+   "var_limit": -372964.980816,
+   "es_limit": -437300.92393,
+   "breach": false
+  },
+  {
+   "date": "09 Sep 2024",
+   "pnl": 125892.565683,
+   "var_limit": -491106.119612,
+   "es_limit": -575139.04827,
+   "breach": false
+  },
+  {
+   "date": "10 Sep 2024",
+   "pnl": 23272.946523,
+   "var_limit": -465442.149359,
+   "es_limit": -545224.486802,
+   "breach": false
+  },
+  {
+   "date": "11 Sep 2024",
+   "pnl": 159594.554836,
+   "var_limit": -368771.508584,
+   "es_limit": -462750.988467,
+   "breach": false
+  },
+  {
+   "date": "12 Sep 2024",
+   "pnl": 108172.942505,
+   "var_limit": -353925.666144,
+   "es_limit": -444216.928844,
+   "breach": false
+  },
+  {
+   "date": "13 Sep 2024",
+   "pnl": 20893.914161,
+   "var_limit": -336715.247358,
+   "es_limit": -422720.785894,
+   "breach": false
+  },
+  {
+   "date": "16 Sep 2024",
+   "pnl": -25101.558857,
+   "var_limit": -317724.556358,
+   "es_limit": -398988.520539,
+   "breach": false
+  },
+  {
+   "date": "17 Sep 2024",
+   "pnl": 30878.119036,
+   "var_limit": -301310.367558,
+   "es_limit": -378465.477225,
+   "breach": false
+  },
+  {
+   "date": "18 Sep 2024",
+   "pnl": -11223.951243,
+   "var_limit": -285676.144546,
+   "es_limit": -358908.53291,
+   "breach": false
+  },
+  {
+   "date": "19 Sep 2024",
+   "pnl": 265065.892225,
+   "var_limit": -271388.768809,
+   "es_limit": -341028.602697,
+   "breach": false
+  },
+  {
+   "date": "20 Sep 2024",
+   "pnl": -36601.857795,
+   "var_limit": -283376.61756,
+   "es_limit": -356031.291389,
+   "breach": false
+  },
+  {
+   "date": "23 Sep 2024",
+   "pnl": 68657.240668,
+   "var_limit": -271537.065442,
+   "es_limit": -341214.226517,
+   "breach": false
+  },
+  {
+   "date": "24 Sep 2024",
+   "pnl": 52945.627334,
+   "var_limit": -260161.577605,
+   "es_limit": -326973.140376,
+   "breach": false
+  },
+  {
+   "date": "25 Sep 2024",
+   "pnl": 10328.499332,
+   "var_limit": -249211.220492,
+   "es_limit": -313259.846234,
+   "breach": false
+  },
+  {
+   "date": "26 Sep 2024",
+   "pnl": -26765.945666,
+   "var_limit": -238274.762766,
+   "es_limit": -299559.62092,
+   "breach": false
+  },
+  {
+   "date": "27 Sep 2024",
+   "pnl": 28971.695332,
+   "var_limit": -229969.409437,
+   "es_limit": -289152.516009,
+   "breach": false
+  },
+  {
+   "date": "30 Sep 2024",
+   "pnl": 62575.50829,
+   "var_limit": -221349.497171,
+   "es_limit": -278348.609419,
+   "breach": false
+  },
+  {
+   "date": "01 Oct 2024",
+   "pnl": -91718.512691,
+   "var_limit": -215094.395385,
+   "es_limit": -270506.993176,
+   "breach": false
+  },
+  {
+   "date": "02 Oct 2024",
+   "pnl": -10118.080374,
+   "var_limit": -227179.441406,
+   "es_limit": -285655.958721,
+   "breach": false
+  },
+  {
+   "date": "03 Oct 2024",
+   "pnl": -2780.622845,
+   "var_limit": -218709.481383,
+   "es_limit": -275039.165108,
+   "breach": false
+  },
+  {
+   "date": "04 Oct 2024",
+   "pnl": 164251.398659,
+   "var_limit": -210935.475411,
+   "es_limit": -265292.441226,
+   "breach": false
+  },
+  {
+   "date": "07 Oct 2024",
+   "pnl": -133193.448992,
+   "var_limit": -213440.831464,
+   "es_limit": -271840.926963,
+   "breach": false
+  },
+  {
+   "date": "08 Oct 2024",
+   "pnl": 87045.784756,
+   "var_limit": -244563.045387,
+   "es_limit": -311330.961448,
+   "breach": false
+  },
+  {
+   "date": "09 Oct 2024",
+   "pnl": 30827.096165,
+   "var_limit": -236934.987086,
+   "es_limit": -301655.441906,
+   "breach": false
+  },
+  {
+   "date": "10 Oct 2024",
+   "pnl": 17960.219593,
+   "var_limit": -227391.36357,
+   "es_limit": -289547.002103,
+   "breach": false
+  },
+  {
+   "date": "11 Oct 2024",
+   "pnl": -6444.179624,
+   "var_limit": -218578.337348,
+   "es_limit": -278362.353165,
+   "breach": false
+  },
+  {
+   "date": "14 Oct 2024",
+   "pnl": 71433.665092,
+   "var_limit": -210656.963412,
+   "es_limit": -268306.722636,
+   "breach": false
+  },
+  {
+   "date": "15 Oct 2024",
+   "pnl": -154670.439847,
+   "var_limit": -205918.794236,
+   "es_limit": -262290.780542,
+   "breach": false
+  },
+  {
+   "date": "16 Oct 2024",
+   "pnl": 37486.335645,
+   "var_limit": -251410.809913,
+   "es_limit": -320014.813791,
+   "breach": false
+  },
+  {
+   "date": "17 Oct 2024",
+   "pnl": -6503.438782,
+   "var_limit": -240565.150287,
+   "es_limit": -306260.26692,
+   "breach": false
+  },
+  {
+   "date": "18 Oct 2024",
+   "pnl": 41409.33565,
+   "var_limit": -230333.781478,
+   "es_limit": -293280.563319,
+   "breach": false
+  },
+  {
+   "date": "21 Oct 2024",
+   "pnl": 42101.131959,
+   "var_limit": -221818.805461,
+   "es_limit": -282475.196697,
+   "breach": false
+  },
+  {
+   "date": "22 Oct 2024",
+   "pnl": 42602.088315,
+   "var_limit": -214257.404119,
+   "es_limit": -272877.533312,
+   "breach": false
+  },
+  {
+   "date": "23 Oct 2024",
+   "pnl": -165270.162796,
+   "var_limit": -207560.358472,
+   "es_limit": -264375.135008,
+   "breach": false
+  },
+  {
+   "date": "24 Oct 2024",
+   "pnl": 197188.608991,
+   "var_limit": -259093.322737,
+   "es_limit": -329755.056931,
+   "breach": false
+  },
+  {
+   "date": "25 Oct 2024",
+   "pnl": 78469.265683,
+   "var_limit": -261443.171107,
+   "es_limit": -332733.842623,
+   "breach": false
+  },
+  {
+   "date": "28 Oct 2024",
+   "pnl": 2600.099746,
+   "var_limit": -251410.711081,
+   "es_limit": -320014.688473,
+   "breach": false
+  },
+  {
+   "date": "29 Oct 2024",
+   "pnl": 33221.17165,
+   "var_limit": -240002.723555,
+   "es_limit": -305546.867984,
+   "breach": false
+  },
+  {
+   "date": "30 Oct 2024",
+   "pnl": 2718.275937,
+   "var_limit": -230204.514759,
+   "es_limit": -293116.547067,
+   "breach": false
+  },
+  {
+   "date": "31 Oct 2024",
+   "pnl": -260273.347035,
+   "var_limit": -220956.238795,
+   "es_limit": -281380.456008,
+   "breach": true
+  },
+  {
+   "date": "01 Nov 2024",
+   "pnl": 69531.088775,
+   "var_limit": -393683.388984,
+   "es_limit": -437139.217784,
+   "breach": false
+  },
+  {
+   "date": "04 Nov 2024",
+   "pnl": -63097.51532,
+   "var_limit": -372987.492477,
+   "es_limit": -414212.562136,
+   "breach": false
+  },
+  {
+   "date": "05 Nov 2024",
+   "pnl": 147852.141587,
+   "var_limit": -359823.97449,
+   "es_limit": -399627.049868,
+   "breach": false
+  },
+  {
+   "date": "06 Nov 2024",
+   "pnl": 467265.815353,
+   "var_limit": -348722.671414,
+   "es_limit": -387324.63388,
+   "breach": false
+  },
+  {
+   "date": "07 Nov 2024",
+   "pnl": 128070.635505,
+   "var_limit": -405405.680045,
+   "es_limit": -450122.352158,
+   "breach": false
+  },
+  {
+   "date": "08 Nov 2024",
+   "pnl": 66952.846693,
+   "var_limit": -387551.681977,
+   "es_limit": -430347.217253,
+   "breach": false
+  },
+  {
+   "date": "11 Nov 2024",
+   "pnl": 82472.236153,
+   "var_limit": -367291.245334,
+   "es_limit": -407901.274253,
+   "breach": false
+  },
+  {
+   "date": "12 Nov 2024",
+   "pnl": -43962.740273,
+   "var_limit": -349780.760654,
+   "es_limit": -388497.278315,
+   "breach": false
+  },
+  {
+   "date": "13 Nov 2024",
+   "pnl": 5169.102696,
+   "var_limit": -335136.278643,
+   "es_limit": -372265.901012,
+   "breach": false
+  },
+  {
+   "date": "14 Nov 2024",
+   "pnl": -102620.264484,
+   "var_limit": -317992.469485,
+   "es_limit": -353260.550227,
+   "breach": false
+  },
+  {
+   "date": "15 Nov 2024",
+   "pnl": -134220.603861,
+   "var_limit": -324984.397849,
+   "es_limit": -361012.186112,
+   "breach": false
+  },
+  {
+   "date": "18 Nov 2024",
+   "pnl": 83274.061727,
+   "var_limit": -345768.548425,
+   "es_limit": -384050.596432,
+   "breach": false
+  },
+  {
+   "date": "19 Nov 2024",
+   "pnl": 79416.47322,
+   "var_limit": -330417.650547,
+   "es_limit": -367035.3162,
+   "breach": false
+  },
+  {
+   "date": "20 Nov 2024",
+   "pnl": 4660.513317,
+   "var_limit": -316355.916711,
+   "es_limit": -351446.079158,
+   "breach": false
+  },
+  {
+   "date": "21 Nov 2024",
+   "pnl": -56405.646614,
+   "var_limit": -300981.904347,
+   "es_limit": -334398.848885,
+   "breach": false
+  },
+  {
+   "date": "22 Nov 2024",
+   "pnl": 5560.874541,
+   "var_limit": -294425.663947,
+   "es_limit": -327128.061217,
+   "breach": false
+  },
+  {
+   "date": "25 Nov 2024",
+   "pnl": -12655.702916,
+   "var_limit": -281195.273856,
+   "es_limit": -312453.899201,
+   "breach": false
+  },
+  {
+   "date": "26 Nov 2024",
+   "pnl": 73158.251175,
+   "var_limit": -269681.155634,
+   "es_limit": -299681.311491,
+   "breach": false
+  },
+  {
+   "date": "27 Nov 2024",
+   "pnl": -60306.371561,
+   "var_limit": -261708.35141,
+   "es_limit": -290836.01385,
+   "breach": false
+  },
+  {
+   "date": "29 Nov 2024",
+   "pnl": 99752.383375,
+   "var_limit": -261385.875376,
+   "es_limit": -290478.229448,
+   "breach": false
+  },
+  {
+   "date": "02 Dec 2024",
+   "pnl": 107840.748325,
+   "var_limit": -256767.433111,
+   "es_limit": -285353.948432,
+   "breach": false
+  },
+  {
+   "date": "03 Dec 2024",
+   "pnl": 44151.22035,
+   "var_limit": -253614.059364,
+   "es_limit": -281855.028258,
+   "breach": false
+  },
+  {
+   "date": "04 Dec 2024",
+   "pnl": 84625.919502,
+   "var_limit": -245059.795049,
+   "es_limit": -272978.045537,
+   "breach": false
+  },
+  {
+   "date": "05 Dec 2024",
+   "pnl": -1343.063117,
+   "var_limit": -240854.457962,
+   "es_limit": -268300.794773,
+   "breach": false
+  },
+  {
+   "date": "06 Dec 2024",
+   "pnl": 56699.757287,
+   "var_limit": -233432.876979,
+   "es_limit": -260045.765127,
+   "breach": false
+  },
+  {
+   "date": "09 Dec 2024",
+   "pnl": -17364.962769,
+   "var_limit": -228607.873052,
+   "es_limit": -254678.488861,
+   "breach": false
+  },
+  {
+   "date": "10 Dec 2024",
+   "pnl": 66299.293766,
+   "var_limit": -223516.653587,
+   "es_limit": -249014.718045,
+   "breach": false
+  },
+  {
+   "date": "11 Dec 2024",
+   "pnl": 155405.73375,
+   "var_limit": -220596.503129,
+   "es_limit": -245766.005019,
+   "breach": false
+  },
+  {
+   "date": "12 Dec 2024",
+   "pnl": -89477.24756,
+   "var_limit": -228891.881748,
+   "es_limit": -254994.425902,
+   "breach": false
+  },
+  {
+   "date": "13 Dec 2024",
+   "pnl": -18775.939642,
+   "var_limit": -246168.763855,
+   "es_limit": -274211.418354,
+   "breach": false
+  },
+  {
+   "date": "16 Dec 2024",
+   "pnl": 96804.020787,
+   "var_limit": -239144.084462,
+   "es_limit": -266398.414777,
+   "breach": false
+  },
+  {
+   "date": "17 Dec 2024",
+   "pnl": -201.493017,
+   "var_limit": -236841.899067,
+   "es_limit": -263837.720243,
+   "breach": false
+  },
+  {
+   "date": "18 Dec 2024",
+   "pnl": -326525.558572,
+   "var_limit": -229873.756486,
+   "es_limit": -256086.674445,
+   "breach": true
+  },
+  {
+   "date": "19 Dec 2024",
+   "pnl": 4333.139017,
+   "var_limit": -455658.254723,
+   "es_limit": -530140.071055,
+   "breach": false
+  },
+  {
+   "date": "20 Dec 2024",
+   "pnl": 49892.585462,
+   "var_limit": -428379.520036,
+   "es_limit": -498531.302633,
+   "breach": false
+  },
+  {
+   "date": "23 Dec 2024",
+   "pnl": 123376.796103,
+   "var_limit": -404179.789676,
+   "es_limit": -470476.395896,
+   "breach": false
+  },
+  {
+   "date": "24 Dec 2024",
+   "pnl": 169990.930765,
+   "var_limit": -386315.149841,
+   "es_limit": -449757.441752,
+   "breach": false
+  },
+  {
+   "date": "26 Dec 2024",
+   "pnl": -31456.6955,
+   "var_limit": -374880.118301,
+   "es_limit": -436491.661269,
+   "breach": false
+  },
+  {
+   "date": "27 Dec 2024",
+   "pnl": -159758.896081,
+   "var_limit": -356531.298683,
+   "es_limit": -415199.130649,
+   "breach": false
+  },
+  {
+   "date": "30 Dec 2024",
+   "pnl": -114877.507379,
+   "var_limit": -388006.325168,
+   "es_limit": -451719.127783,
+   "breach": false
+  },
+  {
+   "date": "31 Dec 2024",
+   "pnl": -93030.464308,
+   "var_limit": -391179.292033,
+   "es_limit": -455399.452762,
+   "breach": false
+  },
+  {
+   "date": "02 Jan 2025",
+   "pnl": -40001.392491,
+   "var_limit": -385611.395203,
+   "es_limit": -448941.099836,
+   "breach": false
+  },
+  {
+   "date": "03 Jan 2025",
+   "pnl": 208572.690814,
+   "var_limit": -367421.536393,
+   "es_limit": -427837.395975,
+   "breach": false
+  },
+  {
+   "date": "06 Jan 2025",
+   "pnl": 134766.7683,
+   "var_limit": -363262.440834,
+   "es_limit": -423011.020834,
+   "breach": false
+  },
+  {
+   "date": "07 Jan 2025",
+   "pnl": -162807.448188,
+   "var_limit": -350675.408115,
+   "es_limit": -408402.204928,
+   "breach": false
+  },
+  {
+   "date": "08 Jan 2025",
+   "pnl": -8591.779824,
+   "var_limit": -385255.439241,
+   "es_limit": -448528.19354,
+   "breach": false
+  },
+  {
+   "date": "10 Jan 2025",
+   "pnl": -107776.790244,
+   "var_limit": -364161.284402,
+   "es_limit": -424054.10613,
+   "breach": false
+  },
+  {
+   "date": "13 Jan 2025",
+   "pnl": 50907.778909,
+   "var_limit": -367953.81487,
+   "es_limit": -428455.044784,
+   "breach": false
+  },
+  {
+   "date": "14 Jan 2025",
+   "pnl": -47464.488855,
+   "var_limit": -349225.556796,
+   "es_limit": -406719.24674,
+   "breach": false
+  },
+  {
+   "date": "15 Jan 2025",
+   "pnl": 287309.795967,
+   "var_limit": -336039.517818,
+   "es_limit": -391411.021196,
+   "breach": false
+  },
+  {
+   "date": "16 Jan 2025",
+   "pnl": -186980.925125,
+   "var_limit": -350350.304368,
+   "es_limit": -408024.835102,
+   "breach": false
+  },
+  {
+   "date": "17 Jan 2025",
+   "pnl": 148964.196943,
+   "var_limit": -400437.74924,
+   "es_limit": -466137.060222,
+   "breach": false
+  },
+  {
+   "date": "21 Jan 2025",
+   "pnl": 62284.489451,
+   "var_limit": -385232.681866,
+   "es_limit": -448501.795058,
+   "breach": false
+  },
+  {
+   "date": "22 Jan 2025",
+   "pnl": 72675.157922,
+   "var_limit": -365361.409679,
+   "es_limit": -425446.793317,
+   "breach": false
+  },
+  {
+   "date": "23 Jan 2025",
+   "pnl": 53314.130778,
+   "var_limit": -347867.283397,
+   "es_limit": -405142.548102,
+   "breach": false
+  },
+  {
+   "date": "24 Jan 2025",
+   "pnl": -41546.671004,
+   "var_limit": -331136.050854,
+   "es_limit": -385717.398939,
+   "breach": false
+  },
+  {
+   "date": "27 Jan 2025",
+   "pnl": -171222.561051,
+   "var_limit": -318736.365196,
+   "es_limit": -371317.227886,
+   "breach": false
+  },
+  {
+   "date": "28 Jan 2025",
+   "pnl": 179361.252901,
+   "var_limit": -366370.730021,
+   "es_limit": -426618.035898,
+   "breach": false
+  },
+  {
+   "date": "29 Jan 2025",
+   "pnl": -71578.984727,
+   "var_limit": -358408.231185,
+   "es_limit": -417377.523281,
+   "breach": false
+  },
+  {
+   "date": "30 Jan 2025",
+   "pnl": 27629.606584,
+   "var_limit": -350119.514463,
+   "es_limit": -407756.940287,
+   "breach": false
+  },
+  {
+   "date": "31 Jan 2025",
+   "pnl": -29706.855779,
+   "var_limit": -332367.41249,
+   "es_limit": -387147.234889,
+   "breach": false
+  },
+  {
+   "date": "03 Feb 2025",
+   "pnl": -115601.588544,
+   "var_limit": -317958.0648,
+   "es_limit": -370413.248123,
+   "breach": false
+  },
+  {
+   "date": "04 Feb 2025",
+   "pnl": 143697.655847,
+   "var_limit": -332991.383093,
+   "es_limit": -387871.766011,
+   "breach": false
+  },
+  {
+   "date": "05 Feb 2025",
+   "pnl": -81588.846317,
+   "var_limit": -324791.430139,
+   "es_limit": -378349.602809,
+   "breach": false
+  },
+  {
+   "date": "06 Feb 2025",
+   "pnl": 47554.149759,
+   "var_limit": -324108.605104,
+   "es_limit": -377556.607833,
+   "breach": false
+  },
+  {
+   "date": "07 Feb 2025",
+   "pnl": -133243.251944,
+   "var_limit": -309464.867889,
+   "es_limit": -360547.705957,
+   "breach": false
+  },
+  {
+   "date": "10 Feb 2025",
+   "pnl": 51832.270403,
+   "var_limit": -335601.210953,
+   "es_limit": -390902.106269,
+   "breach": false
+  },
+  {
+   "date": "11 Feb 2025",
+   "pnl": -23776.859138,
+   "var_limit": -319998.788047,
+   "es_limit": -372783.477362,
+   "breach": false
+  },
+  {
+   "date": "12 Feb 2025",
+   "pnl": -40387.491256,
+   "var_limit": -306117.926775,
+   "es_limit": -356659.522617,
+   "breach": false
+  },
+  {
+   "date": "13 Feb 2025",
+   "pnl": 148917.545491,
+   "var_limit": -296232.523612,
+   "es_limit": -345174.081919,
+   "breach": false
+  },
+  {
+   "date": "14 Feb 2025",
+   "pnl": 25466.300258,
+   "var_limit": -293280.997222,
+   "es_limit": -341744.407431,
+   "breach": false
+  },
+  {
+   "date": "18 Feb 2025",
+   "pnl": -53861.262894,
+   "var_limit": -281042.476233,
+   "es_limit": -327521.192122,
+   "breach": false
+  },
+  {
+   "date": "19 Feb 2025",
+   "pnl": 35591.934748,
+   "var_limit": -277347.842179,
+   "es_limit": -323226.7583,
+   "breach": false
+  },
+  {
+   "date": "20 Feb 2025",
+   "pnl": -77163.182498,
+   "var_limit": -267077.977829,
+   "es_limit": -311288.068269,
+   "breach": false
+  },
+  {
+   "date": "21 Feb 2025",
+   "pnl": -265909.19116,
+   "var_limit": -273385.722295,
+   "es_limit": -318621.079766,
+   "breach": false
+  },
+  {
+   "date": "24 Feb 2025",
+   "pnl": -115116.549639,
+   "var_limit": -413894.690781,
+   "es_limit": -481740.511178,
+   "breach": false
+  },
+  {
+   "date": "25 Feb 2025",
+   "pnl": -168297.582018,
+   "var_limit": -413411.785903,
+   "es_limit": -481180.648118,
+   "breach": false
+  },
+  {
+   "date": "26 Feb 2025",
+   "pnl": -8387.489555,
+   "var_limit": -438134.302917,
+   "es_limit": -509836.397346,
+   "breach": false
+  },
+  {
+   "date": "27 Feb 2025",
+   "pnl": -207959.856685,
+   "var_limit": -412439.497156,
+   "es_limit": -480053.394734,
+   "breach": false
+  },
+  {
+   "date": "28 Feb 2025",
+   "pnl": 194875.198521,
+   "var_limit": -461007.13911,
+   "es_limit": -536336.052091,
+   "breach": false
+  },
+  {
+   "date": "03 Mar 2025",
+   "pnl": -289564.935206,
+   "var_limit": -444100.74035,
+   "es_limit": -516750.025187,
+   "breach": false
+  },
+  {
+   "date": "04 Mar 2025",
+   "pnl": -68506.279141,
+   "var_limit": -541679.558545,
+   "es_limit": -629706.812904,
+   "breach": false
+  },
+  {
+   "date": "05 Mar 2025",
+   "pnl": 116528.238192,
+   "var_limit": -513767.292472,
+   "es_limit": -597417.485744,
+   "breach": false
+  },
+  {
+   "date": "06 Mar 2025",
+   "pnl": -181089.745433,
+   "var_limit": -485248.228036,
+   "es_limit": -564408.158718,
+   "breach": false
+  },
+  {
+   "date": "07 Mar 2025",
+   "pnl": 29230.141463,
+   "var_limit": -503488.889945,
+   "es_limit": -585522.872181,
+   "breach": false
+  },
+  {
+   "date": "10 Mar 2025",
+   "pnl": -427887.869382,
+   "var_limit": -467993.675593,
+   "es_limit": -545294.340613,
+   "breach": false
+  },
+  {
+   "date": "11 Mar 2025",
+   "pnl": 4026.374526,
+   "var_limit": -665386.308282,
+   "es_limit": -773815.000941,
+   "breach": false
+  },
+  {
+   "date": "12 Mar 2025",
+   "pnl": 153367.450507,
+   "var_limit": -622684.125479,
+   "es_limit": -724454.244808,
+   "breach": false
+  },
+  {
+   "date": "13 Mar 2025",
+   "pnl": -186277.859372,
+   "var_limit": -587744.542311,
+   "es_limit": -684035.460696,
+   "breach": false
+  },
+  {
+   "date": "14 Mar 2025",
+   "pnl": 276813.889924,
+   "var_limit": -591036.330863,
+   "es_limit": -687844.655544,
+   "breach": false
+  },
+  {
+   "date": "17 Mar 2025",
+   "pnl": -34787.548794,
+   "var_limit": -569379.919774,
+   "es_limit": -662779.73209,
+   "breach": false
+  },
+  {
+   "date": "18 Mar 2025",
+   "pnl": -160283.683532,
+   "var_limit": -535334.256465,
+   "es_limit": -623353.995538,
+   "breach": false
+  },
+  {
+   "date": "19 Mar 2025",
+   "pnl": 150124.229604,
+   "var_limit": -535367.73508,
+   "es_limit": -623392.777576,
+   "breach": false
+  },
+  {
+   "date": "20 Mar 2025",
+   "pnl": 18276.557222,
+   "var_limit": -507638.379194,
+   "es_limit": -591262.025476,
+   "breach": false
+  },
+  {
+   "date": "21 Mar 2025",
+   "pnl": 117689.878194,
+   "var_limit": -476974.551095,
+   "es_limit": -555710.705985,
+   "breach": false
+  },
+  {
+   "date": "24 Mar 2025",
+   "pnl": 274374.791652,
+   "var_limit": -452281.767321,
+   "es_limit": -527066.675678,
+   "breach": false
+  },
+  {
+   "date": "25 Mar 2025",
+   "pnl": 99431.669378,
+   "var_limit": -446009.322102,
+   "es_limit": -519788.341551,
+   "breach": false
+  },
+  {
+   "date": "26 Mar 2025",
+   "pnl": -187277.875748,
+   "var_limit": -422991.98076,
+   "es_limit": -493072.182574,
+   "breach": false
+  },
+  {
+   "date": "27 Mar 2025",
+   "pnl": -53323.559561,
+   "var_limit": -454720.388355,
+   "es_limit": -529896.12935,
+   "breach": false
+  },
+  {
+   "date": "28 Mar 2025",
+   "pnl": -257279.903777,
+   "var_limit": -432624.657069,
+   "es_limit": -504254.255969,
+   "breach": false
+  },
+  {
+   "date": "31 Mar 2025",
+   "pnl": 10229.449254,
+   "var_limit": -506186.609131,
+   "es_limit": -589579.339366,
+   "breach": false
+  },
+  {
+   "date": "01 Apr 2025",
+   "pnl": 110617.935716,
+   "var_limit": -475580.441129,
+   "es_limit": -554093.883248,
+   "breach": false
+  },
+  {
+   "date": "02 Apr 2025",
+   "pnl": 82025.0336,
+   "var_limit": -450591.920378,
+   "es_limit": -525105.921701,
+   "breach": false
+  },
+  {
+   "date": "03 Apr 2025",
+   "pnl": -559204.026429,
+   "var_limit": -426297.695401,
+   "es_limit": -496909.850835,
+   "breach": true
+  },
+  {
+   "date": "04 Apr 2025",
+   "pnl": -586566.07836,
+   "var_limit": -804949.742168,
+   "es_limit": -938715.822209,
+   "breach": false
+  },
+  {
+   "date": "07 Apr 2025",
+   "pnl": 27645.302344,
+   "var_limit": -1031008.140654,
+   "es_limit": -1199670.148152,
+   "breach": false
+  },
+  {
+   "date": "08 Apr 2025",
+   "pnl": -118389.140783,
+   "var_limit": -963063.502252,
+   "es_limit": -1121363.399621,
+   "breach": false
+  },
+  {
+   "date": "09 Apr 2025",
+   "pnl": 1188095.386997,
+   "var_limit": -910280.71258,
+   "es_limit": -1060455.677014,
+   "breach": false
+  },
+  {
+   "date": "10 Apr 2025",
+   "pnl": -406493.955342,
+   "var_limit": -1014609.61437,
+   "es_limit": -1180780.707632,
+   "breach": false
+  },
+  {
+   "date": "11 Apr 2025",
+   "pnl": 208332.555205,
+   "var_limit": -1062131.434473,
+   "es_limit": -1235503.492673,
+   "breach": false
+  },
+  {
+   "date": "14 Apr 2025",
+   "pnl": -35097.414475,
+   "var_limit": -997138.540595,
+   "es_limit": -1160648.797874,
+   "breach": false
+  },
+  {
+   "date": "15 Apr 2025",
+   "pnl": -51753.836726,
+   "var_limit": -932287.283221,
+   "es_limit": -1085857.714833,
+   "breach": false
+  },
+  {
+   "date": "16 Apr 2025",
+   "pnl": -282451.915925,
+   "var_limit": -873079.628403,
+   "es_limit": -1017488.880273,
+   "breach": false
+  },
+  {
+   "date": "17 Apr 2025",
+   "pnl": -283151.66672,
+   "var_limit": -882127.960688,
+   "es_limit": -1027942.576849,
+   "breach": false
+  },
+  {
+   "date": "21 Apr 2025",
+   "pnl": -321436.109745,
+   "var_limit": -890152.540153,
+   "es_limit": -1037211.910131,
+   "breach": false
+  },
+  {
+   "date": "22 Apr 2025",
+   "pnl": 276843.132635,
+   "var_limit": -915160.322459,
+   "es_limit": -1066089.159498,
+   "breach": false
+  },
+  {
+   "date": "23 Apr 2025",
+   "pnl": 262856.54537,
+   "var_limit": -865681.294824,
+   "es_limit": -1008940.032661,
+   "breach": false
+  },
+  {
+   "date": "24 Apr 2025",
+   "pnl": 231368.66729,
+   "var_limit": -819225.536044,
+   "es_limit": -955230.727419,
+   "breach": false
+  },
+  {
+   "date": "25 Apr 2025",
+   "pnl": 203483.542149,
+   "var_limit": -774266.185836,
+   "es_limit": -903203.610698,
+   "breach": false
+  },
+  {
+   "date": "28 Apr 2025",
+   "pnl": -25371.149716,
+   "var_limit": -731031.55053,
+   "es_limit": -853128.092734,
+   "breach": false
+  },
+  {
+   "date": "29 Apr 2025",
+   "pnl": 25974.460838,
+   "var_limit": -684564.710472,
+   "es_limit": -799260.755635,
+   "breach": false
+  },
+  {
+   "date": "30 Apr 2025",
+   "pnl": -84112.436766,
+   "var_limit": -640957.232925,
+   "es_limit": -748662.921987,
+   "breach": false
+  },
+  {
+   "date": "01 May 2025",
+   "pnl": 172906.486848,
+   "var_limit": -608858.559795,
+   "es_limit": -711390.869555,
+   "breach": false
+  },
+  {
+   "date": "02 May 2025",
+   "pnl": 122011.551657,
+   "var_limit": -577351.987949,
+   "es_limit": -674783.401481,
+   "breach": false
+  },
+  {
+   "date": "05 May 2025",
+   "pnl": -86644.303403,
+   "var_limit": -545158.052147,
+   "es_limit": -637353.862933,
+   "breach": false
+  },
+  {
+   "date": "06 May 2025",
+   "pnl": -87336.231801,
+   "var_limit": -522537.740058,
+   "es_limit": -611040.748386,
+   "breach": false
+  },
+  {
+   "date": "07 May 2025",
+   "pnl": -20900.273715,
+   "var_limit": -502345.812306,
+   "es_limit": -587542.624456,
+   "breach": false
+  },
+  {
+   "date": "08 May 2025",
+   "pnl": 106150.378308,
+   "var_limit": -473201.860689,
+   "es_limit": -553610.364171,
+   "breach": false
+  },
+  {
+   "date": "09 May 2025",
+   "pnl": 30543.523504,
+   "var_limit": -449015.216597,
+   "es_limit": -525435.276055,
+   "breach": false
+  },
+  {
+   "date": "12 May 2025",
+   "pnl": 451935.534195,
+   "var_limit": -423840.966167,
+   "es_limit": -496095.673234,
+   "breach": false
+  },
+  {
+   "date": "13 May 2025",
+   "pnl": 29899.645171,
+   "var_limit": -460271.817208,
+   "es_limit": -538549.768184,
+   "breach": false
+  },
+  {
+   "date": "14 May 2025",
+   "pnl": 125570.021031,
+   "var_limit": -434144.746555,
+   "es_limit": -508106.056281,
+   "breach": false
+  },
+  {
+   "date": "15 May 2025",
+   "pnl": -139825.395412,
+   "var_limit": -414914.337007,
+   "es_limit": -485688.600151,
+   "breach": false
+  },
+  {
+   "date": "16 May 2025",
+   "pnl": 76274.195002,
+   "var_limit": -427873.450208,
+   "es_limit": -500796.338192,
+   "breach": false
+  },
+  {
+   "date": "19 May 2025",
+   "pnl": 9193.391373,
+   "var_limit": -406072.081045,
+   "es_limit": -475378.121494,
+   "breach": false
+  },
+  {
+   "date": "20 May 2025",
+   "pnl": -43089.308493,
+   "var_limit": -384286.693761,
+   "es_limit": -449967.83792,
+   "breach": false
+  },
+  {
+   "date": "21 May 2025",
+   "pnl": -148286.788806,
+   "var_limit": -368152.967311,
+   "es_limit": -431142.718519,
+   "breach": false
+  },
+  {
+   "date": "22 May 2025",
+   "pnl": 36196.956736,
+   "var_limit": -394075.683038,
+   "es_limit": -461386.950809,
+   "breach": false
+  },
+  {
+   "date": "23 May 2025",
+   "pnl": -100154.601889,
+   "var_limit": -373773.076058,
+   "es_limit": -437701.025758,
+   "breach": false
+  },
+  {
+   "date": "27 May 2025",
+   "pnl": 263059.376709,
+   "var_limit": -375355.58035,
+   "es_limit": -439547.578887,
+   "breach": false
+  },
+  {
+   "date": "28 May 2025",
+   "pnl": -52222.401327,
+   "var_limit": -380584.370146,
+   "es_limit": -445648.418271,
+   "breach": false
+  },
+  {
+   "date": "29 May 2025",
+   "pnl": 56639.711989,
+   "var_limit": -366591.826025,
+   "es_limit": -429320.840575,
+   "breach": false
+  },
+  {
+   "date": "30 May 2025",
+   "pnl": -62337.84891,
+   "var_limit": -349500.009791,
+   "es_limit": -409370.825567,
+   "breach": false
+  },
+  {
+   "date": "02 Jun 2025",
+   "pnl": 61011.950955,
+   "var_limit": -341385.350287,
+   "es_limit": -399896.887415,
+   "breach": false
+  },
+  {
+   "date": "03 Jun 2025",
+   "pnl": 17263.112373,
+   "var_limit": -326924.116164,
+   "es_limit": -383009.606306,
+   "breach": false
+  },
+  {
+   "date": "04 Jun 2025",
+   "pnl": -4659.567893,
+   "var_limit": -312450.888378,
+   "es_limit": -366103.629385,
+   "breach": false
+  },
+  {
+   "date": "05 Jun 2025",
+   "pnl": -181365.951963,
+   "var_limit": -299318.083947,
+   "es_limit": -350759.326507,
+   "breach": false
+  },
+  {
+   "date": "06 Jun 2025",
+   "pnl": 209756.869995,
+   "var_limit": -364023.039201,
+   "es_limit": -426322.904287,
+   "breach": false
+  },
+  {
+   "date": "09 Jun 2025",
+   "pnl": 74482.727112,
+   "var_limit": -362889.602079,
+   "es_limit": -424095.403981,
+   "breach": false
+  },
+  {
+   "date": "10 Jun 2025",
+   "pnl": 121976.395424,
+   "var_limit": -347111.916727,
+   "es_limit": -405716.545351,
+   "breach": false
+  },
+  {
+   "date": "11 Jun 2025",
+   "pnl": -22712.211958,
+   "var_limit": -336058.664958,
+   "es_limit": -392837.736333,
+   "breach": false
+  },
+  {
+   "date": "12 Jun 2025",
+   "pnl": 29895.968648,
+   "var_limit": -322141.332598,
+   "es_limit": -376617.982984,
+   "breach": false
+  },
+  {
+   "date": "13 Jun 2025",
+   "pnl": -58264.474089,
+   "var_limit": -308657.514368,
+   "es_limit": -360899.392833,
+   "breach": false
+  },
+  {
+   "date": "16 Jun 2025",
+   "pnl": 121195.187269,
+   "var_limit": -304874.444734,
+   "es_limit": -356488.608459,
+   "breach": false
+  },
+  {
+   "date": "17 Jun 2025",
+   "pnl": -58062.557263,
+   "var_limit": -298489.103941,
+   "es_limit": -349043.050809,
+   "breach": false
+  },
+  {
+   "date": "18 Jun 2025",
+   "pnl": 10183.580526,
+   "var_limit": -295942.422667,
+   "es_limit": -346073.270511,
+   "breach": false
+  },
+  {
+   "date": "20 Jun 2025",
+   "pnl": -65904.954764,
+   "var_limit": -284754.076998,
+   "es_limit": -333024.433299,
+   "breach": false
+  },
+  {
+   "date": "23 Jun 2025",
+   "pnl": 87503.033976,
+   "var_limit": -286665.743583,
+   "es_limit": -335254.182597,
+   "breach": false
+  },
+  {
+   "date": "24 Jun 2025",
+   "pnl": 51004.229235,
+   "var_limit": -279588.853271,
+   "es_limit": -326999.365201,
+   "breach": false
+  },
+  {
+   "date": "25 Jun 2025",
+   "pnl": 32280.878102,
+   "var_limit": -271170.797221,
+   "es_limit": -317178.717153,
+   "breach": false
+  },
+  {
+   "date": "26 Jun 2025",
+   "pnl": 108192.716128,
+   "var_limit": -262989.443972,
+   "es_limit": -307632.720696,
+   "breach": false
+  },
+  {
+   "date": "27 Jun 2025",
+   "pnl": 86790.648908,
+   "var_limit": -260516.388575,
+   "es_limit": -304746.872693,
+   "breach": false
+  },
+  {
+   "date": "30 Jun 2025",
+   "pnl": -12024.453793,
+   "var_limit": -256482.329231,
+   "es_limit": -300039.176407,
+   "breach": false
+  },
+  {
+   "date": "01 Jul 2025",
+   "pnl": -43302.566912,
+   "var_limit": -249893.835631,
+   "es_limit": -292349.720711,
+   "breach": false
+  },
+  {
+   "date": "02 Jul 2025",
+   "pnl": 61377.112031,
+   "var_limit": -249511.817873,
+   "es_limit": -291903.837175,
+   "breach": false
+  },
+  {
+   "date": "03 Jul 2025",
+   "pnl": 93993.633984,
+   "var_limit": -245070.054855,
+   "es_limit": -286719.265,
+   "breach": false
+  },
+  {
+   "date": "07 Jul 2025",
+   "pnl": -148261.966329,
+   "var_limit": -243606.202655,
+   "es_limit": -285010.513809,
+   "breach": false
+  },
+  {
+   "date": "08 Jul 2025",
+   "pnl": 1539.413518,
+   "var_limit": -301773.546653,
+   "es_limit": -352872.951753,
+   "breach": false
+  },
+  {
+   "date": "09 Jul 2025",
+   "pnl": 57794.493599,
+   "var_limit": -289955.428987,
+   "es_limit": -339091.051676,
+   "breach": false
+  },
+  {
+   "date": "10 Jul 2025",
+   "pnl": 67638.505708,
+   "var_limit": -280726.727324,
+   "es_limit": -328326.709168,
+   "breach": false
+  },
+  {
+   "date": "11 Jul 2025",
+   "pnl": 42599.279969,
+   "var_limit": -273027.152861,
+   "es_limit": -319344.507038,
+   "breach": false
+  },
+  {
+   "date": "14 Jul 2025",
+   "pnl": -11011.707842,
+   "var_limit": -264984.820774,
+   "es_limit": -309961.060129,
+   "breach": false
+  },
+  {
+   "date": "15 Jul 2025",
+   "pnl": -23020.453165,
+   "var_limit": -257373.342864,
+   "es_limit": -301079.008752,
+   "breach": false
+  },
+  {
+   "date": "16 Jul 2025",
+   "pnl": 17694.56997,
+   "var_limit": -251873.20604,
+   "es_limit": -294659.951319,
+   "breach": false
+  },
+  {
+   "date": "17 Jul 2025",
+   "pnl": 13843.444802,
+   "var_limit": -245504.846836,
+   "es_limit": -287226.787607,
+   "breach": false
+  },
+  {
+   "date": "18 Jul 2025",
+   "pnl": 4609.868312,
+   "var_limit": -239808.619345,
+   "es_limit": -280577.385115,
+   "breach": false
+  },
+  {
+   "date": "21 Jul 2025",
+   "pnl": 50256.706452,
+   "var_limit": -234692.292677,
+   "es_limit": -274604.315353,
+   "breach": false
+  },
+  {
+   "date": "22 Jul 2025",
+   "pnl": -12809.320823,
+   "var_limit": -231458.211841,
+   "es_limit": -270828.383242,
+   "breach": false
+  },
+  {
+   "date": "23 Jul 2025",
+   "pnl": 87972.928103,
+   "var_limit": -227886.36745,
+   "es_limit": -266657.831389,
+   "breach": false
+  },
+  {
+   "date": "24 Jul 2025",
+   "pnl": -64016.979879,
+   "var_limit": -228199.270423,
+   "es_limit": -267023.193864,
+   "breach": false
+  },
+  {
+   "date": "25 Jul 2025",
+   "pnl": 48444.291321,
+   "var_limit": -238291.766073,
+   "es_limit": -278806.5903,
+   "breach": false
+  },
+  {
+   "date": "28 Jul 2025",
+   "pnl": 68608.430874,
+   "var_limit": -234522.672674,
+   "es_limit": -274406.2822,
+   "breach": false
+  },
+  {
+   "date": "29 Jul 2025",
+   "pnl": -104216.75233,
+   "var_limit": -232411.40855,
+   "es_limit": -271941.306251,
+   "breach": false
+  },
+  {
+   "date": "30 Jul 2025",
+   "pnl": 17184.796645,
+   "var_limit": -262772.986391,
+   "es_limit": -307380.138229,
+   "breach": false
+  },
+  {
+   "date": "31 Jul 2025",
+   "pnl": 20878.82202,
+   "var_limit": -255175.084854,
+   "es_limit": -298513.562213,
+   "breach": false
+  },
+  {
+   "date": "01 Aug 2025",
+   "pnl": -300003.823889,
+   "var_limit": -248490.828218,
+   "es_limit": -290712.14265,
+   "breach": true
+  },
+  {
+   "date": "04 Aug 2025",
+   "pnl": 148218.798139,
+   "var_limit": -490553.53249,
+   "es_limit": -540483.161345,
+   "breach": false
+  },
+  {
+   "date": "05 Aug 2025",
+   "pnl": -8953.794275,
+   "var_limit": -469698.457075,
+   "es_limit": -517565.827762,
+   "breach": false
+  },
+  {
+   "date": "06 Aug 2025",
+   "pnl": 116715.575781,
+   "var_limit": -444349.232095,
+   "es_limit": -489702.620837,
+   "breach": false
+  },
+  {
+   "date": "07 Aug 2025",
+   "pnl": 8523.755844,
+   "var_limit": -425398.272587,
+   "es_limit": -468866.984503,
+   "breach": false
+  },
+  {
+   "date": "08 Aug 2025",
+   "pnl": 154580.596012,
+   "var_limit": -403702.754209,
+   "es_limit": -445008.353299,
+   "breach": false
+  },
+  {
+   "date": "11 Aug 2025",
+   "pnl": 4442.886156,
+   "var_limit": -392357.944141,
+   "es_limit": -432530.099675,
+   "breach": false
+  },
+  {
+   "date": "12 Aug 2025",
+   "pnl": 131216.328912,
+   "var_limit": -373593.088007,
+   "es_limit": -411886.96786,
+   "breach": false
+  },
+  {
+   "date": "13 Aug 2025",
+   "pnl": 26834.705941,
+   "var_limit": -363164.697143,
+   "es_limit": -400412.856202,
+   "breach": false
+  },
+  {
+   "date": "14 Aug 2025",
+   "pnl": 34232.040611,
+   "var_limit": -347394.709388,
+   "es_limit": -383058.954633,
+   "breach": false
+  },
+  {
+   "date": "15 Aug 2025",
+   "pnl": 90058.199678,
+   "var_limit": -333342.698302,
+   "es_limit": -367592.989938,
+   "breach": false
+  },
+  {
+   "date": "18 Aug 2025",
+   "pnl": 14312.590571,
+   "var_limit": -323699.148699,
+   "es_limit": -356977.667657,
+   "breach": false
+  },
+  {
+   "date": "19 Aug 2025",
+   "pnl": -124018.921564,
+   "var_limit": -311601.956194,
+   "es_limit": -343659.828486,
+   "breach": false
+  },
+  {
+   "date": "20 Aug 2025",
+   "pnl": -82817.172335,
+   "var_limit": -345243.895156,
+   "es_limit": -380691.87748,
+   "breach": false
+  },
+  {
+   "date": "21 Aug 2025",
+   "pnl": -19876.91926,
+   "var_limit": -349651.487085,
+   "es_limit": -385542.588313,
+   "breach": false
+  },
+  {
+   "date": "22 Aug 2025",
+   "pnl": 230319.391137,
+   "var_limit": -335976.445508,
+   "es_limit": -370491.938105,
+   "breach": false
+  },
+  {
+   "date": "25 Aug 2025",
+   "pnl": 18477.478198,
+   "var_limit": -344416.341991,
+   "es_limit": -379781.099167,
+   "breach": false
+  },
+  {
+   "date": "26 Aug 2025",
+   "pnl": 22352.018899,
+   "var_limit": -330307.078625,
+   "es_limit": -364251.597133,
+   "breach": false
+  },
+  {
+   "date": "27 Aug 2025",
+   "pnl": 27997.478417,
+   "var_limit": -317671.399783,
+   "es_limit": -350341.924552,
+   "breach": false
+  },
+  {
+   "date": "28 Aug 2025",
+   "pnl": 36062.73786,
+   "var_limit": -306458.068254,
+   "es_limit": -337996.358623,
+   "breach": false
+  },
+  {
+   "date": "29 Aug 2025",
+   "pnl": -57937.042189,
+   "var_limit": -296669.396136,
+   "es_limit": -327218.036661,
+   "breach": false
+  },
+  {
+   "date": "02 Sep 2025",
+   "pnl": -80380.647512,
+   "var_limit": -298021.83282,
+   "es_limit": -328707.277021,
+   "breach": false
+  },
+  {
+   "date": "03 Sep 2025",
+   "pnl": 120601.863157,
+   "var_limit": -308755.010812,
+   "es_limit": -340525.354656,
+   "breach": false
+  },
+  {
+   "date": "04 Sep 2025",
+   "pnl": 121979.148637,
+   "var_limit": -304843.119975,
+   "es_limit": -336218.217865,
+   "breach": false
+  },
+  {
+   "date": "05 Sep 2025",
+   "pnl": -54561.530989,
+   "var_limit": -301578.441506,
+   "es_limit": -332623.541576,
+   "breach": false
+  },
+  {
+   "date": "08 Sep 2025",
+   "pnl": 20241.533568,
+   "var_limit": -301065.320985,
+   "es_limit": -332058.542249,
+   "breach": false
+  },
+  {
+   "date": "09 Sep 2025",
+   "pnl": 166455.451053,
+   "var_limit": -291242.151191,
+   "es_limit": -321392.301999,
+   "breach": false
+  },
+  {
+   "date": "10 Sep 2025",
+   "pnl": -21725.989251,
+   "var_limit": -295448.120802,
+   "es_limit": -326026.061491,
+   "breach": false
+  },
+  {
+   "date": "11 Sep 2025",
+   "pnl": 112318.016404,
+   "var_limit": -287795.316204,
+   "es_limit": -317594.72567,
+   "breach": false
+  },
+  {
+   "date": "12 Sep 2025",
+   "pnl": 117010.346412,
+   "var_limit": -285508.226853,
+   "es_limit": -315074.826704,
+   "breach": false
+  },
+  {
+   "date": "15 Sep 2025",
+   "pnl": 134965.682341,
+   "var_limit": -284032.746976,
+   "es_limit": -313449.119025,
+   "breach": false
+  },
+  {
+   "date": "16 Sep 2025",
+   "pnl": 33491.658543,
+   "var_limit": -284902.127867,
+   "es_limit": -314407.02026,
+   "breach": false
+  },
+  {
+   "date": "17 Sep 2025",
+   "pnl": -10332.060659,
+   "var_limit": -277426.249662,
+   "es_limit": -306169.643018,
+   "breach": false
+  },
+  {
+   "date": "18 Sep 2025",
+   "pnl": -12703.387701,
+   "var_limit": -270609.591786,
+   "es_limit": -298658.032874,
+   "breach": false
+  },
+  {
+   "date": "19 Sep 2025",
+   "pnl": 88464.580941,
+   "var_limit": -264779.412619,
+   "es_limit": -292233.016783,
+   "breach": false
+  },
+  {
+   "date": "22 Sep 2025",
+   "pnl": 54696.849075,
+   "var_limit": -263152.200377,
+   "es_limit": -290439.709714,
+   "breach": false
+  },
+  {
+   "date": "23 Sep 2025",
+   "pnl": -74969.068071,
+   "var_limit": -259211.001442,
+   "es_limit": -286096.084418,
+   "breach": false
+  },
+  {
+   "date": "24 Sep 2025",
+   "pnl": 36987.310554,
+   "var_limit": -274256.857924,
+   "es_limit": -302677.205981,
+   "breach": false
+  },
+  {
+   "date": "25 Sep 2025",
+   "pnl": -76969.65567,
+   "var_limit": -268133.124164,
+   "es_limit": -295928.949436,
+   "breach": false
+  },
+  {
+   "date": "26 Sep 2025",
+   "pnl": 73193.946183,
+   "var_limit": -282559.224907,
+   "es_limit": -311825.541627,
+   "breach": false
+  },
+  {
+   "date": "29 Sep 2025",
+   "pnl": 5147.009592,
+   "var_limit": -277439.376878,
+   "es_limit": -306184.107988,
+   "breach": false
+  },
+  {
+   "date": "30 Sep 2025",
+   "pnl": -2060.205374,
+   "var_limit": -270264.393725,
+   "es_limit": -298277.626906,
+   "breach": false
+  },
+  {
+   "date": "01 Oct 2025",
+   "pnl": 19312.633377,
+   "var_limit": -263916.377743,
+   "es_limit": -291281.89321,
+   "breach": false
+  },
+  {
+   "date": "02 Oct 2025",
+   "pnl": -20887.377141,
+   "var_limit": -258496.058291,
+   "es_limit": -285308.119604,
+   "breach": false
+  },
+  {
+   "date": "03 Oct 2025",
+   "pnl": -7037.741476,
+   "var_limit": -255138.516476,
+   "es_limit": -281607.56648,
+   "breach": false
+  },
+  {
+   "date": "06 Oct 2025",
+   "pnl": 98477.02119,
+   "var_limit": -250757.780384,
+   "es_limit": -276779.07905,
+   "breach": false
+  },
+  {
+   "date": "07 Oct 2025",
+   "pnl": -65875.39437,
+   "var_limit": -252042.601123,
+   "es_limit": -278195.244754,
+   "breach": false
+  },
+  {
+   "date": "08 Oct 2025",
+   "pnl": 63941.922553,
+   "var_limit": -263888.288858,
+   "es_limit": -291250.937179,
+   "breach": false
+  },
+  {
+   "date": "09 Oct 2025",
+   "pnl": -473.011962,
+   "var_limit": -260431.677246,
+   "es_limit": -287441.420987,
+   "breach": false
+  },
+  {
+   "date": "10 Oct 2025",
+   "pnl": -336535.602141,
+   "var_limit": -255228.007664,
+   "es_limit": -281706.202019,
+   "breach": true
+  },
+  {
+   "date": "13 Oct 2025",
+   "pnl": 208862.170424,
+   "var_limit": -574934.226952,
+   "es_limit": -613922.81662,
+   "breach": false
+  },
+  {
+   "date": "14 Oct 2025",
+   "pnl": -96026.99147,
+   "var_limit": -554199.851461,
+   "es_limit": -591830.613905,
+   "breach": false
+  },
+  {
+   "date": "15 Oct 2025",
+   "pnl": 59310.898924,
+   "var_limit": -541677.456569,
+   "es_limit": -578486.391338,
+   "breach": false
+  },
+  {
+   "date": "16 Oct 2025",
+   "pnl": -70379.517355,
+   "var_limit": -512452.299877,
+   "es_limit": -547338.032506,
+   "breach": false
+  },
+  {
+   "date": "17 Oct 2025",
+   "pnl": 73790.210499,
+   "var_limit": -495597.863125,
+   "es_limit": -529371.164865,
+   "breach": false
+  },
+  {
+   "date": "20 Oct 2025",
+   "pnl": 153696.144748,
+   "var_limit": -470987.195828,
+   "es_limit": -503131.809297,
+   "breach": false
+  },
+  {
+   "date": "21 Oct 2025",
+   "pnl": -27242.158447,
+   "var_limit": -454923.684938,
+   "es_limit": -486002.478313,
+   "breach": false
+  },
+  {
+   "date": "22 Oct 2025",
+   "pnl": -40438.445764,
+   "var_limit": -433899.199575,
+   "es_limit": -463579.714301,
+   "breach": false
+  },
+  {
+   "date": "23 Oct 2025",
+   "pnl": 67497.318031,
+   "var_limit": -417220.58036,
+   "es_limit": -445789.193726,
+   "breach": false
+  },
+  {
+   "date": "24 Oct 2025",
+   "pnl": 73550.951438,
+   "var_limit": -399571.712505,
+   "es_limit": -426961.188928,
+   "breach": false
+  },
+  {
+   "date": "27 Oct 2025",
+   "pnl": 200783.816874,
+   "var_limit": -384017.578494,
+   "es_limit": -410365.696163,
+   "breach": false
+  },
+  {
+   "date": "28 Oct 2025",
+   "pnl": 92323.059267,
+   "var_limit": -384690.416351,
+   "es_limit": -411083.623012,
+   "breach": false
+  },
+  {
+   "date": "29 Oct 2025",
+   "pnl": 45065.522679,
+   "var_limit": -371994.685222,
+   "es_limit": -397536.469701,
+   "breach": false
+  },
+  {
+   "date": "30 Oct 2025",
+   "pnl": -237581.273566,
+   "var_limit": -357767.46727,
+   "es_limit": -382353.514895,
+   "breach": false
+  },
+  {
+   "date": "31 Oct 2025",
+   "pnl": 78200.081878,
+   "var_limit": -494827.989504,
+   "es_limit": -528550.420251,
+   "breach": false
+  },
+  {
+   "date": "03 Nov 2025",
+   "pnl": 40107.230992,
+   "var_limit": -470510.699251,
+   "es_limit": -502623.728418,
+   "breach": false
+  },
+  {
+   "date": "04 Nov 2025",
+   "pnl": -157008.130709,
+   "var_limit": -446808.950215,
+   "es_limit": -477348.498193,
+   "breach": false
+  },
+  {
+   "date": "05 Nov 2025",
+   "pnl": 44601.778308,
+   "var_limit": -484598.201101,
+   "es_limit": -517644.200171,
+   "breach": false
+  },
+  {
+   "date": "06 Nov 2025",
+   "pnl": -151837.718953,
+   "var_limit": -459786.954614,
+   "es_limit": -491188.658209,
+   "breach": false
+  },
+  {
+   "date": "07 Nov 2025",
+   "pnl": -18404.126948,
+   "var_limit": -491308.601747,
+   "es_limit": -524798.41763,
+   "breach": false
+  },
+  {
+   "date": "10 Nov 2025",
+   "pnl": 196828.008407,
+   "var_limit": -466023.590679,
+   "es_limit": -497839.100153,
+   "breach": false
+  },
+  {
+   "date": "11 Nov 2025",
+   "pnl": 12103.963473,
+   "var_limit": -455680.996608,
+   "es_limit": -486810.086931,
+   "breach": false
+  },
+  {
+   "date": "12 Nov 2025",
+   "pnl": -48039.952784,
+   "var_limit": -432765.947535,
+   "es_limit": -462370.986874,
+   "breach": false
+  },
+  {
+   "date": "13 Nov 2025",
+   "pnl": -219022.255934,
+   "var_limit": -417979.559298,
+   "es_limit": -446598.821898,
+   "breach": false
+  },
+  {
+   "date": "14 Nov 2025",
+   "pnl": -24685.441545,
+   "var_limit": -515216.672986,
+   "es_limit": -550284.630137,
+   "breach": false
+  },
+  {
+   "date": "17 Nov 2025",
+   "pnl": -49626.723988,
+   "var_limit": -488466.549806,
+   "es_limit": -521768.442836,
+   "breach": false
+  },
+  {
+   "date": "18 Nov 2025",
+   "pnl": -137409.713622,
+   "var_limit": -468411.903951,
+   "es_limit": -500385.792795,
+   "breach": false
+  },
+  {
+   "date": "19 Nov 2025",
+   "pnl": 28161.569985,
+   "var_limit": -488899.22552,
+   "es_limit": -522229.73246,
+   "breach": false
+  },
+  {
+   "date": "20 Nov 2025",
+   "pnl": -125810.057994,
+   "var_limit": -463301.626714,
+   "es_limit": -494936.572137,
+   "breach": false
+  },
+  {
+   "date": "21 Nov 2025",
+   "pnl": 76806.754203,
+   "var_limit": -477679.452398,
+   "es_limit": -510267.455112,
+   "breach": false
+  },
+  {
+   "date": "24 Nov 2025",
+   "pnl": 214575.807859,
+   "var_limit": -454840.971035,
+   "es_limit": -485914.270662,
+   "breach": false
+  },
+  {
+   "date": "25 Nov 2025",
+   "pnl": 83847.010096,
+   "var_limit": -448352.464881,
+   "es_limit": -478994.626315,
+   "breach": false
+  },
+  {
+   "date": "26 Nov 2025",
+   "pnl": 56489.663764,
+   "var_limit": -428655.370871,
+   "es_limit": -457986.551953,
+   "breach": false
+  },
+  {
+   "date": "28 Nov 2025",
+   "pnl": 78008.475675,
+   "var_limit": -409371.747127,
+   "es_limit": -437416.29666,
+   "breach": false
+  },
+  {
+   "date": "01 Dec 2025",
+   "pnl": -30716.226257,
+   "var_limit": -393112.242006,
+   "es_limit": -420069.499939,
+   "breach": false
+  },
+  {
+   "date": "02 Dec 2025",
+   "pnl": 29136.300764,
+   "var_limit": -378671.812387,
+   "es_limit": -404661.558206,
+   "breach": false
+  },
+  {
+   "date": "03 Dec 2025",
+   "pnl": 69935.943939,
+   "var_limit": -363246.039999,
+   "es_limit": -388200.320822,
+   "breach": false
+  },
+  {
+   "date": "04 Dec 2025",
+   "pnl": 34961.16306,
+   "var_limit": -351228.019016,
+   "es_limit": -375374.199016,
+   "breach": false
+  },
+  {
+   "date": "05 Dec 2025",
+   "pnl": 8519.180579,
+   "var_limit": -338763.274241,
+   "es_limit": -362070.036879,
+   "breach": false
+  },
+  {
+   "date": "08 Dec 2025",
+   "pnl": -68822.659041,
+   "var_limit": -328072.192047,
+   "es_limit": -350198.94561,
+   "breach": false
+  },
+  {
+   "date": "09 Dec 2025",
+   "pnl": -18418.044949,
+   "var_limit": -333665.332301,
+   "es_limit": -356161.769555,
+   "breach": false
+  },
+  {
+   "date": "10 Dec 2025",
+   "pnl": 58261.974909,
+   "var_limit": -323989.910314,
+   "es_limit": -345846.680589,
+   "breach": false
+  },
+  {
+   "date": "11 Dec 2025",
+   "pnl": 2543.428519,
+   "var_limit": -315837.747757,
+   "es_limit": -337154.964843,
+   "breach": false
+  },
+  {
+   "date": "12 Dec 2025",
+   "pnl": -41532.497575,
+   "var_limit": -306954.38793,
+   "es_limit": -327683.040532,
+   "breach": false
+  },
+  {
+   "date": "15 Dec 2025",
+   "pnl": 2946.833129,
+   "var_limit": -305267.969496,
+   "es_limit": -325884.816312,
+   "breach": false
+  },
+  {
+   "date": "16 Dec 2025",
+   "pnl": -5135.270063,
+   "var_limit": -297563.711134,
+   "es_limit": -317669.488226,
+   "breach": false
+  },
+  {
+   "date": "17 Dec 2025",
+   "pnl": -135068.700252,
+   "var_limit": -290831.395594,
+   "es_limit": -310490.182246,
+   "breach": false
+  },
+  {
+   "date": "18 Dec 2025",
+   "pnl": 113927.432296,
+   "var_limit": -347976.157222,
+   "es_limit": -371417.318391,
+   "breach": false
+  },
+  {
+   "date": "19 Dec 2025",
+   "pnl": 63782.160675,
+   "var_limit": -341395.875944,
+   "es_limit": -364402.850022,
+   "breach": false
+  },
+  {
+   "date": "22 Dec 2025",
+   "pnl": 62048.131404,
+   "var_limit": -331621.316447,
+   "es_limit": -353982.682222,
+   "breach": false
+  },
+  {
+   "date": "23 Dec 2025",
+   "pnl": 85916.195803,
+   "var_limit": -322826.953708,
+   "es_limit": -344606.786514,
+   "breach": false
+  },
+  {
+   "date": "24 Dec 2025",
+   "pnl": 24604.037396,
+   "var_limit": -316698.832047,
+   "es_limit": -338073.065836,
+   "breach": false
+  },
+  {
+   "date": "26 Dec 2025",
+   "pnl": -14408.330896,
+   "var_limit": -308015.170091,
+   "es_limit": -328814.138319,
+   "breach": false
+  },
+  {
+   "date": "29 Dec 2025",
+   "pnl": -66282.329833,
+   "var_limit": -300747.744004,
+   "es_limit": -321064.795705,
+   "breach": false
+  },
+  {
+   "date": "30 Dec 2025",
+   "pnl": 9058.794105,
+   "var_limit": -309449.81699,
+   "es_limit": -330343.868478,
+   "breach": false
+  },
+  {
+   "date": "31 Dec 2025",
+   "pnl": -62635.183002,
+   "var_limit": -301312.894022,
+   "es_limit": -321667.437292,
+   "breach": false
+  },
+  {
+   "date": "02 Jan 2026",
+   "pnl": -16658.665294,
+   "var_limit": -308260.911128,
+   "es_limit": -329076.167383,
+   "breach": false
+  },
+  {
+   "date": "05 Jan 2026",
+   "pnl": 124220.367627,
+   "var_limit": -301217.628788,
+   "es_limit": -321565.852426,
+   "breach": false
+  },
+  {
+   "date": "06 Jan 2026",
+   "pnl": -30781.534373,
+   "var_limit": -301743.19596,
+   "es_limit": -322126.28335,
+   "breach": false
+  },
+  {
+   "date": "07 Jan 2026",
+   "pnl": -48249.129472,
+   "var_limit": -297914.807641,
+   "es_limit": -318043.885581,
+   "breach": false
+  },
+  {
+   "date": "08 Jan 2026",
+   "pnl": 60564.16148,
+   "var_limit": -299636.032854,
+   "es_limit": -319879.326999,
+   "breach": false
+  },
+  {
+   "date": "09 Jan 2026",
+   "pnl": 51580.677698,
+   "var_limit": -294456.064211,
+   "es_limit": -314355.555673,
+   "breach": false
+  },
+  {
+   "date": "12 Jan 2026",
+   "pnl": -31664.10539,
+   "var_limit": -289379.391873,
+   "es_limit": -308941.724756,
+   "breach": false
+  },
+  {
+   "date": "13 Jan 2026",
+   "pnl": -70562.199163,
+   "var_limit": -287329.216845,
+   "es_limit": -306755.331411,
+   "breach": false
+  },
+  {
+   "date": "14 Jan 2026",
+   "pnl": -84838.546643,
+   "var_limit": -300394.575294,
+   "es_limit": -320688.196764,
+   "breach": false
+  },
+  {
+   "date": "15 Jan 2026",
+   "pnl": 20009.383734,
+   "var_limit": -318923.914766,
+   "es_limit": -340445.454434,
+   "breach": false
+  },
+  {
+   "date": "16 Jan 2026",
+   "pnl": -23456.354801,
+   "var_limit": -309894.502232,
+   "es_limit": -330818.022463,
+   "breach": false
+  },
+  {
+   "date": "20 Jan 2026",
+   "pnl": -217301.950654,
+   "var_limit": -303641.134715,
+   "es_limit": -324150.10406,
+   "breach": false
+  },
+  {
+   "date": "21 Jan 2026",
+   "pnl": 127999.035548,
+   "var_limit": -437242.686536,
+   "es_limit": -466538.871604,
+   "breach": false
+  },
+  {
+   "date": "22 Jan 2026",
+   "pnl": 165594.886969,
+   "var_limit": -422137.018139,
+   "es_limit": -450447.017627,
+   "breach": false
+  },
+  {
+   "date": "23 Jan 2026",
+   "pnl": 71302.69027,
+   "var_limit": -412536.874552,
+   "es_limit": -440219.145133,
+   "breach": false
+  },
+  {
+   "date": "26 Jan 2026",
+   "pnl": 28251.604386,
+   "var_limit": -395850.439186,
+   "es_limit": -422439.823721,
+   "breach": false
+  },
+  {
+   "date": "27 Jan 2026",
+   "pnl": -127634.234588,
+   "var_limit": -379133.45004,
+   "es_limit": -404625.655463,
+   "breach": false
+  },
+  {
+   "date": "28 Jan 2026",
+   "pnl": 45777.373298,
+   "var_limit": -409367.056839,
+   "es_limit": -436841.894706,
+   "breach": false
+  },
+  {
+   "date": "29 Jan 2026",
+   "pnl": 23082.239187,
+   "var_limit": -391860.334717,
+   "es_limit": -418188.046709,
+   "breach": false
+  },
+  {
+   "date": "30 Jan 2026",
+   "pnl": -33487.135757,
+   "var_limit": -375421.255459,
+   "es_limit": -400669.509046,
+   "breach": false
+  },
+  {
+   "date": "02 Feb 2026",
+   "pnl": -24847.286041,
+   "var_limit": -363698.171792,
+   "es_limit": -388175.286057,
+   "breach": false
+  },
+  {
+   "date": "03 Feb 2026",
+   "pnl": -53384.957676,
+   "var_limit": -351697.182394,
+   "es_limit": -375383.711532,
+   "breach": false
+  },
+  {
+   "date": "04 Feb 2026",
+   "pnl": -104645.260991,
+   "var_limit": -347993.198403,
+   "es_limit": -371435.483541,
+   "breach": false
+  },
+  {
+   "date": "05 Feb 2026",
+   "pnl": -192195.421791,
+   "var_limit": -369436.704367,
+   "es_limit": -394291.437429,
+   "breach": false
+  },
+  {
+   "date": "06 Feb 2026",
+   "pnl": 134466.571825,
+   "var_limit": -454218.315745,
+   "es_limit": -484620.524724,
+   "breach": false
+  },
+  {
+   "date": "09 Feb 2026",
+   "pnl": 87843.224506,
+   "var_limit": -437947.521638,
+   "es_limit": -467289.67654,
+   "breach": false
+  },
+  {
+   "date": "10 Feb 2026",
+   "pnl": -46485.095319,
+   "var_limit": -419751.805575,
+   "es_limit": -447905.912868,
+   "breach": false
+  },
+  {
+   "date": "11 Feb 2026",
+   "pnl": -12804.345463,
+   "var_limit": -406226.841618,
+   "es_limit": -433496.102533,
+   "breach": false
+  },
+  {
+   "date": "12 Feb 2026",
+   "pnl": -196828.754,
+   "var_limit": -388667.537621,
+   "es_limit": -414785.770686,
+   "breach": false
+  },
+  {
+   "date": "13 Feb 2026",
+   "pnl": -54309.537018,
+   "var_limit": -471875.088608,
+   "es_limit": -503425.177659,
+   "breach": false
+  },
+  {
+   "date": "17 Feb 2026",
+   "pnl": -839.389621,
+   "var_limit": -454912.4017,
+   "es_limit": -485359.782328,
+   "breach": false
+  },
+  {
+   "date": "18 Feb 2026",
+   "pnl": 88423.011386,
+   "var_limit": -432480.095155,
+   "es_limit": -461465.553459,
+   "breach": false
+  },
+  {
+   "date": "19 Feb 2026",
+   "pnl": -8139.310302,
+   "var_limit": -414849.04589,
+   "es_limit": -442682.572747,
+   "breach": false
+  },
+  {
+   "date": "20 Feb 2026",
+   "pnl": 81945.330523,
+   "var_limit": -396213.617132,
+   "es_limit": -422826.812524,
+   "breach": false
+  },
+  {
+   "date": "23 Feb 2026",
+   "pnl": -147909.456113,
+   "var_limit": -381773.11512,
+   "es_limit": -407438.720951,
+   "breach": false
+  },
+  {
+   "date": "24 Feb 2026",
+   "pnl": 37965.801942,
+   "var_limit": -425969.135789,
+   "es_limit": -454529.495954,
+   "breach": false
+  },
+  {
+   "date": "25 Feb 2026",
+   "pnl": 163210.077166,
+   "var_limit": -406660.516491,
+   "es_limit": -433958.173136,
+   "breach": false
+  },
+  {
+   "date": "26 Feb 2026",
+   "pnl": -89875.345644,
+   "var_limit": -398577.396455,
+   "es_limit": -425345.540689,
+   "breach": false
+  },
+  {
+   "date": "27 Feb 2026",
+   "pnl": -70036.579246,
+   "var_limit": -403484.128793,
+   "es_limit": -430573.769313,
+   "breach": false
+  },
+  {
+   "date": "02 Mar 2026",
+   "pnl": 40345.36496,
+   "var_limit": -399180.536383,
+   "es_limit": -425988.209886,
+   "breach": false
+  },
+  {
+   "date": "03 Mar 2026",
+   "pnl": -62142.988507,
+   "var_limit": -382468.866035,
+   "es_limit": -408180.166444,
+   "breach": false
+  },
+  {
+   "date": "04 Mar 2026",
+   "pnl": 99131.696823,
+   "var_limit": -377909.684838,
+   "es_limit": -403321.481371,
+   "breach": false
+  },
+  {
+   "date": "05 Mar 2026",
+   "pnl": -25894.068067,
+   "var_limit": -366619.364576,
+   "es_limit": -391288.738907,
+   "breach": false
+  },
+  {
+   "date": "06 Mar 2026",
+   "pnl": -144924.767993,
+   "var_limit": -354473.781426,
+   "es_limit": -378343.328404,
+   "breach": false
+  },
+  {
+   "date": "09 Mar 2026",
+   "pnl": 73693.705963,
+   "var_limit": -402878.746406,
+   "es_limit": -429928.73208,
+   "breach": false
+  },
+  {
+   "date": "10 Mar 2026",
+   "pnl": -4698.869377,
+   "var_limit": -387273.887557,
+   "es_limit": -413300.657236,
+   "breach": false
+  },
+  {
+   "date": "11 Mar 2026",
+   "pnl": 53449.997499,
+   "var_limit": -370200.702195,
+   "es_limit": -395916.13819,
+   "breach": false
+  },
+  {
+   "date": "12 Mar 2026",
+   "pnl": -162437.972305,
+   "var_limit": -356742.694429,
+   "es_limit": -381543.395095,
+   "breach": false
+  },
+  {
+   "date": "13 Mar 2026",
+   "pnl": -78816.4763,
+   "var_limit": -418648.281533,
+   "es_limit": -447643.968124,
+   "breach": false
+  },
+  {
+   "date": "16 Mar 2026",
+   "pnl": 131792.866141,
+   "var_limit": -415691.814985,
+   "es_limit": -444487.898481,
+   "breach": false
+  },
+  {
+   "date": "17 Mar 2026",
+   "pnl": 52569.004969,
+   "var_limit": -403297.923252,
+   "es_limit": -431256.436122,
+   "breach": false
+  },
+  {
+   "date": "18 Mar 2026",
+   "pnl": -123635.519087,
+   "var_limit": -386513.543878,
+   "es_limit": -413335.700664,
+   "breach": false
+  },
+  {
+   "date": "19 Mar 2026",
+   "pnl": -83264.908905,
+   "var_limit": -412442.064227,
+   "es_limit": -441018.65808,
+   "breach": false
+  },
+  {
+   "date": "20 Mar 2026",
+   "pnl": -156753.276559,
+   "var_limit": -412187.081463,
+   "es_limit": -440746.449867,
+   "breach": false
+  },
+  {
+   "date": "23 Mar 2026",
+   "pnl": 111206.328985,
+   "var_limit": -455890.15482,
+   "es_limit": -487393.819911,
+   "breach": false
+  },
+  {
+   "date": "24 Mar 2026",
+   "pnl": -46683.528689,
+   "var_limit": -437553.338377,
+   "es_limit": -467823.624162,
+   "breach": false
+  },
+  {
+   "date": "25 Mar 2026",
+   "pnl": 43831.38683,
+   "var_limit": -422064.070389,
+   "es_limit": -451290.278242,
+   "breach": false
+  },
+  {
+   "date": "26 Mar 2026",
+   "pnl": -226756.528789,
+   "var_limit": -403166.886825,
+   "es_limit": -431116.537372,
+   "breach": false
+  },
+  {
+   "date": "27 Mar 2026",
+   "pnl": -214108.112587,
+   "var_limit": -509661.004069,
+   "es_limit": -544764.870659,
+   "breach": false
+  },
+  {
+   "date": "30 Mar 2026",
+   "pnl": 5403.644322,
+   "var_limit": -574941.033583,
+   "es_limit": -614382.369937,
+   "breach": false
+  },
+  {
+   "date": "31 Mar 2026",
+   "pnl": 362386.443003,
+   "var_limit": -542321.373496,
+   "es_limit": -579599.90721,
+   "breach": false
+  },
+  {
+   "date": "01 Apr 2026",
+   "pnl": 60384.606533,
+   "var_limit": -548656.511733,
+   "es_limit": -586355.804902,
+   "breach": false
+  },
+  {
+   "date": "02 Apr 2026",
+   "pnl": -42621.65809,
+   "var_limit": -519211.834473,
+   "es_limit": -554952.583453,
+   "breach": false
+  },
+  {
+   "date": "06 Apr 2026",
+   "pnl": 56088.187348,
+   "var_limit": -495011.438954,
+   "es_limit": -529136.902508,
+   "breach": false
+  },
+  {
+   "date": "07 Apr 2026",
+   "pnl": 97186.01789,
+   "var_limit": -469978.808145,
+   "es_limit": -502428.162049,
+   "breach": false
+  },
+  {
+   "date": "08 Apr 2026",
+   "pnl": 164441.082737,
+   "var_limit": -449291.688195,
+   "es_limit": -480351.854399,
+   "breach": false
+  },
+  {
+   "date": "09 Apr 2026",
+   "pnl": 112000.087641,
+   "var_limit": -436714.681675,
+   "es_limit": -466928.488821,
+   "breach": false
+  },
+  {
+   "date": "10 Apr 2026",
+   "pnl": 23868.713567,
+   "var_limit": -420342.953199,
+   "es_limit": -449453.020461,
+   "breach": false
+  },
+  {
+   "date": "13 Apr 2026",
+   "pnl": 114557.472268,
+   "var_limit": -401086.871889,
+   "es_limit": -428895.826273,
+   "breach": false
+  },
+  {
+   "date": "14 Apr 2026",
+   "pnl": 192253.384381,
+   "var_limit": -388631.583231,
+   "es_limit": -415597.269832,
+   "breach": false
+  },
+  {
+   "date": "15 Apr 2026",
+   "pnl": 162423.830607,
+   "var_limit": -387009.756806,
+   "es_limit": -413865.54308,
+   "breach": false
+  },
+  {
+   "date": "16 Apr 2026",
+   "pnl": 47732.165648,
+   "var_limit": -381422.201598,
+   "es_limit": -407899.185841,
+   "breach": false
+  },
+  {
+   "date": "17 Apr 2026",
+   "pnl": 115596.265304,
+   "var_limit": -366584.797378,
+   "es_limit": -392054.612397,
+   "breach": false
+  },
+  {
+   "date": "20 Apr 2026",
+   "pnl": -46550.42983,
+   "var_limit": -358052.374593,
+   "es_limit": -382942.161005,
+   "breach": false
+  },
+  {
+   "date": "21 Apr 2026",
+   "pnl": 18451.476182,
+   "var_limit": -351286.208356,
+   "es_limit": -375715.597303,
+   "breach": false
+  },
+  {
+   "date": "22 Apr 2026",
+   "pnl": 147955.394607,
+   "var_limit": -338637.958315,
+   "es_limit": -362205.671073,
+   "breach": false
+  },
+  {
+   "date": "23 Apr 2026",
+   "pnl": -109402.586662,
+   "var_limit": -337325.641298,
+   "es_limit": -360803.873607,
+   "breach": false
+  },
+  {
+   "date": "24 Apr 2026",
+   "pnl": 126137.21089,
+   "var_limit": -363703.44464,
+   "es_limit": -388977.456053,
+   "breach": false
+  },
+  {
+   "date": "27 Apr 2026",
+   "pnl": 53625.189335,
+   "var_limit": -356601.487589,
+   "es_limit": -381392.58236,
+   "breach": false
+  },
+  {
+   "date": "28 Apr 2026",
+   "pnl": 29759.542616,
+   "var_limit": -344558.096788,
+   "es_limit": -368529.293881,
+   "breach": false
+  },
+  {
+   "date": "29 Apr 2026",
+   "pnl": -1854.073594,
+   "var_limit": -332860.454686,
+   "es_limit": -356034.118954,
+   "breach": false
+  },
+  {
+   "date": "30 Apr 2026",
+   "pnl": -26835.688441,
+   "var_limit": -321981.941554,
+   "es_limit": -344412.883825,
+   "breach": false
+  },
+  {
+   "date": "01 May 2026",
+   "pnl": 59163.740332,
+   "var_limit": -314746.064011,
+   "es_limit": -336682.42968,
+   "breach": false
+  },
+  {
+   "date": "04 May 2026",
+   "pnl": -2922.919848,
+   "var_limit": -307598.356284,
+   "es_limit": -329045.738602,
+   "breach": false
+  },
+  {
+   "date": "05 May 2026",
+   "pnl": 8338.974696,
+   "var_limit": -299488.391414,
+   "es_limit": -320380.440142,
+   "breach": false
+  },
+  {
+   "date": "06 May 2026",
+   "pnl": 129067.740868,
+   "var_limit": -292302.371948,
+   "es_limit": -312701.892118,
+   "breach": false
+  },
+  {
+   "date": "07 May 2026",
+   "pnl": 25847.484808,
+   "var_limit": -294850.16614,
+   "es_limit": -315424.361403,
+   "breach": false
+  },
+  {
+   "date": "08 May 2026",
+   "pnl": 70752.750347,
+   "var_limit": -288524.73534,
+   "es_limit": -308665.162741,
+   "breach": false
+  },
+  {
+   "date": "11 May 2026",
+   "pnl": 31864.550403,
+   "var_limit": -285338.585121,
+   "es_limit": -305260.394123,
+   "breach": false
+  },
+  {
+   "date": "12 May 2026",
+   "pnl": 17163.044863,
+   "var_limit": -280333.476657,
+   "es_limit": -299911.686737,
+   "breach": false
+  },
+  {
+   "date": "13 May 2026",
+   "pnl": 142515.951145,
+   "var_limit": -275523.615203,
+   "es_limit": -294771.431666,
+   "breach": false
+  },
+  {
+   "date": "14 May 2026",
+   "pnl": 39567.883186,
+   "var_limit": -282572.196898,
+   "es_limit": -302304.120353,
+   "breach": false
+  },
+  {
+   "date": "15 May 2026",
+   "pnl": -75523.326013,
+   "var_limit": -278213.10692,
+   "es_limit": -297645.690889,
+   "breach": false
+  },
+  {
+   "date": "18 May 2026",
+   "pnl": -33513.453326,
+   "var_limit": -295421.803418,
+   "es_limit": -316035.182258,
+   "breach": false
+  },
+  {
+   "date": "19 May 2026",
+   "pnl": -97459.414665,
+   "var_limit": -292868.428869,
+   "es_limit": -313306.762246,
+   "breach": false
+  },
+  {
+   "date": "20 May 2026",
+   "pnl": 59681.3025,
+   "var_limit": -320611.183372,
+   "es_limit": -342948.467383,
+   "breach": false
+  },
+  {
+   "date": "21 May 2026",
+   "pnl": -2554.989651,
+   "var_limit": -312821.2605,
+   "es_limit": -334625.990377,
+   "breach": false
+  },
+  {
+   "date": "22 May 2026",
+   "pnl": 21470.943963,
+   "var_limit": -304122.309178,
+   "es_limit": -325331.735373,
+   "breach": false
+  },
+  {
+   "date": "26 May 2026",
+   "pnl": -37695.781156,
+   "var_limit": -296617.124001,
+   "es_limit": -317312.428664,
+   "breach": false
+  },
+  {
+   "date": "27 May 2026",
+   "pnl": 50733.05834,
+   "var_limit": -295012.27828,
+   "es_limit": -315597.585997,
+   "breach": false
+  },
+  {
+   "date": "28 May 2026",
+   "pnl": 45541.995981,
+   "var_limit": -289702.505327,
+   "es_limit": -309923.724068,
+   "breach": false
+  },
+  {
+   "date": "29 May 2026",
+   "pnl": -26911.303449,
+   "var_limit": -284759.544895,
+   "es_limit": -304641.613761,
+   "breach": false
+  },
+  {
+   "date": "01 Jun 2026",
+   "pnl": -56361.568012,
+   "var_limit": -282061.967577,
+   "es_limit": -301758.861744,
+   "breach": false
+  },
+  {
+   "date": "02 Jun 2026",
+   "pnl": -53143.944414,
+   "var_limit": -289132.191224,
+   "es_limit": -309314.289656,
+   "breach": false
+  },
+  {
+   "date": "03 Jun 2026",
+   "pnl": -59620.758704,
+   "var_limit": -293786.829199,
+   "es_limit": -314288.12942,
+   "breach": false
+  },
+  {
+   "date": "04 Jun 2026",
+   "pnl": 152181.157822,
+   "var_limit": -300412.063544,
+   "es_limit": -321367.389087,
+   "breach": false
+  },
+  {
+   "date": "05 Jun 2026",
+   "pnl": -260222.920271,
+   "var_limit": -305109.362412,
+   "es_limit": -326386.368622,
+   "breach": false
+  },
+  {
+   "date": "08 Jun 2026",
+   "pnl": 28100.372968,
+   "var_limit": -486432.397631,
+   "es_limit": -519984.038048,
+   "breach": false
+  },
+  {
+   "date": "09 Jun 2026",
+   "pnl": -86071.507714,
+   "var_limit": -461369.928495,
+   "es_limit": -493241.620074,
+   "breach": false
+  },
+  {
+   "date": "10 Jun 2026",
+   "pnl": -167008.527194,
+   "var_limit": -457943.67561,
+   "es_limit": -488285.897082,
+   "breach": false
+  },
+  {
+   "date": "11 Jun 2026",
+   "pnl": 55991.873072,
+   "var_limit": -499863.608966,
+   "es_limit": -532898.692859,
+   "breach": false
+  },
+  {
+   "date": "12 Jun 2026",
+   "pnl": 32723.674034,
+   "var_limit": -474448.251588,
+   "es_limit": -505852.415871,
+   "breach": false
+  },
+  {
+   "date": "15 Jun 2026",
+   "pnl": 150719.719669,
+   "var_limit": -450586.085149,
+   "es_limit": -480454.184104,
+   "breach": false
+  },
+  {
+   "date": "16 Jun 2026",
+   "pnl": 15043.628585,
+   "var_limit": -436213.589246,
+   "es_limit": -465154.2499,
+   "breach": false
+  },
+  {
+   "date": "17 Jun 2026",
+   "pnl": -210447.587478,
+   "var_limit": -415462.012858,
+   "es_limit": -443060.627633,
+   "breach": false
+  },
+  {
+   "date": "18 Jun 2026",
+   "pnl": 56286.016606,
+   "var_limit": -503932.383284,
+   "es_limit": -537228.071002,
+   "breach": false
+  },
+  {
+   "date": "22 Jun 2026",
+   "pnl": -105158.252235,
+   "var_limit": -478175.006488,
+   "es_limit": -509818.650243,
+   "breach": false
+  },
+  {
+   "date": "23 Jun 2026",
+   "pnl": -75149.705689,
+   "var_limit": -479192.53178,
+   "es_limit": -510901.541448,
+   "breach": false
+  },
+  {
+   "date": "24 Jun 2026",
+   "pnl": -86298.875157,
+   "var_limit": -467737.818417,
+   "es_limit": -498710.486747,
+   "breach": false
+  },
+  {
+   "date": "25 Jun 2026",
+   "pnl": -129009.845372,
+   "var_limit": -461831.946609,
+   "es_limit": -492424.549174,
+   "breach": false
+  },
+  {
+   "date": "26 Jun 2026",
+   "pnl": 96716.470606,
+   "var_limit": -477999.839659,
+   "es_limit": -509632.229826,
+   "breach": false
+  },
+  {
+   "date": "29 Jun 2026",
+   "pnl": 145340.766859,
+   "var_limit": -456513.795274,
+   "es_limit": -486763.910022,
+   "breach": false
+  },
+  {
+   "date": "30 Jun 2026",
+   "pnl": 73562.254582,
+   "var_limit": -440987.146335,
+   "es_limit": -470236.025457,
+   "breach": false
+  },
+  {
+   "date": "01 Jul 2026",
+   "pnl": 202719.088796,
+   "var_limit": -421638.857594,
+   "es_limit": -449637.308252,
+   "breach": false
+  },
+  {
+   "date": "02 Jul 2026",
+   "pnl": -70678.349633,
+   "var_limit": -416909.938264,
+   "es_limit": -444602.307192,
+   "breach": false
+  },
+  {
+   "date": "06 Jul 2026",
+   "pnl": 116076.117847,
+   "var_limit": -411235.098657,
+   "es_limit": -438559.920165,
+   "breach": false
+  },
+  {
+   "date": "07 Jul 2026",
+   "pnl": 67743.376058,
+   "var_limit": -397767.958718,
+   "es_limit": -424219.492467,
+   "breach": false
+  },
+  {
+   "date": "08 Jul 2026",
+   "pnl": -71172.736023,
+   "var_limit": -382297.459966,
+   "es_limit": -407743.975866,
+   "breach": false
+  },
+  {
+   "date": "09 Jul 2026",
+   "pnl": 92149.420008,
+   "var_limit": -381275.690152,
+   "es_limit": -406655.759831,
+   "breach": false
+  },
+  {
+   "date": "10 Jul 2026",
+   "pnl": 91081.033213,
+   "var_limit": -369051.64239,
+   "es_limit": -393636.118528,
+   "breach": false
+  },
+  {
+   "date": "13 Jul 2026",
+   "pnl": -25258.878997,
+   "var_limit": -328571.324828,
+   "es_limit": -376030.861016,
+   "breach": false
+  },
+  {
+   "date": "14 Jul 2026",
+   "pnl": 65827.811191,
+   "var_limit": -318119.483801,
+   "es_limit": -364099.806997,
+   "breach": false
+  },
+  {
+   "date": "15 Jul 2026",
+   "pnl": 155683.879391,
+   "var_limit": -308681.846931,
+   "es_limit": -353324.759571,
+   "breach": false
+  },
+  {
+   "date": "16 Jul 2026",
+   "pnl": -80295.059561,
+   "var_limit": -308521.213006,
+   "es_limit": -353141.347922,
+   "breach": false
+  },
+  {
+   "date": "17 Jul 2026",
+   "pnl": -113838.152117,
+   "var_limit": -317662.909307,
+   "es_limit": -363578.56906,
+   "breach": false
+  },
+  {
+   "date": "20 Jul 2026",
+   "pnl": -10542.834459,
+   "var_limit": -343404.845765,
+   "es_limit": -392960.250248,
+   "breach": false
+  },
+  {
+   "date": "21 Jul 2026",
+   "pnl": 82833.59,
+   "var_limit": -329931.116656,
+   "es_limit": -377582.951004,
+   "breach": false
+  },
+  {
+   "date": "22 Jul 2026",
+   "pnl": -49568.082655,
+   "var_limit": -320223.459385,
+   "es_limit": -366501.713317,
+   "breach": false
+  },
+  {
+   "date": "23 Jul 2026",
+   "pnl": -317520.218142,
+   "var_limit": -316025.673151,
+   "es_limit": -361709.423793,
+   "breach": true
+  },
+  {
+   "date": "24 Jul 2026",
+   "pnl": -2218.742261,
+   "var_limit": -532207.905142,
+   "es_limit": -605759.554279,
+   "breach": false
+  },
+  {
+   "date": "27 Jul 2026",
+   "pnl": -27504.769187,
+   "var_limit": -501963.643779,
+   "es_limit": -571471.25254,
+   "breach": false
+  },
+  {
+   "date": "28 Jul 2026",
+   "pnl": 54650.210884,
+   "var_limit": -475604.905631,
+   "es_limit": -541574.505859,
+   "breach": false
+  },
+  {
+   "date": "29 Jul 2026",
+   "pnl": -123322.187362,
+   "var_limit": -450822.790346,
+   "es_limit": -513454.55237,
+   "breach": false
+  },
+  {
+   "date": "30 Jul 2026",
+   "pnl": 164208.746826,
+   "var_limit": -458838.985976,
+   "es_limit": -522551.641427,
+   "breach": false
+  },
+  {
+   "date": "31 Jul 2026",
+   "pnl": 202439.081488,
+   "var_limit": -442307.393924,
+   "es_limit": -503789.681516,
+   "breach": false
+  },
+  {
+   "date": "03 Aug 2026",
+   "pnl": 252962.857382,
+   "var_limit": -431514.498943,
+   "es_limit": -491537.999854,
+   "breach": false
+  },
+  {
+   "date": "04 Aug 2026",
+   "pnl": 43765.086226,
+   "var_limit": -428601.894008,
+   "es_limit": -488231.362628,
+   "breach": false
+  },
+  {
+   "date": "05 Aug 2026",
+   "pnl": -43701.922712,
+   "var_limit": -407609.098947,
+   "es_limit": -464394.038415,
+   "breach": false
+  },
+  {
+   "date": "06 Aug 2026",
+   "pnl": 2116.363898,
+   "var_limit": -392382.735599,
+   "es_limit": -447099.542462,
+   "breach": false
+  },
+  {
+   "date": "07 Aug 2026",
+   "pnl": 57461.028755,
+   "var_limit": -374041.893464,
+   "es_limit": -426262.016246,
+   "breach": false
+  },
+  {
+   "date": "10 Aug 2026",
+   "pnl": 52602.129539,
+   "var_limit": -358579.831578,
+   "es_limit": -408690.465741,
+   "breach": false
+  },
+  {
+   "date": "11 Aug 2026",
+   "pnl": -68961.058569,
+   "var_limit": -344442.211224,
+   "es_limit": -392620.304637,
+   "breach": false
+  },
+  {
+   "date": "12 Aug 2026",
+   "pnl": -54401.177461,
+   "var_limit": -343753.160065,
+   "es_limit": -391836.97232,
+   "breach": false
+  },
+  {
+   "date": "13 Aug 2026",
+   "pnl": 63806.727977,
+   "var_limit": -338251.183975,
+   "es_limit": -385581.870044,
+   "breach": false
+  },
+  {
+   "date": "14 Aug 2026",
+   "pnl": 1312.012296,
+   "var_limit": -326678.374814,
+   "es_limit": -372423.176269,
+   "breach": false
+  },
+  {
+   "date": "17 Aug 2026",
+   "pnl": -93297.917318,
+   "var_limit": -314672.309929,
+   "es_limit": -358769.328119,
+   "breach": false
+  },
+  {
+   "date": "18 Aug 2026",
+   "pnl": -38853.098679,
+   "var_limit": -329574.554325,
+   "es_limit": -375716.459347,
+   "breach": false
+  },
+  {
+   "date": "19 Aug 2026",
+   "pnl": 56015.644292,
+   "var_limit": -321661.009183,
+   "es_limit": -366717.510643,
+   "breach": false
+  },
+  {
+   "date": "20 Aug 2026",
+   "pnl": -92634.718177,
+   "var_limit": -311466.703323,
+   "es_limit": -355123.330111,
+   "breach": false
+  },
+  {
+   "date": "21 Aug 2026",
+   "pnl": 63261.274242,
+   "var_limit": -326587.563478,
+   "es_limit": -372319.911106,
+   "breach": false
+  },
+  {
+   "date": "24 Aug 2026",
+   "pnl": 1992.288824,
+   "var_limit": -316219.269993,
+   "es_limit": -360528.74648,
+   "breach": false
+  },
+  {
+   "date": "25 Aug 2026",
+   "pnl": 21121.34912,
+   "var_limit": -305292.39973,
+   "es_limit": -348100.274375,
+   "breach": false
+  },
+  {
+   "date": "26 Aug 2026",
+   "pnl": -20712.443874,
+   "var_limit": -295711.105648,
+   "es_limit": -337200.540107,
+   "breach": false
+  },
+  {
+   "date": "27 Aug 2026",
+   "pnl": 81076.078848,
+   "var_limit": -288357.543588,
+   "es_limit": -328833.977295,
+   "breach": false
+  },
+  {
+   "date": "28 Aug 2026",
+   "pnl": 35324.822068,
+   "var_limit": -283428.435444,
+   "es_limit": -323225.313736,
+   "breach": false
+  },
+  {
+   "date": "31 Aug 2026",
+   "pnl": 13959.667764,
+   "var_limit": -276631.427745,
+   "es_limit": -315490.522108,
+   "breach": false
+  },
+  {
+   "date": "01 Sep 2026",
+   "pnl": -17130.638718,
+   "var_limit": -270114.976293,
+   "es_limit": -308074.22367,
+   "breach": false
+  },
+  {
+   "date": "02 Sep 2026",
+   "pnl": 66500.549991,
+   "var_limit": -265293.871518,
+   "es_limit": -302586.893988,
+   "breach": false
+  },
+  {
+   "date": "03 Sep 2026",
+   "pnl": 176196.950651,
+   "var_limit": -262195.979931,
+   "es_limit": -299060.689101,
+   "breach": false
+  },
+  {
+   "date": "04 Sep 2026",
+   "pnl": -133898.120654,
+   "var_limit": -272278.398032,
+   "es_limit": -310536.472779,
+   "breach": false
+  },
+  {
+   "date": "08 Sep 2026",
+   "pnl": -15224.656859,
+   "var_limit": -323399.269027,
+   "es_limit": -368694.282007,
+   "breach": false
+  },
+  {
+   "date": "09 Sep 2026",
+   "pnl": 17776.136358,
+   "var_limit": -312416.946624,
+   "es_limit": -356204.13848,
+   "breach": false
+  },
+  {
+   "date": "10 Sep 2026",
+   "pnl": -19091.12707,
+   "var_limit": -301953.673536,
+   "es_limit": -344204.376831,
+   "breach": false
+  },
+  {
+   "date": "11 Sep 2026",
+   "pnl": 59855.662021,
+   "var_limit": -293798.695162,
+   "es_limit": -334929.424627,
+   "breach": false
+  },
+  {
+   "date": "14 Sep 2026",
+   "pnl": 15870.490878,
+   "var_limit": -286966.619975,
+   "es_limit": -327158.149213,
+   "breach": false
+  },
+  {
+   "date": "15 Sep 2026",
+   "pnl": -33662.942453,
+   "var_limit": -279416.858708,
+   "es_limit": -318569.564705,
+   "breach": false
+  },
+  {
+   "date": "16 Sep 2026",
+   "pnl": -56857.533164,
+   "var_limit": -276408.937957,
+   "es_limit": -315147.48199,
+   "breach": false
+  },
+  {
+   "date": "17 Sep 2026",
+   "pnl": 124856.48961,
+   "var_limit": -280792.692637,
+   "es_limit": -320134.784356,
+   "breach": false
+  },
+  {
+   "date": "18 Sep 2026",
+   "pnl": -8044.680402,
+   "var_limit": -280894.838429,
+   "es_limit": -320250.989339,
+   "breach": false
+  },
+  {
+   "date": "21 Sep 2026",
+   "pnl": 216789.920463,
+   "var_limit": -274126.996192,
+   "es_limit": -312551.231634,
+   "breach": false
+  },
+  {
+   "date": "22 Sep 2026",
+   "pnl": -61615.744824,
+   "var_limit": -288965.642086,
+   "es_limit": -329432.061119,
+   "breach": false
+  },
+  {
+   "date": "23 Sep 2026",
+   "pnl": -57276.071225,
+   "var_limit": -293292.330434,
+   "es_limit": -334353.478749,
+   "breach": false
+  },
+  {
+   "date": "24 Sep 2026",
+   "pnl": 69745.675448,
+   "var_limit": -295367.077907,
+   "es_limit": -336713.294835,
+   "breach": false
+  },
+  {
+   "date": "25 Sep 2026",
+   "pnl": 5852.701241,
+   "var_limit": -288915.801718,
+   "es_limit": -329375.367957,
+   "breach": false
+  },
+  {
+   "date": "28 Sep 2026",
+   "pnl": -123462.580811,
+   "var_limit": -281051.067592,
+   "es_limit": -320428.721289,
+   "breach": false
+  },
+  {
+   "date": "29 Sep 2026",
+   "pnl": -30391.253725,
+   "var_limit": -321547.420307,
+   "es_limit": -366484.223795,
+   "breach": false
+  },
+  {
+   "date": "30 Sep 2026",
+   "pnl": 1619.444345,
+   "var_limit": -312918.185811,
+   "es_limit": -356672.851506,
+   "breach": false
+  },
+  {
+   "date": "01 Oct 2026",
+   "pnl": -10491.056166,
+   "var_limit": -302463.0982,
+   "es_limit": -344783.724751,
+   "breach": false
+  },
+  {
+   "date": "02 Oct 2026",
+   "pnl": 127911.573339,
+   "var_limit": -293455.911474,
+   "es_limit": -334539.538466,
+   "breach": false
+  },
+  {
+   "date": "05 Oct 2026",
+   "pnl": 101284.872197,
+   "var_limit": -292198.754587,
+   "es_limit": -333109.615716,
+   "breach": false
+  },
+  {
+   "date": "06 Oct 2026",
+   "pnl": 33935.940739,
+   "var_limit": -288474.106097,
+   "es_limit": -328872.939542,
+   "breach": false
+  },
+  {
+   "date": "07 Oct 2026",
+   "pnl": -15611.996801,
+   "var_limit": -281163.193485,
+   "es_limit": -320556.279495,
+   "breach": false
+  },
+  {
+   "date": "08 Oct 2026",
+   "pnl": -51276.516575,
+   "var_limit": -274965.569795,
+   "es_limit": -313505.318863,
+   "breach": false
+  },
+  {
+   "date": "09 Oct 2026",
+   "pnl": 98112.661649,
+   "var_limit": -277558.08453,
+   "es_limit": -316454.874008,
+   "breach": false
+  },
+  {
+   "date": "12 Oct 2026",
+   "pnl": 43990.367612,
+   "var_limit": -275401.500412,
+   "es_limit": -314001.294057,
+   "breach": false
+  },
+  {
+   "date": "13 Oct 2026",
+   "pnl": 33306.436212,
+   "var_limit": -269952.571215,
+   "es_limit": -307801.593614,
+   "breach": false
+  },
+  {
+   "date": "14 Oct 2026",
+   "pnl": -58159.335757,
+   "var_limit": -264753.54196,
+   "es_limit": -301885.734688,
+   "breach": false
+  },
+  {
+   "date": "15 Oct 2026",
+   "pnl": -58.364299,
+   "var_limit": -271432.703548,
+   "es_limit": -309485.715463,
+   "breach": false
+  },
+  {
+   "date": "16 Oct 2026",
+   "pnl": -105080.248087,
+   "var_limit": -265528.132685,
+   "es_limit": -302767.154477,
+   "breach": false
+  },
+  {
+   "date": "19 Oct 2026",
+   "pnl": 51043.991961,
+   "var_limit": -297117.702342,
+   "es_limit": -338704.394193,
+   "breach": false
+  },
+  {
+   "date": "20 Oct 2026",
+   "pnl": -19481.725733,
+   "var_limit": -289482.487893,
+   "es_limit": -330019.967958,
+   "breach": false
+  }
+ ],
+ "bt_exceptions_gjr": [
+  {
+   "date": "11 Jun 2020",
+   "var": 259011.128335,
+   "loss": 585670.585068,
+   "excess": 326659.456733
+  },
+  {
+   "date": "13 Sep 2022",
+   "var": 388659.548049,
+   "loss": 559631.381928,
+   "excess": 170971.833879
+  },
+  {
+   "date": "03 Apr 2025",
+   "var": 426297.695401,
+   "loss": 559204.026429,
+   "excess": 132906.331027
+  },
+  {
+   "date": "24 Feb 2020",
+   "var": 395434.456438,
+   "loss": 530343.616929,
+   "excess": 134909.160491
+  },
+  {
+   "date": "03 Feb 2022",
+   "var": 474097.935001,
+   "loss": 501691.784927,
+   "excess": 27593.849927
+  },
+  {
+   "date": "03 Sep 2020",
+   "var": 263661.493019,
+   "loss": 476904.4191,
+   "excess": 213242.926081
+  },
+  {
+   "date": "05 Feb 2018",
+   "var": 389078.623161,
+   "loss": 463227.5002,
+   "excess": 74148.877039
+  },
+  {
+   "date": "28 Oct 2020",
+   "var": 408768.439492,
+   "loss": 451096.422042,
+   "excess": 42327.982549
+  }
+ ],
  "stress": [
   {
    "rank": 1,
    "scenario": "2008 financial crisis",
    "kind": "Historical",
-   "loss": 0.440907,
-   "worst_day": 0.131408,
-   "stressed_var": 0.095955,
-   "stressed_es": 0.110605
+   "loss": 0.439798,
+   "worst_day": 0.131365,
+   "stressed_var": 0.095685,
+   "stressed_es": 0.110497
   },
   {
    "rank": 2,
    "scenario": "COVID crash 2020",
    "kind": "Historical",
-   "loss": 0.345996,
-   "worst_day": 0.136989,
-   "stressed_var": 0.083446,
-   "stressed_es": 0.106285
+   "loss": 0.344419,
+   "worst_day": 0.136623,
+   "stressed_var": 0.083179,
+   "stressed_es": 0.106057
   },
   {
    "rank": 3,
    "scenario": "Inflation shock 2022",
    "kind": "Historical",
-   "loss": 0.252122,
-   "worst_day": 0.049643,
-   "stressed_var": 0.049292,
-   "stressed_es": 0.051662
+   "loss": 0.254287,
+   "worst_day": 0.049629,
+   "stressed_var": 0.049357,
+   "stressed_es": 0.051807
   },
   {
    "rank": 4,
    "scenario": "Tech selloff 2021-22",
    "kind": "Historical",
-   "loss": 0.232912,
-   "worst_day": 0.049264,
-   "stressed_var": 0.049292,
-   "stressed_es": 0.051662
+   "loss": 0.236912,
+   "worst_day": 0.049243,
+   "stressed_var": 0.049357,
+   "stressed_es": 0.051807
   },
   {
    "rank": 5,
    "scenario": "Market -20%",
    "kind": "Hypothetical",
-   "loss": 0.22357,
-   "worst_day": 0.22357,
+   "loss": 0.224429,
+   "worst_day": 0.224429,
    "stressed_var": null,
    "stressed_es": null
   },
@@ -705,44 +6000,44 @@
    "rank": 6,
    "scenario": "Tariff shock April 2025",
    "kind": "Historical",
-   "loss": 0.117365,
-   "worst_day": 0.05814,
-   "stressed_var": 0.04288,
-   "stressed_es": 0.05209
+   "loss": 0.11723,
+   "worst_day": 0.058015,
+   "stressed_var": 0.042918,
+   "stressed_es": 0.052096
   },
   {
    "rank": 7,
    "scenario": "Market -10%",
    "kind": "Hypothetical",
-   "loss": 0.111785,
-   "worst_day": 0.111785,
+   "loss": 0.112215,
+   "worst_day": 0.112215,
    "stressed_var": null,
    "stressed_es": null
   },
   {
    "rank": 8,
-   "scenario": "Volatility x2",
+   "scenario": "Market -5%",
    "kind": "Hypothetical",
-   "loss": 0.058481,
-   "worst_day": 0.058481,
-   "stressed_var": 0.058481,
-   "stressed_es": 0.066535
+   "loss": 0.056107,
+   "worst_day": 0.056107,
+   "stressed_var": null,
+   "stressed_es": null
   },
   {
    "rank": 9,
-   "scenario": "Market -5%",
+   "scenario": "Volatility x2",
    "kind": "Hypothetical",
-   "loss": 0.055892,
-   "worst_day": 0.055892,
-   "stressed_var": null,
-   "stressed_es": null
+   "loss": 0.055693,
+   "worst_day": 0.055693,
+   "stressed_var": 0.055693,
+   "stressed_es": 0.063385
   },
   {
    "rank": 10,
    "scenario": "Technology -15%",
    "kind": "Hypothetical",
-   "loss": 0.044138,
-   "worst_day": 0.044138,
+   "loss": 0.044206,
+   "worst_day": 0.044206,
    "stressed_var": null,
    "stressed_es": null
   },
@@ -750,31 +6045,31 @@
    "rank": 11,
    "scenario": "Correlation spike (50% to 1)",
    "kind": "Hypothetical",
-   "loss": 0.041951,
-   "worst_day": 0.041951,
-   "stressed_var": 0.041951,
-   "stressed_es": 0.047836
+   "loss": 0.039858,
+   "worst_day": 0.039858,
+   "stressed_var": 0.039858,
+   "stressed_es": 0.04546
   },
   {
    "rank": 12,
    "scenario": "Banking stress 2023",
    "kind": "Historical",
-   "loss": -0.016292,
-   "worst_day": 0.022831,
-   "stressed_var": 0.049292,
-   "stressed_es": 0.051662
+   "loss": -0.016857,
+   "worst_day": 0.022841,
+   "stressed_var": 0.049357,
+   "stressed_es": 0.051807
   }
  ],
- "basel_svar": 0.09595510087963625,
+ "basel_svar": 0.09568508526093335,
  "basel_svar_end": "December 2008",
  "betas": {
   "AAPL": 1.06,
   "MSFT": 0.941,
-  "NVDA": 1.855,
+  "NVDA": 1.857,
   "JPM": 0.918,
   "XOM": 0.17,
-  "AMZN": 1.363,
-  "META": 1.404,
+  "AMZN": 1.362,
+  "META": 1.405,
   "GOOGL": 1.123,
   "TSLA": 2.283,
   "UNH": 0.299
@@ -783,185 +6078,185 @@
   {
    "stock": "TSLA",
    "sector": "Consumer Cyclical",
-   "weight": 0.098044,
-   "var_usd": 73444.008774,
-   "es_usd": 65769.261413,
-   "var_share": 0.239042,
-   "es_share": 0.199216,
-   "standalone_usd": 81083.648449,
-   "marginal": 0.074909
+   "weight": 0.097737,
+   "var_usd": 72063.723193,
+   "es_usd": 62352.805013,
+   "var_share": 0.245791,
+   "es_share": 0.197597,
+   "standalone_usd": 76856.357576,
+   "marginal": 0.073733
   },
   {
    "stock": "AMZN",
    "sector": "Consumer Cyclical",
-   "weight": 0.098404,
-   "var_usd": 49461.240713,
-   "es_usd": 57439.477023,
-   "var_share": 0.160984,
-   "es_share": 0.173985,
-   "standalone_usd": 41993.799523,
-   "marginal": 0.050264
+   "weight": 0.103722,
+   "var_usd": 42124.923357,
+   "es_usd": 57583.142069,
+   "var_share": 0.143677,
+   "es_share": 0.182482,
+   "standalone_usd": 42091.480813,
+   "marginal": 0.040613
   },
   {
    "stock": "META",
    "sector": "Communication Services",
-   "weight": 0.095926,
-   "var_usd": 35377.547183,
-   "es_usd": 38362.936123,
-   "var_share": 0.115145,
-   "es_share": 0.116202,
-   "standalone_usd": 55337.897522,
-   "marginal": 0.03688
+   "weight": 0.093551,
+   "var_usd": 36582.526821,
+   "es_usd": 35580.953041,
+   "var_share": 0.124773,
+   "es_share": 0.112757,
+   "standalone_usd": 51341.935347,
+   "marginal": 0.039104
   },
   {
    "stock": "GOOGL",
    "sector": "Communication Services",
-   "weight": 0.097074,
-   "var_usd": 31726.550541,
-   "es_usd": 32687.886676,
-   "var_share": 0.103262,
-   "es_share": 0.099012,
-   "standalone_usd": 38449.164133,
-   "marginal": 0.032683
+   "weight": 0.097517,
+   "var_usd": 31896.464563,
+   "es_usd": 31228.358353,
+   "var_share": 0.108791,
+   "es_share": 0.098963,
+   "standalone_usd": 36719.538912,
+   "marginal": 0.032709
   },
   {
    "stock": "AAPL",
    "sector": "Technology",
-   "weight": 0.101143,
-   "var_usd": 16202.184906,
-   "es_usd": 31660.883405,
-   "var_share": 0.052734,
-   "es_share": 0.095901,
-   "standalone_usd": 40209.495086,
-   "marginal": 0.016019
+   "weight": 0.100053,
+   "var_usd": 20753.037647,
+   "es_usd": 29784.794154,
+   "var_share": 0.070783,
+   "es_share": 0.094389,
+   "standalone_usd": 37841.24658,
+   "marginal": 0.020742
   },
   {
    "stock": "NVDA",
    "sector": "Technology",
-   "weight": 0.09195,
-   "var_usd": 29844.523025,
-   "es_usd": 28369.071558,
-   "var_share": 0.097136,
-   "es_share": 0.08593,
-   "standalone_usd": 47069.829658,
-   "marginal": 0.032457
+   "weight": 0.093387,
+   "var_usd": 32720.341427,
+   "es_usd": 27401.996469,
+   "var_share": 0.111601,
+   "es_share": 0.086837,
+   "standalone_usd": 45467.521927,
+   "marginal": 0.035037
   },
   {
    "stock": "MSFT",
    "sector": "Technology",
-   "weight": 0.101157,
-   "var_usd": 26750.23179,
-   "es_usd": 24208.144579,
-   "var_share": 0.087065,
-   "es_share": 0.073327,
-   "standalone_usd": 43531.879007,
-   "marginal": 0.026444
+   "weight": 0.101269,
+   "var_usd": 24452.827693,
+   "es_usd": 23049.68137,
+   "var_share": 0.083402,
+   "es_share": 0.073045,
+   "standalone_usd": 41448.511139,
+   "marginal": 0.024146
   },
   {
    "stock": "JPM",
    "sector": "Financial Services",
-   "weight": 0.101207,
-   "var_usd": 12837.486015,
-   "es_usd": 23333.653248,
-   "var_share": 0.041783,
-   "es_share": 0.070678,
-   "standalone_usd": 36664.01686,
-   "marginal": 0.012684
+   "weight": 0.100423,
+   "var_usd": 15346.752386,
+   "es_usd": 22018.488724,
+   "var_share": 0.052344,
+   "es_share": 0.069777,
+   "standalone_usd": 34600.974918,
+   "marginal": 0.015282
   },
   {
    "stock": "XOM",
    "sector": "Energy",
-   "weight": 0.107849,
-   "var_usd": 10392.051922,
-   "es_usd": 15899.453213,
-   "var_share": 0.033824,
-   "es_share": 0.04816,
-   "standalone_usd": 39588.237032,
-   "marginal": 0.009636
+   "weight": 0.105432,
+   "var_usd": 12129.288802,
+   "es_usd": 14782.131829,
+   "var_share": 0.04137,
+   "es_share": 0.046845,
+   "standalone_usd": 36811.833588,
+   "marginal": 0.011504
   },
   {
    "stock": "UNH",
    "sector": "Healthcare",
-   "weight": 0.107246,
-   "var_usd": 21207.405557,
-   "es_usd": 12409.755684,
-   "var_share": 0.069025,
-   "es_share": 0.037589,
-   "standalone_usd": 71703.081478,
-   "marginal": 0.019775
+   "weight": 0.10691,
+   "var_usd": 5121.730776,
+   "es_usd": 11772.741174,
+   "var_share": 0.017469,
+   "es_share": 0.037308,
+   "standalone_usd": 67933.001194,
+   "marginal": 0.004791
   }
  ],
  "diversification": {
-  "var": 307243.23042524664,
-  "es": 330140.52292223956,
-  "sum_standalone": 495631.04874835315,
-  "benefit": 188387.81832310648,
-  "benefit_share": 0.3800968861794546
+  "var": 293191.6166639589,
+  "es": 315555.0921971637,
+  "sum_standalone": 471112.40199251584,
+  "benefit": 177920.785328557,
+  "benefit_share": 0.3776610095086893
  },
  "active": {
-  "tracking error": 0.0930459906352013,
-  "active VaR": 125640.8803262922,
-  "active ES": 152426.8225743393,
-  "beta": 1.1350234877596155,
-  "information ratio": 0.8421398449438032
+  "tracking error": 0.09304603393138616,
+  "active VaR": 119460.01386582857,
+  "active ES": 145677.8289519225,
+  "beta": 1.1350235677396234,
+  "information ratio": 0.8421395882946519
  },
  "hedges": [
   {
    "instrument": "SPY",
-   "size": -1.03,
-   "amount": -10300000.0,
-   "var_before": 307243.230425,
-   "var_after": 125213.594208,
-   "reduction": 0.592461
+   "size": -1.05,
+   "amount": -10500000.0,
+   "var_before": 293191.616664,
+   "var_after": 118783.041889,
+   "reduction": 0.594862
   },
   {
    "instrument": "TSLA",
    "size": -0.25,
    "amount": -2500000.0,
-   "var_before": 307243.230425,
-   "var_after": 168287.680069,
-   "reduction": 0.452266
+   "var_before": 293191.616664,
+   "var_after": 161210.325044,
+   "reduction": 0.450154
   },
   {
    "instrument": "AMZN",
-   "size": -0.3,
-   "amount": -3000000.0,
-   "var_before": 307243.230425,
-   "var_after": 174021.27972,
-   "reduction": 0.433604
+   "size": -0.31,
+   "amount": -3100000.0,
+   "var_before": 293191.616664,
+   "var_after": 164910.438637,
+   "reduction": 0.437534
   },
   {
    "instrument": "JPM",
    "size": -0.6,
    "amount": -6000000.0,
-   "var_before": 307243.230425,
-   "var_after": 198696.480155,
-   "reduction": 0.353293
+   "var_before": 293191.616664,
+   "var_after": 189591.491896,
+   "reduction": 0.353353
   }
  ],
  "optimizer": {
   "weights": {
-   "MSFT": 0.2146,
-   "JPM": 0.1348,
+   "MSFT": 0.2145,
+   "JPM": 0.135,
    "XOM": 0.25,
-   "GOOGL": 0.2407,
-   "UNH": 0.1598
+   "GOOGL": 0.2408,
+   "UNH": 0.1597
   },
   "compare": [
    {
     "split": "Today's split",
-    "VaR": 307243.230425,
-    "ES": 330140.522922,
-    "volatility": 0.216899,
-    "return": 0.293946,
-    "largest weight": 0.107849
+    "VaR": 293191.616664,
+    "ES": 315555.092197,
+    "volatility": 0.217266,
+    "return": 0.294727,
+    "largest weight": 0.10691
    },
    {
     "split": "Optimized split",
-    "VaR": 189143.972134,
-    "ES": 229418.001399,
-    "volatility": 0.187311,
-    "return": 0.211583,
+    "VaR": 179847.468536,
+    "ES": 218200.103853,
+    "volatility": 0.187262,
+    "return": 0.211279,
     "largest weight": 0.25
    }
   ]

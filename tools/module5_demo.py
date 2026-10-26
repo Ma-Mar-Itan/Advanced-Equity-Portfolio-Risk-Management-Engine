@@ -34,8 +34,10 @@ def main() -> None:
     r = build_portfolio(clean_market_data(md, cfg), md, cfg).log_returns
     results = all_models_today(r, cfg)
     for v in results:
-        print(f"{v.model:9s} 1-day VaR ${v.var_1d_usd:>9,.0f} ({v.var_1d:.2%})  ES ${v.es_1d_usd:>9,.0f}  "
-              f"10-day VaR ${v.var_h_usd:>11,.0f}")
+        print(
+            f"{v.model:9s} 1-day VaR ${v.var_1d_usd:>9,.0f} ({v.var_1d:.2%})  ES ${v.es_1d_usd:>9,.0f}  "
+            f"10-day VaR ${v.var_h_usd:>11,.0f}"
+        )
     print("\n", confidence_window_grid(r, cfg, cfg.var.model).map("{:.2%}".format).to_string(), sep="")
     rolling = {m: rolling_var(r, cfg, m) for m in VAR_MODELS}
     print()
@@ -52,9 +54,13 @@ def main() -> None:
     fig.update_traces(selector=dict(name="Loss beyond VaR"), name="Loss beyond GJR-scaled VaR")
     hs = window["HS"]
     beyond = hs["actual"] > hs["var"]
-    fig.add_scatter(x=hs.index[beyond], y=-hs["actual"][beyond] * cfg.portfolio_value, mode="markers",
-                    name="Loss beyond plain-history VaR", marker=dict(color="#161616", size=9, symbol="circle-open",
-                                                                      line=dict(width=2)))
+    fig.add_scatter(
+        x=hs.index[beyond],
+        y=-hs["actual"][beyond] * cfg.portfolio_value,
+        mode="markers",
+        name="Loss beyond plain-history VaR",
+        marker=dict(color="#161616", size=9, symbol="circle-open", line=dict(width=2)),
+    )
     save(fig, "m5_rolling_2020.png")
 
 

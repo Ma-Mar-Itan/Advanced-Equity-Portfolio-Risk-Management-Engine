@@ -24,11 +24,14 @@ def main() -> None:
     print(f"Days kept: {len(cd.returns):,}   filled: {cd.count('fill')}   stale: {cd.count('stale')}")
     for c in cd.checks:
         print(f"  [{'PASS' if c.passed else 'FAIL'}] {c.name}: {c.detail}")
-    clipped = clean_market_data(md, cfg.updated(cleaning=CleaningSpec(winsor_method="quantile",
-                                                                      winsor_lower=0.01, winsor_upper=0.99)))
+    clipped = clean_market_data(
+        md, cfg.updated(cleaning=CleaningSpec(winsor_method="quantile", winsor_lower=0.01, winsor_upper=0.99))
+    )
     days = clipped.log[clipped.log["ticker"] == STOCK]["date"]
-    print(f"\n1%/99% winsorizing would change {clipped.count('winsorize')} returns in total, "
-          f"{len(days)} of them for {STOCK}; busiest year: {days.dt.year.value_counts().idxmax()}")
+    print(
+        f"\n1%/99% winsorizing would change {clipped.count('winsorize')} returns in total, "
+        f"{len(days)} of them for {STOCK}; busiest year: {days.dt.year.value_counts().idxmax()}"
+    )
     fig = returns_timeline(clipped.raw_returns[STOCK], clipped.returns[STOCK])
     fig.update_layout(width=1000, height=520, legend=dict(y=1.02))
     try:

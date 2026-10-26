@@ -58,9 +58,13 @@ def check_aligned(prices: pd.DataFrame, raw_returns: pd.DataFrame, kind: str) ->
     return Check("Returns aligned with prices", ok, "day t uses prices t-1 and t" if ok else "mismatch")
 
 
-def run_checks(cfg: RiskConfig, prices: pd.DataFrame, raw_returns: pd.DataFrame,
-               returns: pd.DataFrame) -> list[Check]:
-    """All Module 2 checks in one list."""
-    return [check_no_missing(returns), check_dates_in_order(returns), check_weights(cfg),
-            check_positive_prices(prices), check_finite(returns),
-            check_aligned(prices, raw_returns, cfg.cleaning.return_type)]
+def run_checks(cfg: RiskConfig, prices: pd.DataFrame, raw_returns: pd.DataFrame, returns: pd.DataFrame) -> list[Check]:
+    """Run the complete set of cleaned-data validation checks."""
+    return [
+        check_no_missing(returns),
+        check_dates_in_order(returns),
+        check_weights(cfg),
+        check_positive_prices(prices),
+        check_finite(returns),
+        check_aligned(prices, raw_returns, cfg.cleaning.return_type),
+    ]

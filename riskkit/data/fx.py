@@ -12,7 +12,10 @@ import pandas as pd
 
 #: Currencies quoted in hundredths: code -> (main currency, divisor)
 MINOR_UNITS: dict[str, tuple[str, int]] = {
-    "GBp": ("GBP", 100), "GBX": ("GBP", 100), "ZAc": ("ZAR", 100), "ILA": ("ILS", 100),
+    "GBp": ("GBP", 100),
+    "GBX": ("GBP", 100),
+    "ZAc": ("ZAR", 100),
+    "ILA": ("ILS", 100),
 }
 
 

@@ -32,8 +32,12 @@ class AlphaVantageSource:
 
         if not self.available:
             raise DataUnavailableError("No Alpha Vantage key: set ALPHAVANTAGE_API_KEY.")
-        params = {"function": "TIME_SERIES_DAILY_ADJUSTED", "symbol": ticker,
-                  "outputsize": "full", "apikey": self.api_key}
+        params = {
+            "function": "TIME_SERIES_DAILY_ADJUSTED",
+            "symbol": ticker,
+            "outputsize": "full",
+            "apikey": self.api_key,
+        }
         try:
             response = requests.get(API_URL, params=params, timeout=30)
             response.raise_for_status()
@@ -42,15 +46,18 @@ class AlphaVantageSource:
             raise DataUnavailableError(f"Alpha Vantage failed for {ticker}: {exc}") from exc
         rows = payload.get("Time Series (Daily)") if isinstance(payload, dict) else None
         if not rows:
-            message = payload.get("Note") or payload.get("Information") or payload.get("Error Message") \
-                if isinstance(payload, dict) else None
+            message = (
+                payload.get("Note") or payload.get("Information") or payload.get("Error Message")
+                if isinstance(payload, dict)
+                else None
+            )
             raise DataUnavailableError(f"Alpha Vantage returned no rows for {ticker}: {message or 'unknown error'}")
-        frame = pd.DataFrame.from_dict(rows, orient="index").rename(columns={
-            "4. close": "close", "5. adjusted close": "adj_close", "6. volume": "volume"
-        })
+        frame = pd.DataFrame.from_dict(rows, orient="index").rename(
+            columns={"4. close": "close", "5. adjusted close": "adj_close", "6. volume": "volume"}
+        )
         frame = standardize(frame, ticker)
         stop = pd.Timestamp(end) if end else frame.index.max()
-        return frame.loc[pd.Timestamp(start):stop]
+        return frame.loc[pd.Timestamp(start) : stop]
 
     def currency(self, ticker: str) -> str:
         return "USD"

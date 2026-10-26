@@ -1,8 +1,7 @@
-"""Module 2, part 2: optional changes to the returns (winsorizing and custom formulas).
+"""Optional return transformations, including winsorization and custom formulas.
 
-Winsorizing clips extreme days to a ceiling and a floor, like capping exam scores so
-one typo can't dominate the average. For a RISK model this is double-edged: real
-crashes are exactly what we want to keep. So it is off by default.
+Winsorization limits extreme observations but can suppress genuine tail events.
+It is therefore disabled by default.
 """
 
 from __future__ import annotations
@@ -13,8 +12,9 @@ import pandas as pd
 from riskkit.data.cleaning import empty_log, log_from_mask
 
 
-def winsor_bounds(r: pd.DataFrame, method: str, lower: float = 0.001, upper: float = 0.999,
-                  k: float = 6.0, cap: float = 0.25) -> tuple[pd.Series, pd.Series]:
+def winsor_bounds(
+    r: pd.DataFrame, method: str, lower: float = 0.001, upper: float = 0.999, k: float = 6.0, cap: float = 0.25
+) -> tuple[pd.Series, pd.Series]:
     """Per-stock floor and ceiling for each winsorizing method.
 
     quantile - the `lower` and `upper` percentiles of each stock's own history
@@ -43,9 +43,16 @@ def winsorize(r: pd.DataFrame, method: str, **params: float) -> tuple[pd.DataFra
 #: Functions a custom formula may use. `r` is the table of returns (dates x stocks).
 SAFE_FUNCTIONS = {
     "np": np,
-    "abs": np.abs, "sqrt": np.sqrt, "log": np.log, "log1p": np.log1p, "exp": np.exp, "sign": np.sign,
+    "abs": np.abs,
+    "sqrt": np.sqrt,
+    "log": np.log,
+    "log1p": np.log1p,
+    "exp": np.exp,
+    "sign": np.sign,
     "clip": lambda x, lo, hi: x.clip(lo, hi),
-    "mean": lambda x: x.mean(), "median": lambda x: x.median(), "std": lambda x: x.std(),
+    "mean": lambda x: x.mean(),
+    "median": lambda x: x.median(),
+    "std": lambda x: x.std(),
     "rolling_mean": lambda x, n: x.rolling(int(n)).mean(),
     "rolling_std": lambda x, n: x.rolling(int(n)).std(),
     "lag": lambda x, n=1: x.shift(int(n)),

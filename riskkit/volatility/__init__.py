@@ -1,1 +1,1 @@
-"""Module 4: volatility models (rolling, EWMA, GARCH, GJR-GARCH), all behind one interface."""
+"""Rolling, EWMA, GARCH, and GJR-GARCH volatility models."""

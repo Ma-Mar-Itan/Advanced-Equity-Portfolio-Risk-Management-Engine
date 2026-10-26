@@ -10,6 +10,7 @@ from __future__ import annotations
 import html
 import io
 import itertools
+import re
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -97,7 +98,7 @@ class Kpi:
     label: str
     value: str
     sub: str | None = None
-    state: str | None = None   # within | watch | breach
+    state: str | None = None  # within | watch | breach
 
 
 def kpis(items: Sequence[Kpi]) -> None:
@@ -105,7 +106,9 @@ def kpis(items: Sequence[Kpi]) -> None:
     for k in items:
         val = f"{dot(k.state)}{esc(k.value)}" if k.state else esc(k.value)
         sub = f'<div class="sub">{k.sub}</div>' if k.sub else ""
-        cells.append(f'<div class="rk-kpi"><div class="lab">{esc(k.label)}</div><div class="val">{val}</div>{sub}</div>')
+        cells.append(
+            f'<div class="rk-kpi"><div class="lab">{esc(k.label)}</div><div class="val">{val}</div>{sub}</div>'
+        )
     render(f'<div class="rk-kpis">{"".join(cells)}</div>')
 
 
@@ -119,9 +122,21 @@ def checks(items: dict[str, bool]) -> None:
     render(f'<div class="rk-checks">{spans}</div>')
 
 
-def hero(*, label: str, var_d: float, var_pct: float, value: float, var_prev_d: float,
-         rail_var: float, rail_es: float, rail_prev: float, limit_d: float,
-         side: Sequence[tuple[str, str, str | None]], reading: str, rail_label: str = "") -> None:
+def hero(
+    *,
+    label: str,
+    var_d: float,
+    var_pct: float,
+    value: float,
+    var_prev_d: float,
+    rail_var: float,
+    rail_es: float,
+    rail_prev: float,
+    limit_d: float,
+    side: Sequence[tuple[str, str, str | None]],
+    reading: str,
+    rail_label: str = "",
+) -> None:
     """Headline VaR plus the limit rail: 99% VaR, ES and yesterday's VaR placed against the limit."""
     use = rail_var / limit_d if limit_d else 0.0
     st_ = state_of_use(use)
@@ -138,7 +153,7 @@ def hero(*, label: str, var_d: float, var_pct: float, value: float, var_prev_d: 
     var_shift, lim_shift = (left_end, right_start) if rail_var <= limit_d else (right_start, left_end)
     side_html = "".join(
         f'<div><div class="lab">{esc(lab)}</div><div class="val">{val}'
-        f'{f"<small>{esc(sm)}</small>" if sm else ""}</div></div>'
+        f"{f'<small>{esc(sm)}</small>' if sm else ''}</div></div>"
         for lab, val, sm in side
     )
     rail_caption = f'<span class="rk-rail-scale" style="left:0">{esc(rail_label)}</span>' if rail_label else ""
@@ -174,9 +189,9 @@ def hero(*, label: str, var_d: float, var_pct: float, value: float, var_prev_d: 
 class Col:
     key: str
     label: str
-    fmt: Callable[[object], str] | str | None = None    # format spec, callable, or None (str)
+    fmt: Callable[[object], str] | str | None = None  # format spec, callable, or None (str)
     num: bool = False
-    kind: str = "text"            # text | bar | state | swatch | html
+    kind: str = "text"  # text | bar | state | swatch | html
     bar_max: float | None = None
     marker_key: str | None = None  # for kind="bar": draws a tick at row[marker_key]
     dim: bool = False
@@ -198,8 +213,14 @@ def _fmt(v: object, f) -> str:
     return str(v)
 
 
-def table(df: pd.DataFrame, cols: Sequence[Col], highlight: Callable[[pd.Series], bool] | None = None,
-          download: str | None = None, height: int | None = None, test_threshold: float = 0.05) -> None:
+def table(
+    df: pd.DataFrame,
+    cols: Sequence[Col],
+    highlight: Callable[[pd.Series], bool] | None = None,
+    download: str | None = None,
+    height: int | None = None,
+    test_threshold: float = 0.05,
+) -> None:
     head = "".join(f'<th class="{"num" if c.num else ""}">{esc(c.label)}</th>' for c in cols)
     rows = []
     for _, r in df.iterrows():
@@ -227,7 +248,9 @@ def table(df: pd.DataFrame, cols: Sequence[Col], highlight: Callable[[pd.Series]
                 swatch = theme.ACCENT if str(v) == theme.focus() else "transparent"
                 cell = f'<span class="rk-swatch" style="background:{swatch}"></span>{esc(v)}'
             elif c.kind == "test":
-                cell = (status("within", "Pass") if v >= test_threshold else status("breach", "Reject")) if v == v else "–"
+                cell = (
+                    (status("within", "Pass") if v >= test_threshold else status("breach", "Reject")) if v == v else "–"
+                )
             elif c.kind == "html":
                 cell = str(v)
             else:
@@ -237,8 +260,10 @@ def table(df: pd.DataFrame, cols: Sequence[Col], highlight: Callable[[pd.Series]
         rows.append(f'<tr class="{tr_cls}">{"".join(tds)}</tr>')
     style = f' style="max-height:{height}px"' if height else ""
     scroll = " scroll" if height else ""
-    render(f'<div class="rk-table-wrap{scroll}"{style}><table class="rk-table"><thead><tr>{head}</tr></thead>'
-           f'<tbody>{"".join(rows)}</tbody></table></div>')
+    render(
+        f'<div class="rk-table-wrap{scroll}"{style}><table class="rk-table"><thead><tr>{head}</tr></thead>'
+        f"<tbody>{''.join(rows)}</tbody></table></div>"
+    )
     if download:
         csv_download(df, download)
 
@@ -250,9 +275,12 @@ def csv_download(df: pd.DataFrame, name: str) -> None:
 
 
 # --------------------------------------------------------------------------- charts
-_PLOT_CONFIG = {"displaylogo": False, "displayModeBar": "hover",
-                "modeBarButtonsToRemove": ["lasso2d", "select2d", "autoScale2d"],
-                "toImageButtonOptions": {"format": "png", "scale": 2}}
+_PLOT_CONFIG = {
+    "displaylogo": False,
+    "displayModeBar": "hover",
+    "modeBarButtonsToRemove": ["lasso2d", "select2d", "autoScale2d"],
+    "toImageButtonOptions": {"format": "png", "scale": 2},
+}
 
 
 def plot(fig: go.Figure, height: int | None = None, key: str | None = None) -> None:
@@ -263,13 +291,86 @@ def plot(fig: go.Figure, height: int | None = None, key: str | None = None) -> N
     st.plotly_chart(fig, width="stretch", key=key, theme=None, config=_PLOT_CONFIG)
 
 
-def chart(fig: go.Figure, title: str | None = None, finding: str | None = None, note_text: str | None = None,
-          height: int | None = None, key: str | None = None, aside: str | None = None) -> None:
+def ensure_chart_legend(fig: go.Figure, fallback_name: str) -> None:
+    """Guarantee every dashboard chart has at least one clear, consistently placed legend item."""
+    eligible = [trace for trace in fig.data if trace.showlegend is not False]
+    if not eligible and fig.data:
+        fig.data[0].showlegend = True
+        eligible = [fig.data[0]]
+    for position, trace in enumerate(eligible, start=1):
+        if not trace.name:
+            trace.name = fallback_name if len(eligible) == 1 else f"Series {position}"
+    legend = fig.layout.legend.to_plotly_json()
+    legend.setdefault("orientation", "h")
+    legend.setdefault("x", 0)
+    legend.setdefault("xanchor", "left")
+    legend.setdefault("y", 1.02)
+    legend.setdefault("yanchor", "bottom")
+    margin = fig.layout.margin.to_plotly_json()
+    margin["t"] = max(56, margin.get("t", 0) or 0)
+    fig.update_layout(showlegend=True, legend=legend, margin=margin)
+
+
+def chart_frame(fig: go.Figure) -> pd.DataFrame:
+    """Return every plotted observation in a consistent long-form table."""
+    rows = []
+
+    def missing(value: object) -> bool:
+        return value is None or (not isinstance(value, (list, tuple, dict)) and bool(pd.isna(value)))
+
+    for position, trace in enumerate(fig.data, start=1):
+        x = list(trace.x) if trace.x is not None else []
+        y = list(trace.y) if trace.y is not None else []
+        length = max(len(x), len(y))
+        if not length:
+            continue
+        x.extend([None] * (length - len(x)))
+        y.extend([None] * (length - len(y)))
+        name = trace.name or f"Series {position}"
+        for x_value, y_value in zip(x, y, strict=True):
+            measure = x_value if trace.type == "bar" and trace.orientation == "h" else y_value
+            if trace.type == "bar" and missing(measure):
+                continue
+            if trace.type != "histogram" and missing(x_value) and missing(y_value):
+                continue
+            rows.append({"series": name, "chart_type": trace.type, "x": x_value, "y": y_value})
+    return pd.DataFrame(rows, columns=["series", "chart_type", "x", "y"])
+
+
+def _chart_download(fig: go.Figure, title: str, key: str | None) -> None:
+    data = chart_frame(fig)
+    if data.empty:
+        return
+    slug = re.sub(r"[^a-z0-9]+", "_", title.lower()).strip("_") or "chart"
+    st.download_button(
+        "Chart data",
+        data.to_csv(index=False, date_format="%Y-%m-%d"),
+        file_name=f"{slug}.csv",
+        mime="text/csv",
+        key=f"chart_csv_{key or next(_counter)}",
+        help="Download the plotted observations as CSV. Use the camera in the chart toolbar for PNG.",
+        icon=":material/download:",
+        type="tertiary",
+        on_click="ignore",
+    )
+
+
+def chart(
+    fig: go.Figure,
+    title: str | None = None,
+    finding: str | None = None,
+    note_text: str | None = None,
+    height: int | None = None,
+    key: str | None = None,
+    aside: str | None = None,
+) -> None:
     """A chart in a panel: the heading is HTML (statement-style), the figure has no title."""
     t = title if title is not None else (fig.layout.title.text or "")
     with panel(key):
         if t or finding:
             section(t, finding, aside)
+        ensure_chart_legend(fig, t or "Chart series")
         plot(fig, height, key)
+        _chart_download(fig, t or "chart", key)
         if note_text:
             note(note_text)

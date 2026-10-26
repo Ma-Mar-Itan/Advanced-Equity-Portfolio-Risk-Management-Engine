@@ -92,8 +92,9 @@ def save_snapshot(cache_dir: Path) -> int:
     return count
 
 
-def load_prices(ticker: str, sources: list[PriceSource], cache_dir: Path,
-                refresh: bool = False, offline: bool = False) -> tuple[pd.DataFrame, str]:
+def load_prices(
+    ticker: str, sources: list[PriceSource], cache_dir: Path, refresh: bool = False, offline: bool = False
+) -> tuple[pd.DataFrame, str]:
     """Full price history for one ticker, plus a label saying where it came from.
 
     Order: any saved file -> each source in turn (saving the result) -> any older
@@ -108,7 +109,7 @@ def load_prices(ticker: str, sources: list[PriceSource], cache_dir: Path,
                 freshness = "saved" if is_fresh(path) else "saved, refresh available"
                 return df, f"{name} ({freshness})"
     if not offline:
-        for source, (name, path) in zip(sources, saved):
+        for source, (name, path) in zip(sources, saved, strict=True):
             try:
                 df = source.fetch_prices(ticker, HISTORY_START, None)
             except DataUnavailableError:

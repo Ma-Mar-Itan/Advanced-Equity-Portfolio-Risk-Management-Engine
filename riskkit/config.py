@@ -14,7 +14,16 @@ from pathlib import Path
 
 #: The example universe from the QFI brief (Phase 1).
 DEFAULT_TICKERS: tuple[str, ...] = (
-    "AAPL", "MSFT", "NVDA", "JPM", "XOM", "AMZN", "META", "GOOGL", "TSLA", "UNH",
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "JPM",
+    "XOM",
+    "AMZN",
+    "META",
+    "GOOGL",
+    "TSLA",
+    "UNH",
 )
 
 #: Where downloaded prices are saved (V2/data/cache).
@@ -23,27 +32,31 @@ DEFAULT_CACHE_DIR = Path(__file__).resolve().parents[1] / "data" / "cache"
 
 @dataclass(frozen=True)
 class CleaningSpec:
-    """How raw prices are cleaned and turned into returns (Module 2). Every option is on the Cleaning page."""
+    """Price-cleaning and return-transformation settings."""
 
-    calendar: str = "union"          # which days to keep: "union" (any stock traded), "common" (all traded),
-                                     # "benchmark" (the benchmark's trading days)
-    fill_method: str = "ffill"       # missing prices: "ffill" (repeat last price), "interpolate", "drop" (drop the day)
-    fill_limit: int = 5              # at most this many missing days in a row are filled
-    stale_days: int = 5              # a price unchanged for more than this many days is stale (0 = off)
-    stale_action: str = "flag"       # "flag" (log only) or "remove" (treat as missing, then the fill rule applies)
-    return_type: str = "log"         # "log" or "simple"
-    winsor_method: str = "none"      # "none", "quantile", "sigma" (mean +/- k std), "cap" (fixed +/- limit)
-    winsor_lower: float = 0.001      # quantile method: lower and upper cut-off probabilities
+    calendar: str = "union"  # which days to keep: "union" (any stock traded), "common" (all traded),
+    # "benchmark" (the benchmark's trading days)
+    fill_method: str = "ffill"  # missing prices: "ffill" (repeat last price), "interpolate", "drop" (drop the day)
+    fill_limit: int = 5  # at most this many missing days in a row are filled
+    stale_days: int = 5  # a price unchanged for more than this many days is stale (0 = off)
+    stale_action: str = "flag"  # "flag" (log only) or "remove" (treat as missing, then the fill rule applies)
+    return_type: str = "log"  # "log" or "simple"
+    winsor_method: str = "none"  # "none", "quantile", "sigma" (mean +/- k std), "cap" (fixed +/- limit)
+    winsor_lower: float = 0.001  # quantile method: lower and upper cut-off probabilities
     winsor_upper: float = 0.999
-    winsor_k: float = 6.0            # sigma method: how many standard deviations
-    winsor_cap: float = 0.25         # cap method: largest allowed daily move (0.25 = 25%)
-    custom_expression: str = ""      # optional formula applied to the returns `r`, e.g. "clip(r, -0.2, 0.2)"
+    winsor_k: float = 6.0  # sigma method: how many standard deviations
+    winsor_cap: float = 0.25  # cap method: largest allowed daily move (0.25 = 25%)
+    custom_expression: str = ""  # optional formula applied to the returns `r`, e.g. "clip(r, -0.2, 0.2)"
 
     def __post_init__(self) -> None:
         """Reject unknown option names and impossible numbers."""
-        choices = {"calendar": ("union", "common", "benchmark"), "fill_method": ("ffill", "interpolate", "drop"),
-                   "stale_action": ("flag", "remove"), "return_type": ("log", "simple"),
-                   "winsor_method": ("none", "quantile", "sigma", "cap")}
+        choices = {
+            "calendar": ("union", "common", "benchmark"),
+            "fill_method": ("ffill", "interpolate", "drop"),
+            "stale_action": ("flag", "remove"),
+            "return_type": ("log", "simple"),
+            "winsor_method": ("none", "quantile", "sigma", "cap"),
+        }
         for name, allowed in choices.items():
             if getattr(self, name) not in allowed:
                 raise ValueError(f"{name} must be one of {allowed}.")
@@ -55,21 +68,23 @@ class CleaningSpec:
 
 @dataclass(frozen=True)
 class PortfolioSpec:
-    """How the money is split and managed over time (Module 3). Every option is on the Portfolio page."""
+    """Portfolio construction and rebalancing settings."""
 
-    scheme: str = "equal"            # "equal", "custom" (uses RiskConfig.weights), "market_cap", "inverse_vol"
-    rebalance: str = "monthly"       # "none" (buy and hold), "daily", "monthly", "quarterly", "yearly"
-    allow_short: bool = False        # True = custom weights may be negative (long-short)
-    max_weight: float = 1.0          # cap on any one stock for market_cap / inverse_vol (1.0 = no cap)
-    vol_lookback: int = 63           # inverse_vol: trading days of history used to measure calmness
-    cost_bps: float = 0.0            # trading cost per rebalance, in basis points of the amount traded (1bp = 0.01%)
-    value_basis: str = "today"       # "today": worth portfolio_value now; "start": portfolio_value invested at the start
+    scheme: str = "equal"  # "equal", "custom" (uses RiskConfig.weights), "market_cap", "inverse_vol"
+    rebalance: str = "monthly"  # "none" (buy and hold), "daily", "monthly", "quarterly", "yearly"
+    allow_short: bool = False  # True = custom weights may be negative (long-short)
+    max_weight: float = 1.0  # cap on any one stock for market_cap / inverse_vol (1.0 = no cap)
+    vol_lookback: int = 63  # inverse_vol: trading days of history used to measure calmness
+    cost_bps: float = 0.0  # trading cost per rebalance, in basis points of the amount traded (1bp = 0.01%)
+    value_basis: str = "today"  # "today": worth portfolio_value now; "start": portfolio_value invested at the start
 
     def __post_init__(self) -> None:
         """Reject unknown option names and impossible numbers."""
-        choices = {"scheme": ("equal", "custom", "market_cap", "inverse_vol"),
-                   "rebalance": ("none", "daily", "monthly", "quarterly", "yearly"),
-                   "value_basis": ("today", "start")}
+        choices = {
+            "scheme": ("equal", "custom", "market_cap", "inverse_vol"),
+            "rebalance": ("none", "daily", "monthly", "quarterly", "yearly"),
+            "value_basis": ("today", "start"),
+        }
         for name, allowed in choices.items():
             if getattr(self, name) not in allowed:
                 raise ValueError(f"{name} must be one of {allowed}.")
@@ -81,13 +96,13 @@ class PortfolioSpec:
 
 @dataclass(frozen=True)
 class VolatilitySpec:
-    """Settings of the volatility models (Module 4). Every option is on the Volatility page."""
+    """Volatility-model settings."""
 
-    rolling_window: int = 63         # rolling model: trading days averaged (63 = about 3 months)
-    ewma_lambda: float = 0.94        # EWMA memory: 0.94 is the RiskMetrics standard for daily data
-    garch_dist: str = "normal"       # shape of GARCH shocks: "normal" or "t" (Student-t, fatter tails)
-    garch_mean: str = "zero"         # GARCH mean return: "zero" or "constant"
-    horizon: int = 10                # how many days ahead to forecast
+    rolling_window: int = 63  # rolling model: trading days averaged (63 = about 3 months)
+    ewma_lambda: float = 0.94  # EWMA memory: 0.94 is the RiskMetrics standard for daily data
+    garch_dist: str = "normal"  # shape of GARCH shocks: "normal" or "t" (Student-t, fatter tails)
+    garch_mean: str = "zero"  # GARCH mean return: "zero" or "constant"
+    horizon: int = 10  # how many days ahead to forecast
 
     def __post_init__(self) -> None:
         """Reject impossible values."""
@@ -104,12 +119,12 @@ VAR_MODELS: tuple[str, ...] = ("HS", "EWMA-HS", "GARCH-HS", "GJR-HS")
 
 @dataclass(frozen=True)
 class VarSpec:
-    """Settings of the VaR and ES engine (Module 5). Confidence and window live on RiskConfig itself."""
+    """Value at Risk and Expected Shortfall settings."""
 
-    model: str = "GJR-HS"            # "HS" (plain), or history rescaled by "EWMA-HS", "GARCH-HS", "GJR-HS"
-    horizon: int = 10                # the longer horizon reported next to 1 day
-    horizon_method: str = "sqrt"     # "sqrt": 1-day x sqrt(horizon) (Basel shortcut); "overlapping": real h-day stretches
-    refit_every: int = 63            # rolling VaR: refit GARCH parameters every N days, using only past data
+    model: str = "GJR-HS"  # "HS" (plain), or history rescaled by "EWMA-HS", "GARCH-HS", "GJR-HS"
+    horizon: int = 10  # the longer horizon reported next to 1 day
+    horizon_method: str = "sqrt"  # "sqrt": 1-day x sqrt(horizon) (Basel shortcut); "overlapping": real h-day stretches
+    refit_every: int = 63  # rolling VaR: refit GARCH parameters every N days, using only past data
 
     def __post_init__(self) -> None:
         """Reject unknown models and impossible numbers."""
@@ -123,17 +138,23 @@ class VarSpec:
 
 @dataclass(frozen=True)
 class StressSpec:
-    """Settings of the stress tests (Module 7). Every option is on the Stress page."""
+    """Historical and hypothetical stress-test settings."""
 
-    historical: tuple[str, ...] = ("2008 financial crisis", "COVID crash 2020", "Inflation shock 2022",
-                                   "Banking stress 2023", "Tech selloff 2021-22", "Tariff shock April 2025")
-    market_shocks: tuple[float, ...] = (-0.05, -0.10, -0.20)   # whole-market moves; each stock moves beta x shock
-    vol_multiplier: float = 2.0      # "volatility doubles": every replayed day scaled by this
-    corr_blend: float = 0.5          # correlation spike: correlations moved this far towards 1 (0.5 = halfway)
-    sector: str = "Technology"       # sector shock: which sector
-    sector_shock: float = -0.15      # ... and how much it falls
-    spillover: float = 0.0           # share of the sector shock passed to the other stocks through their beta
-    custom_shocks: tuple[tuple[str, float], ...] = ()   # your own scenario: (ticker, move) pairs
+    historical: tuple[str, ...] = (
+        "2008 financial crisis",
+        "COVID crash 2020",
+        "Inflation shock 2022",
+        "Banking stress 2023",
+        "Tech selloff 2021-22",
+        "Tariff shock April 2025",
+    )
+    market_shocks: tuple[float, ...] = (-0.05, -0.10, -0.20)  # whole-market moves; each stock moves beta x shock
+    vol_multiplier: float = 2.0  # "volatility doubles": every replayed day scaled by this
+    corr_blend: float = 0.5  # correlation spike: correlations moved this far towards 1 (0.5 = halfway)
+    sector: str = "Technology"  # sector shock: which sector
+    sector_shock: float = -0.15  # ... and how much it falls
+    spillover: float = 0.0  # share of the sector shock passed to the other stocks through their beta
+    custom_shocks: tuple[tuple[str, float], ...] = ()  # your own scenario: (ticker, move) pairs
 
     def __post_init__(self) -> None:
         """Reject impossible values."""
@@ -153,17 +174,17 @@ class RiskConfig:
 
     tickers: tuple[str, ...] = DEFAULT_TICKERS
     weights: tuple[float, ...] | None = None
-    start: date = date(2012, 6, 1)          # all 10 default stocks trade from here (META listed May 2012)
-    end: date | None = None                 # None = up to the latest available day
-    portfolio_value: float = 10_000_000.0   # dollars
-    confidence: float = 0.99                # 99% VaR = the loss we expect to beat 99 days out of 100
-    window: int = 500                       # trading days of history behind each VaR estimate
-    source: str = "yahoo"                   # primary price source registered in riskkit.data.sources
-    fallback_source: str | None = "tiingo"  # tried when the primary fails (needs a Tiingo key)
-    benchmark: str = "SPY"                  # S&P 500 tracker, used as "the whole market"
-    base_currency: str = "USD"              # every price is converted into this currency
+    start: date = date(2012, 6, 1)  # all 10 default stocks trade from here (META listed May 2012)
+    end: date | None = None  # None = up to the latest available day
+    portfolio_value: float = 10_000_000.0  # dollars
+    confidence: float = 0.99  # 99% VaR = the loss we expect to beat 99 days out of 100
+    window: int = 500  # trading days of history behind each VaR estimate
+    source: str = "yahoo"  # primary price source registered in riskkit.data.sources
+    fallback_source: str | None = "yahoo"  # public saved-data fallback; no API key required
+    benchmark: str = "SPY"  # S&P 500 tracker, used as "the whole market"
+    base_currency: str = "USD"  # every price is converted into this currency
     cache_dir: Path = field(default=DEFAULT_CACHE_DIR)
-    offline: bool = False                   # True = use saved prices only, never go online
+    offline: bool = False  # True = use saved prices only, never go online
     cleaning: CleaningSpec = field(default_factory=CleaningSpec)
     portfolio: PortfolioSpec = field(default_factory=PortfolioSpec)
     volatility: VolatilitySpec = field(default_factory=VolatilitySpec)
