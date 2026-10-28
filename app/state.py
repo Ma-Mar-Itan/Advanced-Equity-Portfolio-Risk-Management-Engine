@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pandas as pd
 import streamlit as st
 
@@ -21,6 +23,10 @@ def config() -> RiskConfig:
     """Return the active configuration, creating the default on first access."""
     if "cfg" not in st.session_state:
         st.session_state["cfg"] = RiskConfig()
+    if st.session_state.get("portfolio_value_basis_default_version", 0) < 2:
+        cfg = st.session_state["cfg"]
+        st.session_state["cfg"] = cfg.updated(portfolio=replace(cfg.portfolio, value_basis="start"))
+        st.session_state["portfolio_value_basis_default_version"] = 2
     return st.session_state["cfg"]
 
 

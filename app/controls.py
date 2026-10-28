@@ -268,6 +268,7 @@ def portfolio_controls(cfg: RiskConfig) -> dict | str:
         ["today", "start"],
         index=["today", "start"].index(spec.value_basis),
         format_func={"today": "what we hold today", "start": "what we invested at the start"}.get,
+        key="portfolio_value_basis_v2",
     )
     c1, c2 = st.columns(2)
     start = c1.date_input("From", cfg.start, min_value=date(2000, 1, 1))
