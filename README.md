@@ -218,7 +218,7 @@ Coverage includes data alignment, missing and stale values, portfolio arithmetic
 
 ## Project scope
 
-The default example is a USD 10 million, equally weighted portfolio of AAPL, MSFT, NVDA, JPM, XOM, AMZN, META, GOOGL, TSLA and UNH, benchmarked against SPY. Every input can be changed from the dashboard.
+The default example invests USD 10 million on the start date in an equally weighted portfolio of AAPL, MSFT, NVDA, JPM, XOM, AMZN, META, GOOGL, TSLA and UNH, benchmarked against SPY. Every input can be changed from the dashboard.
 
 ## Disclaimer
 

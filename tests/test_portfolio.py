@@ -9,6 +9,11 @@ from riskkit.portfolio import construction, drawdown, weights
 DATES = pd.bdate_range("2024-01-31", periods=4)  # Jan 31, Feb 1, Feb 2, Feb 5
 
 
+def test_default_portfolio_value_is_invested_at_the_start():
+    """The dashboard's default $10m is starting capital, not a value anchored to today."""
+    assert RiskConfig().portfolio.value_basis == "start"
+
+
 def test_cap_weights_redistributes_excess():
     """A 50% cap on (70, 20, 10) moves the extra 20% to the others in proportion (2:1)."""
     w = weights.cap_weights(pd.Series([0.7, 0.2, 0.1], index=list("ABC")), 0.5)

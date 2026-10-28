@@ -76,7 +76,7 @@ class PortfolioSpec:
     max_weight: float = 1.0  # cap on any one stock for market_cap / inverse_vol (1.0 = no cap)
     vol_lookback: int = 63  # inverse_vol: trading days of history used to measure calmness
     cost_bps: float = 0.0  # trading cost per rebalance, in basis points of the amount traded (1bp = 0.01%)
-    value_basis: str = "today"  # "today": worth portfolio_value now; "start": portfolio_value invested at the start
+    value_basis: str = "start"  # "start": portfolio_value invested at the start; "today": worth that amount now
 
     def __post_init__(self) -> None:
         """Reject unknown option names and impossible numbers."""
