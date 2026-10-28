@@ -55,9 +55,19 @@ data/cache/
 # Local and intermediate deliverables
 extra/
 deliverables/
+tmp/
+presentation_mockups/
+.comprehensive-deck-build/
+.docx-learning-outcomes-qa/
+.docx-render-aligned/
+.engine-deck-build*/
+.mockups-build/
+.swiss-build/
 QFI_V2_slides_updated.pptx
 report_assets/presentation_*.json
 slides_assets/dashboard/
+slides_assets/dashboard_charts/
+slides_assets/performance/
 slides_assets/dashboard_var_raw.png
 tools/build_plain_english_deck_artifact.mjs
 tools/build_quant_deck_artifact.mjs

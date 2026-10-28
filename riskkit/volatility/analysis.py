@@ -69,6 +69,17 @@ def scale_to_today(returns: pd.Series, fit: VolFit) -> pd.Series:
     return (returns * fit.next_day / sigma).dropna()
 
 
+def band_exceptions(returns: pd.Series, fit: VolFit, width: float = 2.0) -> tuple[int, int, float]:
+    """Count returns outside a model volatility band, using only dates with valid estimates."""
+    aligned = pd.concat(
+        [returns.rename("return"), fit.sigma.reindex(returns.index).rename("sigma")], axis=1
+    ).dropna()
+    outside = aligned["return"].abs() > width * aligned["sigma"]
+    total = len(aligned)
+    count = int(outside.sum())
+    return count, total, count / total if total else 0.0
+
+
 def leverage_effect(returns: pd.Series, days_after: int = 5) -> pd.DataFrame:
     """Model-free check of the leverage effect: how big are the next few days' moves after each kind of day?
 

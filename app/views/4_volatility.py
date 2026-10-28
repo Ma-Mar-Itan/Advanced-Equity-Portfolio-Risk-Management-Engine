@@ -6,7 +6,13 @@ import streamlit as st
 from app import controls, state, theme
 from app.charts import volatility as charts
 from app.components import kit
-from riskkit.volatility.analysis import leverage_effect, regime_table, scale_to_today, volatility_regimes
+from riskkit.volatility.analysis import (
+    band_exceptions,
+    leverage_effect,
+    regime_table,
+    scale_to_today,
+    volatility_regimes,
+)
 from riskkit.volatility.base import annualize
 
 cfg = state.config()
@@ -55,10 +61,13 @@ with right:
         help="GJR-GARCH is selected by default; choose another model to update the diagnostics.",
     )
     m = fits[pick]
+    outside_count, observed_days, outside_share = band_exceptions(returns, m)
     kit.chart(
         charts.clustering_chart(returns, m),
         "Bad days cluster together",
-        f"The line is daily returns; the band is ±2 {pick} volatilities. Red days broke the band.",
+        f"The line is daily returns; the band is ±2 {pick} volatilities. "
+        f"<b>{outside_count:,} of {observed_days:,} days ({outside_share:.1%})</b> fell outside it; "
+        "a normal distribution would put about 4.6% outside.",
         key="cluster",
     )
     c1, c2 = st.columns(2)

@@ -6,7 +6,7 @@ import pytest
 
 from riskkit.config import VolatilitySpec
 from riskkit.volatility import analysis, ewma, garch, rolling
-from riskkit.volatility.base import horizon_vol
+from riskkit.volatility.base import VolFit, horizon_vol
 
 
 def simulated_garch(n=3000, omega=2e-6, alpha=0.08, beta=0.9, seed=1):
@@ -78,3 +78,19 @@ def test_regimes_and_scaling():
     scaled = analysis.scale_to_today(r, fit)
     d = fit.sigma.idxmin()
     assert abs(scaled[d]) >= abs(r[d]) * 0.999
+
+
+def test_band_exceptions_counts_only_valid_model_days():
+    """Band diagnostics use the same strict two-volatility rule as the clustering chart."""
+    dates = pd.bdate_range("2024-01-01", periods=5)
+    returns = pd.Series([0.00, 0.03, -0.01, -0.05, 0.02], index=dates)
+    fit = VolFit(
+        "Test",
+        pd.Series([np.nan, 0.01, 0.01, 0.02, 0.01], index=dates),
+        np.array([0.01]),
+    )
+
+    count, total, share = analysis.band_exceptions(returns, fit)
+
+    assert (count, total) == (2, 4)
+    assert share == pytest.approx(0.5)
